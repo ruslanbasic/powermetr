@@ -1,0 +1,544 @@
+ARM GAS  /tmp/cckkh1Ln.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"stm32f0xx_dma.c"
+  12              		.text
+  13              		.section	.text.DMA_DeInit,"ax",%progbits
+  14              		.align	1
+  15              		.global	DMA_DeInit
+  16              		.syntax unified
+  17              		.code	16
+  18              		.thumb_func
+  19              		.fpu softvfp
+  21              	DMA_DeInit:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 0368     		ldr	r3, [r0]
+  26 0002 3E4A     		ldr	r2, .L25
+  27 0004 1340     		ands	r3, r2
+  28 0006 0360     		str	r3, [r0]
+  29 0008 0023     		movs	r3, #0
+  30 000a 0360     		str	r3, [r0]
+  31 000c 4360     		str	r3, [r0, #4]
+  32 000e 8360     		str	r3, [r0, #8]
+  33 0010 C360     		str	r3, [r0, #12]
+  34 0012 3B4B     		ldr	r3, .L25+4
+  35 0014 9842     		cmp	r0, r3
+  36 0016 27D0     		beq	.L14
+  37 0018 3A4B     		ldr	r3, .L25+8
+  38 001a 9842     		cmp	r0, r3
+  39 001c 2AD0     		beq	.L15
+  40 001e 3A4B     		ldr	r3, .L25+12
+  41 0020 9842     		cmp	r0, r3
+  42 0022 2DD0     		beq	.L16
+  43 0024 394B     		ldr	r3, .L25+16
+  44 0026 9842     		cmp	r0, r3
+  45 0028 31D0     		beq	.L17
+  46 002a 394B     		ldr	r3, .L25+20
+  47 002c 9842     		cmp	r0, r3
+  48 002e 35D0     		beq	.L18
+  49 0030 384B     		ldr	r3, .L25+24
+  50 0032 9842     		cmp	r0, r3
+  51 0034 39D0     		beq	.L19
+  52 0036 384B     		ldr	r3, .L25+28
+  53 0038 9842     		cmp	r0, r3
+  54 003a 3DD0     		beq	.L20
+  55 003c 374B     		ldr	r3, .L25+32
+  56 003e 9842     		cmp	r0, r3
+  57 0040 41D0     		beq	.L21
+  58 0042 374B     		ldr	r3, .L25+36
+ARM GAS  /tmp/cckkh1Ln.s 			page 2
+
+
+  59 0044 9842     		cmp	r0, r3
+  60 0046 44D0     		beq	.L22
+  61 0048 364B     		ldr	r3, .L25+40
+  62 004a 9842     		cmp	r0, r3
+  63 004c 47D0     		beq	.L23
+  64 004e 364B     		ldr	r3, .L25+44
+  65 0050 9842     		cmp	r0, r3
+  66 0052 4BD0     		beq	.L24
+  67 0054 354B     		ldr	r3, .L25+48
+  68 0056 9842     		cmp	r0, r3
+  69 0058 0BD1     		bne	.L1
+  70 005a 354A     		ldr	r2, .L25+52
+  71 005c 5168     		ldr	r1, [r2, #4]
+  72 005e F023     		movs	r3, #240
+  73 0060 1B03     		lsls	r3, r3, #12
+  74 0062 0B43     		orrs	r3, r1
+  75 0064 5360     		str	r3, [r2, #4]
+  76 0066 04E0     		b	.L1
+  77              	.L14:
+  78 0068 324A     		ldr	r2, .L25+56
+  79 006a 5368     		ldr	r3, [r2, #4]
+  80 006c 0F21     		movs	r1, #15
+  81 006e 0B43     		orrs	r3, r1
+  82 0070 5360     		str	r3, [r2, #4]
+  83              	.L1:
+  84              		@ sp needed
+  85 0072 7047     		bx	lr
+  86              	.L15:
+  87 0074 2F4A     		ldr	r2, .L25+56
+  88 0076 5368     		ldr	r3, [r2, #4]
+  89 0078 F021     		movs	r1, #240
+  90 007a 0B43     		orrs	r3, r1
+  91 007c 5360     		str	r3, [r2, #4]
+  92 007e F8E7     		b	.L1
+  93              	.L16:
+  94 0080 2C4A     		ldr	r2, .L25+56
+  95 0082 5168     		ldr	r1, [r2, #4]
+  96 0084 F023     		movs	r3, #240
+  97 0086 1B01     		lsls	r3, r3, #4
+  98 0088 0B43     		orrs	r3, r1
+  99 008a 5360     		str	r3, [r2, #4]
+ 100 008c F1E7     		b	.L1
+ 101              	.L17:
+ 102 008e 294A     		ldr	r2, .L25+56
+ 103 0090 5168     		ldr	r1, [r2, #4]
+ 104 0092 F023     		movs	r3, #240
+ 105 0094 1B02     		lsls	r3, r3, #8
+ 106 0096 0B43     		orrs	r3, r1
+ 107 0098 5360     		str	r3, [r2, #4]
+ 108 009a EAE7     		b	.L1
+ 109              	.L18:
+ 110 009c 254A     		ldr	r2, .L25+56
+ 111 009e 5168     		ldr	r1, [r2, #4]
+ 112 00a0 F023     		movs	r3, #240
+ 113 00a2 1B03     		lsls	r3, r3, #12
+ 114 00a4 0B43     		orrs	r3, r1
+ 115 00a6 5360     		str	r3, [r2, #4]
+ARM GAS  /tmp/cckkh1Ln.s 			page 3
+
+
+ 116 00a8 E3E7     		b	.L1
+ 117              	.L19:
+ 118 00aa 224A     		ldr	r2, .L25+56
+ 119 00ac 5168     		ldr	r1, [r2, #4]
+ 120 00ae F023     		movs	r3, #240
+ 121 00b0 1B04     		lsls	r3, r3, #16
+ 122 00b2 0B43     		orrs	r3, r1
+ 123 00b4 5360     		str	r3, [r2, #4]
+ 124 00b6 DCE7     		b	.L1
+ 125              	.L20:
+ 126 00b8 1E4A     		ldr	r2, .L25+56
+ 127 00ba 5168     		ldr	r1, [r2, #4]
+ 128 00bc F023     		movs	r3, #240
+ 129 00be 1B05     		lsls	r3, r3, #20
+ 130 00c0 0B43     		orrs	r3, r1
+ 131 00c2 5360     		str	r3, [r2, #4]
+ 132 00c4 D5E7     		b	.L1
+ 133              	.L21:
+ 134 00c6 1A4A     		ldr	r2, .L25+52
+ 135 00c8 5368     		ldr	r3, [r2, #4]
+ 136 00ca 0F21     		movs	r1, #15
+ 137 00cc 0B43     		orrs	r3, r1
+ 138 00ce 5360     		str	r3, [r2, #4]
+ 139 00d0 CFE7     		b	.L1
+ 140              	.L22:
+ 141 00d2 174A     		ldr	r2, .L25+52
+ 142 00d4 5368     		ldr	r3, [r2, #4]
+ 143 00d6 F021     		movs	r1, #240
+ 144 00d8 0B43     		orrs	r3, r1
+ 145 00da 5360     		str	r3, [r2, #4]
+ 146 00dc C9E7     		b	.L1
+ 147              	.L23:
+ 148 00de 144A     		ldr	r2, .L25+52
+ 149 00e0 5168     		ldr	r1, [r2, #4]
+ 150 00e2 F023     		movs	r3, #240
+ 151 00e4 1B01     		lsls	r3, r3, #4
+ 152 00e6 0B43     		orrs	r3, r1
+ 153 00e8 5360     		str	r3, [r2, #4]
+ 154 00ea C2E7     		b	.L1
+ 155              	.L24:
+ 156 00ec 104A     		ldr	r2, .L25+52
+ 157 00ee 5168     		ldr	r1, [r2, #4]
+ 158 00f0 F023     		movs	r3, #240
+ 159 00f2 1B02     		lsls	r3, r3, #8
+ 160 00f4 0B43     		orrs	r3, r1
+ 161 00f6 5360     		str	r3, [r2, #4]
+ 162 00f8 BBE7     		b	.L1
+ 163              	.L26:
+ 164 00fa C046     		.align	2
+ 165              	.L25:
+ 166 00fc FEFF0000 		.word	65534
+ 167 0100 08000240 		.word	1073872904
+ 168 0104 1C000240 		.word	1073872924
+ 169 0108 30000240 		.word	1073872944
+ 170 010c 44000240 		.word	1073872964
+ 171 0110 58000240 		.word	1073872984
+ 172 0114 6C000240 		.word	1073873004
+ARM GAS  /tmp/cckkh1Ln.s 			page 4
+
+
+ 173 0118 80000240 		.word	1073873024
+ 174 011c 08040240 		.word	1073873928
+ 175 0120 1C040240 		.word	1073873948
+ 176 0124 30040240 		.word	1073873968
+ 177 0128 44040240 		.word	1073873988
+ 178 012c 58040240 		.word	1073874008
+ 179 0130 00040240 		.word	1073873920
+ 180 0134 00000240 		.word	1073872896
+ 182              		.section	.text.DMA_Init,"ax",%progbits
+ 183              		.align	1
+ 184              		.global	DMA_Init
+ 185              		.syntax unified
+ 186              		.code	16
+ 187              		.thumb_func
+ 188              		.fpu softvfp
+ 190              	DMA_Init:
+ 191              		@ args = 0, pretend = 0, frame = 0
+ 192              		@ frame_needed = 0, uses_anonymous_args = 0
+ 193 0000 10B5     		push	{r4, lr}
+ 194 0002 0368     		ldr	r3, [r0]
+ 195 0004 0C4A     		ldr	r2, .L28
+ 196 0006 1A40     		ands	r2, r3
+ 197 0008 8B68     		ldr	r3, [r1, #8]
+ 198 000a 0C6A     		ldr	r4, [r1, #32]
+ 199 000c 2343     		orrs	r3, r4
+ 200 000e 0C69     		ldr	r4, [r1, #16]
+ 201 0010 2343     		orrs	r3, r4
+ 202 0012 4C69     		ldr	r4, [r1, #20]
+ 203 0014 2343     		orrs	r3, r4
+ 204 0016 8C69     		ldr	r4, [r1, #24]
+ 205 0018 2343     		orrs	r3, r4
+ 206 001a CC69     		ldr	r4, [r1, #28]
+ 207 001c 2343     		orrs	r3, r4
+ 208 001e 4C6A     		ldr	r4, [r1, #36]
+ 209 0020 2343     		orrs	r3, r4
+ 210 0022 8C6A     		ldr	r4, [r1, #40]
+ 211 0024 2343     		orrs	r3, r4
+ 212 0026 1343     		orrs	r3, r2
+ 213 0028 0360     		str	r3, [r0]
+ 214 002a CB68     		ldr	r3, [r1, #12]
+ 215 002c 4360     		str	r3, [r0, #4]
+ 216 002e 0B68     		ldr	r3, [r1]
+ 217 0030 8360     		str	r3, [r0, #8]
+ 218 0032 4B68     		ldr	r3, [r1, #4]
+ 219 0034 C360     		str	r3, [r0, #12]
+ 220              		@ sp needed
+ 221 0036 10BD     		pop	{r4, pc}
+ 222              	.L29:
+ 223              		.align	2
+ 224              	.L28:
+ 225 0038 0F80FFFF 		.word	-32753
+ 227              		.section	.text.DMA_StructInit,"ax",%progbits
+ 228              		.align	1
+ 229              		.global	DMA_StructInit
+ 230              		.syntax unified
+ 231              		.code	16
+ 232              		.thumb_func
+ARM GAS  /tmp/cckkh1Ln.s 			page 5
+
+
+ 233              		.fpu softvfp
+ 235              	DMA_StructInit:
+ 236              		@ args = 0, pretend = 0, frame = 0
+ 237              		@ frame_needed = 0, uses_anonymous_args = 0
+ 238              		@ link register save eliminated.
+ 239 0000 0023     		movs	r3, #0
+ 240 0002 0360     		str	r3, [r0]
+ 241 0004 4360     		str	r3, [r0, #4]
+ 242 0006 8360     		str	r3, [r0, #8]
+ 243 0008 C360     		str	r3, [r0, #12]
+ 244 000a 0361     		str	r3, [r0, #16]
+ 245 000c 4361     		str	r3, [r0, #20]
+ 246 000e 8361     		str	r3, [r0, #24]
+ 247 0010 C361     		str	r3, [r0, #28]
+ 248 0012 0362     		str	r3, [r0, #32]
+ 249 0014 4362     		str	r3, [r0, #36]
+ 250 0016 8362     		str	r3, [r0, #40]
+ 251              		@ sp needed
+ 252 0018 7047     		bx	lr
+ 254              		.section	.text.DMA_Cmd,"ax",%progbits
+ 255              		.align	1
+ 256              		.global	DMA_Cmd
+ 257              		.syntax unified
+ 258              		.code	16
+ 259              		.thumb_func
+ 260              		.fpu softvfp
+ 262              	DMA_Cmd:
+ 263              		@ args = 0, pretend = 0, frame = 0
+ 264              		@ frame_needed = 0, uses_anonymous_args = 0
+ 265              		@ link register save eliminated.
+ 266 0000 0029     		cmp	r1, #0
+ 267 0002 04D1     		bne	.L34
+ 268 0004 0368     		ldr	r3, [r0]
+ 269 0006 044A     		ldr	r2, .L35
+ 270 0008 1340     		ands	r3, r2
+ 271 000a 0360     		str	r3, [r0]
+ 272              	.L31:
+ 273              		@ sp needed
+ 274 000c 7047     		bx	lr
+ 275              	.L34:
+ 276 000e 0368     		ldr	r3, [r0]
+ 277 0010 0122     		movs	r2, #1
+ 278 0012 1343     		orrs	r3, r2
+ 279 0014 0360     		str	r3, [r0]
+ 280 0016 F9E7     		b	.L31
+ 281              	.L36:
+ 282              		.align	2
+ 283              	.L35:
+ 284 0018 FEFF0000 		.word	65534
+ 286              		.section	.text.DMA_RemapConfig,"ax",%progbits
+ 287              		.align	1
+ 288              		.global	DMA_RemapConfig
+ 289              		.syntax unified
+ 290              		.code	16
+ 291              		.thumb_func
+ 292              		.fpu softvfp
+ 294              	DMA_RemapConfig:
+ARM GAS  /tmp/cckkh1Ln.s 			page 6
+
+
+ 295              		@ args = 0, pretend = 0, frame = 0
+ 296              		@ frame_needed = 0, uses_anonymous_args = 0
+ 297 0000 30B5     		push	{r4, r5, lr}
+ 298 0002 A823     		movs	r3, #168
+ 299 0004 C258     		ldr	r2, [r0, r3]
+ 300 0006 0D0F     		lsrs	r5, r1, #28
+ 301 0008 AD00     		lsls	r5, r5, #2
+ 302 000a 0F24     		movs	r4, #15
+ 303 000c AC40     		lsls	r4, r4, r5
+ 304 000e A243     		bics	r2, r4
+ 305 0010 C250     		str	r2, [r0, r3]
+ 306 0012 C258     		ldr	r2, [r0, r3]
+ 307 0014 0901     		lsls	r1, r1, #4
+ 308 0016 0909     		lsrs	r1, r1, #4
+ 309 0018 1143     		orrs	r1, r2
+ 310 001a C150     		str	r1, [r0, r3]
+ 311              		@ sp needed
+ 312 001c 30BD     		pop	{r4, r5, pc}
+ 314              		.section	.text.DMA_SetCurrDataCounter,"ax",%progbits
+ 315              		.align	1
+ 316              		.global	DMA_SetCurrDataCounter
+ 317              		.syntax unified
+ 318              		.code	16
+ 319              		.thumb_func
+ 320              		.fpu softvfp
+ 322              	DMA_SetCurrDataCounter:
+ 323              		@ args = 0, pretend = 0, frame = 0
+ 324              		@ frame_needed = 0, uses_anonymous_args = 0
+ 325              		@ link register save eliminated.
+ 326 0000 4160     		str	r1, [r0, #4]
+ 327              		@ sp needed
+ 328 0002 7047     		bx	lr
+ 330              		.section	.text.DMA_GetCurrDataCounter,"ax",%progbits
+ 331              		.align	1
+ 332              		.global	DMA_GetCurrDataCounter
+ 333              		.syntax unified
+ 334              		.code	16
+ 335              		.thumb_func
+ 336              		.fpu softvfp
+ 338              	DMA_GetCurrDataCounter:
+ 339              		@ args = 0, pretend = 0, frame = 0
+ 340              		@ frame_needed = 0, uses_anonymous_args = 0
+ 341              		@ link register save eliminated.
+ 342 0000 4068     		ldr	r0, [r0, #4]
+ 343 0002 80B2     		uxth	r0, r0
+ 344              		@ sp needed
+ 345 0004 7047     		bx	lr
+ 347              		.section	.text.DMA_ITConfig,"ax",%progbits
+ 348              		.align	1
+ 349              		.global	DMA_ITConfig
+ 350              		.syntax unified
+ 351              		.code	16
+ 352              		.thumb_func
+ 353              		.fpu softvfp
+ 355              	DMA_ITConfig:
+ 356              		@ args = 0, pretend = 0, frame = 0
+ 357              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /tmp/cckkh1Ln.s 			page 7
+
+
+ 358              		@ link register save eliminated.
+ 359 0000 002A     		cmp	r2, #0
+ 360 0002 03D1     		bne	.L43
+ 361 0004 0368     		ldr	r3, [r0]
+ 362 0006 8B43     		bics	r3, r1
+ 363 0008 0360     		str	r3, [r0]
+ 364              	.L40:
+ 365              		@ sp needed
+ 366 000a 7047     		bx	lr
+ 367              	.L43:
+ 368 000c 0368     		ldr	r3, [r0]
+ 369 000e 1943     		orrs	r1, r3
+ 370 0010 0160     		str	r1, [r0]
+ 371 0012 FAE7     		b	.L40
+ 373              		.section	.text.DMA_GetFlagStatus,"ax",%progbits
+ 374              		.align	1
+ 375              		.global	DMA_GetFlagStatus
+ 376              		.syntax unified
+ 377              		.code	16
+ 378              		.thumb_func
+ 379              		.fpu softvfp
+ 381              	DMA_GetFlagStatus:
+ 382              		@ args = 0, pretend = 0, frame = 0
+ 383              		@ frame_needed = 0, uses_anonymous_args = 0
+ 384              		@ link register save eliminated.
+ 385 0000 C300     		lsls	r3, r0, #3
+ 386 0002 05D5     		bpl	.L45
+ 387 0004 054B     		ldr	r3, .L50
+ 388 0006 1B68     		ldr	r3, [r3]
+ 389              	.L46:
+ 390 0008 1842     		tst	r0, r3
+ 391 000a 04D1     		bne	.L49
+ 392 000c 0020     		movs	r0, #0
+ 393              	.L47:
+ 394              		@ sp needed
+ 395 000e 7047     		bx	lr
+ 396              	.L45:
+ 397 0010 034B     		ldr	r3, .L50+4
+ 398 0012 1B68     		ldr	r3, [r3]
+ 399 0014 F8E7     		b	.L46
+ 400              	.L49:
+ 401 0016 0120     		movs	r0, #1
+ 402 0018 F9E7     		b	.L47
+ 403              	.L51:
+ 404 001a C046     		.align	2
+ 405              	.L50:
+ 406 001c 00040240 		.word	1073873920
+ 407 0020 00000240 		.word	1073872896
+ 409              		.section	.text.DMA_ClearFlag,"ax",%progbits
+ 410              		.align	1
+ 411              		.global	DMA_ClearFlag
+ 412              		.syntax unified
+ 413              		.code	16
+ 414              		.thumb_func
+ 415              		.fpu softvfp
+ 417              	DMA_ClearFlag:
+ 418              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  /tmp/cckkh1Ln.s 			page 8
+
+
+ 419              		@ frame_needed = 0, uses_anonymous_args = 0
+ 420              		@ link register save eliminated.
+ 421 0000 C300     		lsls	r3, r0, #3
+ 422 0002 02D4     		bmi	.L55
+ 423 0004 024B     		ldr	r3, .L56
+ 424 0006 5860     		str	r0, [r3, #4]
+ 425              	.L52:
+ 426              		@ sp needed
+ 427 0008 7047     		bx	lr
+ 428              	.L55:
+ 429 000a 024B     		ldr	r3, .L56+4
+ 430 000c 5860     		str	r0, [r3, #4]
+ 431 000e FBE7     		b	.L52
+ 432              	.L57:
+ 433              		.align	2
+ 434              	.L56:
+ 435 0010 00000240 		.word	1073872896
+ 436 0014 00040240 		.word	1073873920
+ 438              		.section	.text.DMA_GetITStatus,"ax",%progbits
+ 439              		.align	1
+ 440              		.global	DMA_GetITStatus
+ 441              		.syntax unified
+ 442              		.code	16
+ 443              		.thumb_func
+ 444              		.fpu softvfp
+ 446              	DMA_GetITStatus:
+ 447              		@ args = 0, pretend = 0, frame = 0
+ 448              		@ frame_needed = 0, uses_anonymous_args = 0
+ 449              		@ link register save eliminated.
+ 450 0000 C300     		lsls	r3, r0, #3
+ 451 0002 05D5     		bpl	.L59
+ 452 0004 054B     		ldr	r3, .L64
+ 453 0006 1B68     		ldr	r3, [r3]
+ 454              	.L60:
+ 455 0008 1842     		tst	r0, r3
+ 456 000a 04D1     		bne	.L63
+ 457 000c 0020     		movs	r0, #0
+ 458              	.L61:
+ 459              		@ sp needed
+ 460 000e 7047     		bx	lr
+ 461              	.L59:
+ 462 0010 034B     		ldr	r3, .L64+4
+ 463 0012 1B68     		ldr	r3, [r3]
+ 464 0014 F8E7     		b	.L60
+ 465              	.L63:
+ 466 0016 0120     		movs	r0, #1
+ 467 0018 F9E7     		b	.L61
+ 468              	.L65:
+ 469 001a C046     		.align	2
+ 470              	.L64:
+ 471 001c 00040240 		.word	1073873920
+ 472 0020 00000240 		.word	1073872896
+ 474              		.section	.text.DMA_ClearITPendingBit,"ax",%progbits
+ 475              		.align	1
+ 476              		.global	DMA_ClearITPendingBit
+ 477              		.syntax unified
+ 478              		.code	16
+ARM GAS  /tmp/cckkh1Ln.s 			page 9
+
+
+ 479              		.thumb_func
+ 480              		.fpu softvfp
+ 482              	DMA_ClearITPendingBit:
+ 483              		@ args = 0, pretend = 0, frame = 0
+ 484              		@ frame_needed = 0, uses_anonymous_args = 0
+ 485              		@ link register save eliminated.
+ 486 0000 C300     		lsls	r3, r0, #3
+ 487 0002 02D4     		bmi	.L69
+ 488 0004 024B     		ldr	r3, .L70
+ 489 0006 5860     		str	r0, [r3, #4]
+ 490              	.L66:
+ 491              		@ sp needed
+ 492 0008 7047     		bx	lr
+ 493              	.L69:
+ 494 000a 024B     		ldr	r3, .L70+4
+ 495 000c 5860     		str	r0, [r3, #4]
+ 496 000e FBE7     		b	.L66
+ 497              	.L71:
+ 498              		.align	2
+ 499              	.L70:
+ 500 0010 00000240 		.word	1073872896
+ 501 0014 00040240 		.word	1073873920
+ 503              		.ident	"GCC: (GNU Tools for Arm Embedded Processors 7-2018-q3-update) 7.3.1 20180622 (release) [AR
+ARM GAS  /tmp/cckkh1Ln.s 			page 10
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32f0xx_dma.c
+     /tmp/cckkh1Ln.s:14     .text.DMA_DeInit:00000000 $t
+     /tmp/cckkh1Ln.s:21     .text.DMA_DeInit:00000000 DMA_DeInit
+     /tmp/cckkh1Ln.s:166    .text.DMA_DeInit:000000fc $d
+     /tmp/cckkh1Ln.s:183    .text.DMA_Init:00000000 $t
+     /tmp/cckkh1Ln.s:190    .text.DMA_Init:00000000 DMA_Init
+     /tmp/cckkh1Ln.s:225    .text.DMA_Init:00000038 $d
+     /tmp/cckkh1Ln.s:228    .text.DMA_StructInit:00000000 $t
+     /tmp/cckkh1Ln.s:235    .text.DMA_StructInit:00000000 DMA_StructInit
+     /tmp/cckkh1Ln.s:255    .text.DMA_Cmd:00000000 $t
+     /tmp/cckkh1Ln.s:262    .text.DMA_Cmd:00000000 DMA_Cmd
+     /tmp/cckkh1Ln.s:284    .text.DMA_Cmd:00000018 $d
+     /tmp/cckkh1Ln.s:287    .text.DMA_RemapConfig:00000000 $t
+     /tmp/cckkh1Ln.s:294    .text.DMA_RemapConfig:00000000 DMA_RemapConfig
+     /tmp/cckkh1Ln.s:315    .text.DMA_SetCurrDataCounter:00000000 $t
+     /tmp/cckkh1Ln.s:322    .text.DMA_SetCurrDataCounter:00000000 DMA_SetCurrDataCounter
+     /tmp/cckkh1Ln.s:331    .text.DMA_GetCurrDataCounter:00000000 $t
+     /tmp/cckkh1Ln.s:338    .text.DMA_GetCurrDataCounter:00000000 DMA_GetCurrDataCounter
+     /tmp/cckkh1Ln.s:348    .text.DMA_ITConfig:00000000 $t
+     /tmp/cckkh1Ln.s:355    .text.DMA_ITConfig:00000000 DMA_ITConfig
+     /tmp/cckkh1Ln.s:374    .text.DMA_GetFlagStatus:00000000 $t
+     /tmp/cckkh1Ln.s:381    .text.DMA_GetFlagStatus:00000000 DMA_GetFlagStatus
+     /tmp/cckkh1Ln.s:406    .text.DMA_GetFlagStatus:0000001c $d
+     /tmp/cckkh1Ln.s:410    .text.DMA_ClearFlag:00000000 $t
+     /tmp/cckkh1Ln.s:417    .text.DMA_ClearFlag:00000000 DMA_ClearFlag
+     /tmp/cckkh1Ln.s:435    .text.DMA_ClearFlag:00000010 $d
+     /tmp/cckkh1Ln.s:439    .text.DMA_GetITStatus:00000000 $t
+     /tmp/cckkh1Ln.s:446    .text.DMA_GetITStatus:00000000 DMA_GetITStatus
+     /tmp/cckkh1Ln.s:471    .text.DMA_GetITStatus:0000001c $d
+     /tmp/cckkh1Ln.s:475    .text.DMA_ClearITPendingBit:00000000 $t
+     /tmp/cckkh1Ln.s:482    .text.DMA_ClearITPendingBit:00000000 DMA_ClearITPendingBit
+     /tmp/cckkh1Ln.s:500    .text.DMA_ClearITPendingBit:00000010 $d
+
+NO UNDEFINED SYMBOLS

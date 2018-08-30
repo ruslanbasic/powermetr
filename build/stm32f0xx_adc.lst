@@ -1,0 +1,908 @@
+ARM GAS  /tmp/ccUgl6go.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"stm32f0xx_adc.c"
+  12              		.text
+  13              		.section	.text.ADC_DeInit,"ax",%progbits
+  14              		.align	1
+  15              		.global	ADC_DeInit
+  16              		.syntax unified
+  17              		.code	16
+  18              		.thumb_func
+  19              		.fpu softvfp
+  21              	ADC_DeInit:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24 0000 10B5     		push	{r4, lr}
+  25 0002 074B     		ldr	r3, .L4
+  26 0004 9842     		cmp	r0, r3
+  27 0006 00D0     		beq	.L3
+  28              	.L1:
+  29              		@ sp needed
+  30 0008 10BD     		pop	{r4, pc}
+  31              	.L3:
+  32 000a 8024     		movs	r4, #128
+  33 000c A400     		lsls	r4, r4, #2
+  34 000e 0121     		movs	r1, #1
+  35 0010 2000     		movs	r0, r4
+  36 0012 FFF7FEFF 		bl	RCC_APB2PeriphResetCmd
+  37 0016 0021     		movs	r1, #0
+  38 0018 2000     		movs	r0, r4
+  39 001a FFF7FEFF 		bl	RCC_APB2PeriphResetCmd
+  40 001e F3E7     		b	.L1
+  41              	.L5:
+  42              		.align	2
+  43              	.L4:
+  44 0020 00240140 		.word	1073816576
+  46              		.section	.text.ADC_Init,"ax",%progbits
+  47              		.align	1
+  48              		.global	ADC_Init
+  49              		.syntax unified
+  50              		.code	16
+  51              		.thumb_func
+  52              		.fpu softvfp
+  54              	ADC_Init:
+  55              		@ args = 0, pretend = 0, frame = 0
+  56              		@ frame_needed = 0, uses_anonymous_args = 0
+  57 0000 10B5     		push	{r4, lr}
+  58 0002 C368     		ldr	r3, [r0, #12]
+  59 0004 084A     		ldr	r2, .L7
+  60 0006 1A40     		ands	r2, r3
+ARM GAS  /tmp/ccUgl6go.s 			page 2
+
+
+  61 0008 0B79     		ldrb	r3, [r1, #4]
+  62 000a 5B03     		lsls	r3, r3, #13
+  63 000c 0C68     		ldr	r4, [r1]
+  64 000e 2343     		orrs	r3, r4
+  65 0010 8C68     		ldr	r4, [r1, #8]
+  66 0012 2343     		orrs	r3, r4
+  67 0014 CC68     		ldr	r4, [r1, #12]
+  68 0016 2343     		orrs	r3, r4
+  69 0018 0C69     		ldr	r4, [r1, #16]
+  70 001a 2343     		orrs	r3, r4
+  71 001c 4969     		ldr	r1, [r1, #20]
+  72 001e 0B43     		orrs	r3, r1
+  73 0020 1343     		orrs	r3, r2
+  74 0022 C360     		str	r3, [r0, #12]
+  75              		@ sp needed
+  76 0024 10BD     		pop	{r4, pc}
+  77              	.L8:
+  78 0026 C046     		.align	2
+  79              	.L7:
+  80 0028 03D2FFFF 		.word	-11773
+  82              		.section	.text.ADC_StructInit,"ax",%progbits
+  83              		.align	1
+  84              		.global	ADC_StructInit
+  85              		.syntax unified
+  86              		.code	16
+  87              		.thumb_func
+  88              		.fpu softvfp
+  90              	ADC_StructInit:
+  91              		@ args = 0, pretend = 0, frame = 0
+  92              		@ frame_needed = 0, uses_anonymous_args = 0
+  93              		@ link register save eliminated.
+  94 0000 0023     		movs	r3, #0
+  95 0002 0360     		str	r3, [r0]
+  96 0004 0371     		strb	r3, [r0, #4]
+  97 0006 8360     		str	r3, [r0, #8]
+  98 0008 C360     		str	r3, [r0, #12]
+  99 000a 0361     		str	r3, [r0, #16]
+ 100 000c 4361     		str	r3, [r0, #20]
+ 101              		@ sp needed
+ 102 000e 7047     		bx	lr
+ 104              		.section	.text.ADC_Cmd,"ax",%progbits
+ 105              		.align	1
+ 106              		.global	ADC_Cmd
+ 107              		.syntax unified
+ 108              		.code	16
+ 109              		.thumb_func
+ 110              		.fpu softvfp
+ 112              	ADC_Cmd:
+ 113              		@ args = 0, pretend = 0, frame = 0
+ 114              		@ frame_needed = 0, uses_anonymous_args = 0
+ 115              		@ link register save eliminated.
+ 116 0000 0029     		cmp	r1, #0
+ 117 0002 04D1     		bne	.L13
+ 118 0004 8368     		ldr	r3, [r0, #8]
+ 119 0006 0222     		movs	r2, #2
+ 120 0008 1343     		orrs	r3, r2
+ 121 000a 8360     		str	r3, [r0, #8]
+ARM GAS  /tmp/ccUgl6go.s 			page 3
+
+
+ 122              	.L10:
+ 123              		@ sp needed
+ 124 000c 7047     		bx	lr
+ 125              	.L13:
+ 126 000e 8368     		ldr	r3, [r0, #8]
+ 127 0010 0122     		movs	r2, #1
+ 128 0012 1343     		orrs	r3, r2
+ 129 0014 8360     		str	r3, [r0, #8]
+ 130 0016 F9E7     		b	.L10
+ 132              		.section	.text.ADC_ClockModeConfig,"ax",%progbits
+ 133              		.align	1
+ 134              		.global	ADC_ClockModeConfig
+ 135              		.syntax unified
+ 136              		.code	16
+ 137              		.thumb_func
+ 138              		.fpu softvfp
+ 140              	ADC_ClockModeConfig:
+ 141              		@ args = 0, pretend = 0, frame = 0
+ 142              		@ frame_needed = 0, uses_anonymous_args = 0
+ 143              		@ link register save eliminated.
+ 144 0000 0161     		str	r1, [r0, #16]
+ 145              		@ sp needed
+ 146 0002 7047     		bx	lr
+ 148              		.section	.text.ADC_JitterCmd,"ax",%progbits
+ 149              		.align	1
+ 150              		.global	ADC_JitterCmd
+ 151              		.syntax unified
+ 152              		.code	16
+ 153              		.thumb_func
+ 154              		.fpu softvfp
+ 156              	ADC_JitterCmd:
+ 157              		@ args = 0, pretend = 0, frame = 0
+ 158              		@ frame_needed = 0, uses_anonymous_args = 0
+ 159              		@ link register save eliminated.
+ 160 0000 002A     		cmp	r2, #0
+ 161 0002 03D1     		bne	.L18
+ 162 0004 0369     		ldr	r3, [r0, #16]
+ 163 0006 8B43     		bics	r3, r1
+ 164 0008 0361     		str	r3, [r0, #16]
+ 165              	.L15:
+ 166              		@ sp needed
+ 167 000a 7047     		bx	lr
+ 168              	.L18:
+ 169 000c 0369     		ldr	r3, [r0, #16]
+ 170 000e 1943     		orrs	r1, r3
+ 171 0010 0161     		str	r1, [r0, #16]
+ 172 0012 FAE7     		b	.L15
+ 174              		.section	.text.ADC_AutoPowerOffCmd,"ax",%progbits
+ 175              		.align	1
+ 176              		.global	ADC_AutoPowerOffCmd
+ 177              		.syntax unified
+ 178              		.code	16
+ 179              		.thumb_func
+ 180              		.fpu softvfp
+ 182              	ADC_AutoPowerOffCmd:
+ 183              		@ args = 0, pretend = 0, frame = 0
+ 184              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /tmp/ccUgl6go.s 			page 4
+
+
+ 185              		@ link register save eliminated.
+ 186 0000 0029     		cmp	r1, #0
+ 187 0002 04D1     		bne	.L22
+ 188 0004 C368     		ldr	r3, [r0, #12]
+ 189 0006 054A     		ldr	r2, .L23
+ 190 0008 1340     		ands	r3, r2
+ 191 000a C360     		str	r3, [r0, #12]
+ 192              	.L19:
+ 193              		@ sp needed
+ 194 000c 7047     		bx	lr
+ 195              	.L22:
+ 196 000e C268     		ldr	r2, [r0, #12]
+ 197 0010 8023     		movs	r3, #128
+ 198 0012 1B02     		lsls	r3, r3, #8
+ 199 0014 1343     		orrs	r3, r2
+ 200 0016 C360     		str	r3, [r0, #12]
+ 201 0018 F8E7     		b	.L19
+ 202              	.L24:
+ 203 001a C046     		.align	2
+ 204              	.L23:
+ 205 001c FF7FFFFF 		.word	-32769
+ 207              		.section	.text.ADC_WaitModeCmd,"ax",%progbits
+ 208              		.align	1
+ 209              		.global	ADC_WaitModeCmd
+ 210              		.syntax unified
+ 211              		.code	16
+ 212              		.thumb_func
+ 213              		.fpu softvfp
+ 215              	ADC_WaitModeCmd:
+ 216              		@ args = 0, pretend = 0, frame = 0
+ 217              		@ frame_needed = 0, uses_anonymous_args = 0
+ 218              		@ link register save eliminated.
+ 219 0000 0029     		cmp	r1, #0
+ 220 0002 04D1     		bne	.L28
+ 221 0004 C368     		ldr	r3, [r0, #12]
+ 222 0006 054A     		ldr	r2, .L29
+ 223 0008 1340     		ands	r3, r2
+ 224 000a C360     		str	r3, [r0, #12]
+ 225              	.L25:
+ 226              		@ sp needed
+ 227 000c 7047     		bx	lr
+ 228              	.L28:
+ 229 000e C268     		ldr	r2, [r0, #12]
+ 230 0010 8023     		movs	r3, #128
+ 231 0012 DB01     		lsls	r3, r3, #7
+ 232 0014 1343     		orrs	r3, r2
+ 233 0016 C360     		str	r3, [r0, #12]
+ 234 0018 F8E7     		b	.L25
+ 235              	.L30:
+ 236 001a C046     		.align	2
+ 237              	.L29:
+ 238 001c FFBFFFFF 		.word	-16385
+ 240              		.section	.text.ADC_AnalogWatchdogCmd,"ax",%progbits
+ 241              		.align	1
+ 242              		.global	ADC_AnalogWatchdogCmd
+ 243              		.syntax unified
+ 244              		.code	16
+ARM GAS  /tmp/ccUgl6go.s 			page 5
+
+
+ 245              		.thumb_func
+ 246              		.fpu softvfp
+ 248              	ADC_AnalogWatchdogCmd:
+ 249              		@ args = 0, pretend = 0, frame = 0
+ 250              		@ frame_needed = 0, uses_anonymous_args = 0
+ 251              		@ link register save eliminated.
+ 252 0000 0029     		cmp	r1, #0
+ 253 0002 04D1     		bne	.L34
+ 254 0004 C368     		ldr	r3, [r0, #12]
+ 255 0006 054A     		ldr	r2, .L35
+ 256 0008 1340     		ands	r3, r2
+ 257 000a C360     		str	r3, [r0, #12]
+ 258              	.L31:
+ 259              		@ sp needed
+ 260 000c 7047     		bx	lr
+ 261              	.L34:
+ 262 000e C268     		ldr	r2, [r0, #12]
+ 263 0010 8023     		movs	r3, #128
+ 264 0012 1B04     		lsls	r3, r3, #16
+ 265 0014 1343     		orrs	r3, r2
+ 266 0016 C360     		str	r3, [r0, #12]
+ 267 0018 F8E7     		b	.L31
+ 268              	.L36:
+ 269 001a C046     		.align	2
+ 270              	.L35:
+ 271 001c FFFF7FFF 		.word	-8388609
+ 273              		.section	.text.ADC_AnalogWatchdogThresholdsConfig,"ax",%progbits
+ 274              		.align	1
+ 275              		.global	ADC_AnalogWatchdogThresholdsConfig
+ 276              		.syntax unified
+ 277              		.code	16
+ 278              		.thumb_func
+ 279              		.fpu softvfp
+ 281              	ADC_AnalogWatchdogThresholdsConfig:
+ 282              		@ args = 0, pretend = 0, frame = 0
+ 283              		@ frame_needed = 0, uses_anonymous_args = 0
+ 284              		@ link register save eliminated.
+ 285 0000 0904     		lsls	r1, r1, #16
+ 286 0002 0A43     		orrs	r2, r1
+ 287 0004 0262     		str	r2, [r0, #32]
+ 288              		@ sp needed
+ 289 0006 7047     		bx	lr
+ 291              		.section	.text.ADC_AnalogWatchdogSingleChannelConfig,"ax",%progbits
+ 292              		.align	1
+ 293              		.global	ADC_AnalogWatchdogSingleChannelConfig
+ 294              		.syntax unified
+ 295              		.code	16
+ 296              		.thumb_func
+ 297              		.fpu softvfp
+ 299              	ADC_AnalogWatchdogSingleChannelConfig:
+ 300              		@ args = 0, pretend = 0, frame = 0
+ 301              		@ frame_needed = 0, uses_anonymous_args = 0
+ 302              		@ link register save eliminated.
+ 303 0000 C368     		ldr	r3, [r0, #12]
+ 304 0002 024A     		ldr	r2, .L39
+ 305 0004 1340     		ands	r3, r2
+ 306 0006 1943     		orrs	r1, r3
+ARM GAS  /tmp/ccUgl6go.s 			page 6
+
+
+ 307 0008 C160     		str	r1, [r0, #12]
+ 308              		@ sp needed
+ 309 000a 7047     		bx	lr
+ 310              	.L40:
+ 311              		.align	2
+ 312              	.L39:
+ 313 000c FFFFFF83 		.word	-2080374785
+ 315              		.section	.text.ADC_AnalogWatchdogSingleChannelCmd,"ax",%progbits
+ 316              		.align	1
+ 317              		.global	ADC_AnalogWatchdogSingleChannelCmd
+ 318              		.syntax unified
+ 319              		.code	16
+ 320              		.thumb_func
+ 321              		.fpu softvfp
+ 323              	ADC_AnalogWatchdogSingleChannelCmd:
+ 324              		@ args = 0, pretend = 0, frame = 0
+ 325              		@ frame_needed = 0, uses_anonymous_args = 0
+ 326              		@ link register save eliminated.
+ 327 0000 0029     		cmp	r1, #0
+ 328 0002 04D1     		bne	.L44
+ 329 0004 C368     		ldr	r3, [r0, #12]
+ 330 0006 054A     		ldr	r2, .L45
+ 331 0008 1340     		ands	r3, r2
+ 332 000a C360     		str	r3, [r0, #12]
+ 333              	.L41:
+ 334              		@ sp needed
+ 335 000c 7047     		bx	lr
+ 336              	.L44:
+ 337 000e C268     		ldr	r2, [r0, #12]
+ 338 0010 8023     		movs	r3, #128
+ 339 0012 DB03     		lsls	r3, r3, #15
+ 340 0014 1343     		orrs	r3, r2
+ 341 0016 C360     		str	r3, [r0, #12]
+ 342 0018 F8E7     		b	.L41
+ 343              	.L46:
+ 344 001a C046     		.align	2
+ 345              	.L45:
+ 346 001c FFFFBFFF 		.word	-4194305
+ 348              		.section	.text.ADC_TempSensorCmd,"ax",%progbits
+ 349              		.align	1
+ 350              		.global	ADC_TempSensorCmd
+ 351              		.syntax unified
+ 352              		.code	16
+ 353              		.thumb_func
+ 354              		.fpu softvfp
+ 356              	ADC_TempSensorCmd:
+ 357              		@ args = 0, pretend = 0, frame = 0
+ 358              		@ frame_needed = 0, uses_anonymous_args = 0
+ 359              		@ link register save eliminated.
+ 360 0000 0028     		cmp	r0, #0
+ 361 0002 05D1     		bne	.L50
+ 362 0004 064A     		ldr	r2, .L51
+ 363 0006 1368     		ldr	r3, [r2]
+ 364 0008 0649     		ldr	r1, .L51+4
+ 365 000a 0B40     		ands	r3, r1
+ 366 000c 1360     		str	r3, [r2]
+ 367              	.L47:
+ARM GAS  /tmp/ccUgl6go.s 			page 7
+
+
+ 368              		@ sp needed
+ 369 000e 7047     		bx	lr
+ 370              	.L50:
+ 371 0010 034A     		ldr	r2, .L51
+ 372 0012 1168     		ldr	r1, [r2]
+ 373 0014 8023     		movs	r3, #128
+ 374 0016 1B04     		lsls	r3, r3, #16
+ 375 0018 0B43     		orrs	r3, r1
+ 376 001a 1360     		str	r3, [r2]
+ 377 001c F7E7     		b	.L47
+ 378              	.L52:
+ 379 001e C046     		.align	2
+ 380              	.L51:
+ 381 0020 08270140 		.word	1073817352
+ 382 0024 FFFF7FFF 		.word	-8388609
+ 384              		.section	.text.ADC_VrefintCmd,"ax",%progbits
+ 385              		.align	1
+ 386              		.global	ADC_VrefintCmd
+ 387              		.syntax unified
+ 388              		.code	16
+ 389              		.thumb_func
+ 390              		.fpu softvfp
+ 392              	ADC_VrefintCmd:
+ 393              		@ args = 0, pretend = 0, frame = 0
+ 394              		@ frame_needed = 0, uses_anonymous_args = 0
+ 395              		@ link register save eliminated.
+ 396 0000 0028     		cmp	r0, #0
+ 397 0002 05D1     		bne	.L56
+ 398 0004 064A     		ldr	r2, .L57
+ 399 0006 1368     		ldr	r3, [r2]
+ 400 0008 0649     		ldr	r1, .L57+4
+ 401 000a 0B40     		ands	r3, r1
+ 402 000c 1360     		str	r3, [r2]
+ 403              	.L53:
+ 404              		@ sp needed
+ 405 000e 7047     		bx	lr
+ 406              	.L56:
+ 407 0010 034A     		ldr	r2, .L57
+ 408 0012 1168     		ldr	r1, [r2]
+ 409 0014 8023     		movs	r3, #128
+ 410 0016 DB03     		lsls	r3, r3, #15
+ 411 0018 0B43     		orrs	r3, r1
+ 412 001a 1360     		str	r3, [r2]
+ 413 001c F7E7     		b	.L53
+ 414              	.L58:
+ 415 001e C046     		.align	2
+ 416              	.L57:
+ 417 0020 08270140 		.word	1073817352
+ 418 0024 FFFFBFFF 		.word	-4194305
+ 420              		.section	.text.ADC_VbatCmd,"ax",%progbits
+ 421              		.align	1
+ 422              		.global	ADC_VbatCmd
+ 423              		.syntax unified
+ 424              		.code	16
+ 425              		.thumb_func
+ 426              		.fpu softvfp
+ 428              	ADC_VbatCmd:
+ARM GAS  /tmp/ccUgl6go.s 			page 8
+
+
+ 429              		@ args = 0, pretend = 0, frame = 0
+ 430              		@ frame_needed = 0, uses_anonymous_args = 0
+ 431              		@ link register save eliminated.
+ 432 0000 0028     		cmp	r0, #0
+ 433 0002 05D1     		bne	.L62
+ 434 0004 064A     		ldr	r2, .L63
+ 435 0006 1368     		ldr	r3, [r2]
+ 436 0008 0649     		ldr	r1, .L63+4
+ 437 000a 0B40     		ands	r3, r1
+ 438 000c 1360     		str	r3, [r2]
+ 439              	.L59:
+ 440              		@ sp needed
+ 441 000e 7047     		bx	lr
+ 442              	.L62:
+ 443 0010 034A     		ldr	r2, .L63
+ 444 0012 1168     		ldr	r1, [r2]
+ 445 0014 8023     		movs	r3, #128
+ 446 0016 5B04     		lsls	r3, r3, #17
+ 447 0018 0B43     		orrs	r3, r1
+ 448 001a 1360     		str	r3, [r2]
+ 449 001c F7E7     		b	.L59
+ 450              	.L64:
+ 451 001e C046     		.align	2
+ 452              	.L63:
+ 453 0020 08270140 		.word	1073817352
+ 454 0024 FFFFFFFE 		.word	-16777217
+ 456              		.section	.text.ADC_ChannelConfig,"ax",%progbits
+ 457              		.align	1
+ 458              		.global	ADC_ChannelConfig
+ 459              		.syntax unified
+ 460              		.code	16
+ 461              		.thumb_func
+ 462              		.fpu softvfp
+ 464              	ADC_ChannelConfig:
+ 465              		@ args = 0, pretend = 0, frame = 0
+ 466              		@ frame_needed = 0, uses_anonymous_args = 0
+ 467              		@ link register save eliminated.
+ 468 0000 836A     		ldr	r3, [r0, #40]
+ 469 0002 1943     		orrs	r1, r3
+ 470 0004 8162     		str	r1, [r0, #40]
+ 471 0006 4261     		str	r2, [r0, #20]
+ 472              		@ sp needed
+ 473 0008 7047     		bx	lr
+ 475              		.section	.text.ADC_ContinuousModeCmd,"ax",%progbits
+ 476              		.align	1
+ 477              		.global	ADC_ContinuousModeCmd
+ 478              		.syntax unified
+ 479              		.code	16
+ 480              		.thumb_func
+ 481              		.fpu softvfp
+ 483              	ADC_ContinuousModeCmd:
+ 484              		@ args = 0, pretend = 0, frame = 0
+ 485              		@ frame_needed = 0, uses_anonymous_args = 0
+ 486              		@ link register save eliminated.
+ 487 0000 0029     		cmp	r1, #0
+ 488 0002 04D1     		bne	.L69
+ 489 0004 C368     		ldr	r3, [r0, #12]
+ARM GAS  /tmp/ccUgl6go.s 			page 9
+
+
+ 490 0006 054A     		ldr	r2, .L70
+ 491 0008 1340     		ands	r3, r2
+ 492 000a C360     		str	r3, [r0, #12]
+ 493              	.L66:
+ 494              		@ sp needed
+ 495 000c 7047     		bx	lr
+ 496              	.L69:
+ 497 000e C268     		ldr	r2, [r0, #12]
+ 498 0010 8023     		movs	r3, #128
+ 499 0012 9B01     		lsls	r3, r3, #6
+ 500 0014 1343     		orrs	r3, r2
+ 501 0016 C360     		str	r3, [r0, #12]
+ 502 0018 F8E7     		b	.L66
+ 503              	.L71:
+ 504 001a C046     		.align	2
+ 505              	.L70:
+ 506 001c FFDFFFFF 		.word	-8193
+ 508              		.section	.text.ADC_DiscModeCmd,"ax",%progbits
+ 509              		.align	1
+ 510              		.global	ADC_DiscModeCmd
+ 511              		.syntax unified
+ 512              		.code	16
+ 513              		.thumb_func
+ 514              		.fpu softvfp
+ 516              	ADC_DiscModeCmd:
+ 517              		@ args = 0, pretend = 0, frame = 0
+ 518              		@ frame_needed = 0, uses_anonymous_args = 0
+ 519              		@ link register save eliminated.
+ 520 0000 0029     		cmp	r1, #0
+ 521 0002 04D1     		bne	.L75
+ 522 0004 C368     		ldr	r3, [r0, #12]
+ 523 0006 054A     		ldr	r2, .L76
+ 524 0008 1340     		ands	r3, r2
+ 525 000a C360     		str	r3, [r0, #12]
+ 526              	.L72:
+ 527              		@ sp needed
+ 528 000c 7047     		bx	lr
+ 529              	.L75:
+ 530 000e C268     		ldr	r2, [r0, #12]
+ 531 0010 8023     		movs	r3, #128
+ 532 0012 5B02     		lsls	r3, r3, #9
+ 533 0014 1343     		orrs	r3, r2
+ 534 0016 C360     		str	r3, [r0, #12]
+ 535 0018 F8E7     		b	.L72
+ 536              	.L77:
+ 537 001a C046     		.align	2
+ 538              	.L76:
+ 539 001c FFFFFEFF 		.word	-65537
+ 541              		.section	.text.ADC_OverrunModeCmd,"ax",%progbits
+ 542              		.align	1
+ 543              		.global	ADC_OverrunModeCmd
+ 544              		.syntax unified
+ 545              		.code	16
+ 546              		.thumb_func
+ 547              		.fpu softvfp
+ 549              	ADC_OverrunModeCmd:
+ 550              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  /tmp/ccUgl6go.s 			page 10
+
+
+ 551              		@ frame_needed = 0, uses_anonymous_args = 0
+ 552              		@ link register save eliminated.
+ 553 0000 0029     		cmp	r1, #0
+ 554 0002 04D1     		bne	.L81
+ 555 0004 C368     		ldr	r3, [r0, #12]
+ 556 0006 054A     		ldr	r2, .L82
+ 557 0008 1340     		ands	r3, r2
+ 558 000a C360     		str	r3, [r0, #12]
+ 559              	.L78:
+ 560              		@ sp needed
+ 561 000c 7047     		bx	lr
+ 562              	.L81:
+ 563 000e C268     		ldr	r2, [r0, #12]
+ 564 0010 8023     		movs	r3, #128
+ 565 0012 5B01     		lsls	r3, r3, #5
+ 566 0014 1343     		orrs	r3, r2
+ 567 0016 C360     		str	r3, [r0, #12]
+ 568 0018 F8E7     		b	.L78
+ 569              	.L83:
+ 570 001a C046     		.align	2
+ 571              	.L82:
+ 572 001c FFEFFFFF 		.word	-4097
+ 574              		.section	.text.ADC_GetCalibrationFactor,"ax",%progbits
+ 575              		.align	1
+ 576              		.global	ADC_GetCalibrationFactor
+ 577              		.syntax unified
+ 578              		.code	16
+ 579              		.thumb_func
+ 580              		.fpu softvfp
+ 582              	ADC_GetCalibrationFactor:
+ 583              		@ args = 0, pretend = 0, frame = 0
+ 584              		@ frame_needed = 0, uses_anonymous_args = 0
+ 585              		@ link register save eliminated.
+ 586 0000 8268     		ldr	r2, [r0, #8]
+ 587 0002 8023     		movs	r3, #128
+ 588 0004 1B06     		lsls	r3, r3, #24
+ 589 0006 1343     		orrs	r3, r2
+ 590 0008 8360     		str	r3, [r0, #8]
+ 591 000a 0023     		movs	r3, #0
+ 592              	.L86:
+ 593 000c 8168     		ldr	r1, [r0, #8]
+ 594 000e 0133     		adds	r3, r3, #1
+ 595 0010 F022     		movs	r2, #240
+ 596 0012 1202     		lsls	r2, r2, #8
+ 597 0014 9342     		cmp	r3, r2
+ 598 0016 01D0     		beq	.L85
+ 599 0018 0029     		cmp	r1, #0
+ 600 001a F7DB     		blt	.L86
+ 601              	.L85:
+ 602 001c 8368     		ldr	r3, [r0, #8]
+ 603 001e 002B     		cmp	r3, #0
+ 604 0020 01DB     		blt	.L88
+ 605 0022 006C     		ldr	r0, [r0, #64]
+ 606              	.L84:
+ 607              		@ sp needed
+ 608 0024 7047     		bx	lr
+ 609              	.L88:
+ARM GAS  /tmp/ccUgl6go.s 			page 11
+
+
+ 610 0026 0020     		movs	r0, #0
+ 611 0028 FCE7     		b	.L84
+ 613              		.section	.text.ADC_StopOfConversion,"ax",%progbits
+ 614              		.align	1
+ 615              		.global	ADC_StopOfConversion
+ 616              		.syntax unified
+ 617              		.code	16
+ 618              		.thumb_func
+ 619              		.fpu softvfp
+ 621              	ADC_StopOfConversion:
+ 622              		@ args = 0, pretend = 0, frame = 0
+ 623              		@ frame_needed = 0, uses_anonymous_args = 0
+ 624              		@ link register save eliminated.
+ 625 0000 8368     		ldr	r3, [r0, #8]
+ 626 0002 1022     		movs	r2, #16
+ 627 0004 1343     		orrs	r3, r2
+ 628 0006 8360     		str	r3, [r0, #8]
+ 629              		@ sp needed
+ 630 0008 7047     		bx	lr
+ 632              		.section	.text.ADC_StartOfConversion,"ax",%progbits
+ 633              		.align	1
+ 634              		.global	ADC_StartOfConversion
+ 635              		.syntax unified
+ 636              		.code	16
+ 637              		.thumb_func
+ 638              		.fpu softvfp
+ 640              	ADC_StartOfConversion:
+ 641              		@ args = 0, pretend = 0, frame = 0
+ 642              		@ frame_needed = 0, uses_anonymous_args = 0
+ 643              		@ link register save eliminated.
+ 644 0000 8368     		ldr	r3, [r0, #8]
+ 645 0002 0422     		movs	r2, #4
+ 646 0004 1343     		orrs	r3, r2
+ 647 0006 8360     		str	r3, [r0, #8]
+ 648              		@ sp needed
+ 649 0008 7047     		bx	lr
+ 651              		.section	.text.ADC_GetConversionValue,"ax",%progbits
+ 652              		.align	1
+ 653              		.global	ADC_GetConversionValue
+ 654              		.syntax unified
+ 655              		.code	16
+ 656              		.thumb_func
+ 657              		.fpu softvfp
+ 659              	ADC_GetConversionValue:
+ 660              		@ args = 0, pretend = 0, frame = 0
+ 661              		@ frame_needed = 0, uses_anonymous_args = 0
+ 662              		@ link register save eliminated.
+ 663 0000 006C     		ldr	r0, [r0, #64]
+ 664 0002 80B2     		uxth	r0, r0
+ 665              		@ sp needed
+ 666 0004 7047     		bx	lr
+ 668              		.section	.text.ADC_DMACmd,"ax",%progbits
+ 669              		.align	1
+ 670              		.global	ADC_DMACmd
+ 671              		.syntax unified
+ 672              		.code	16
+ 673              		.thumb_func
+ARM GAS  /tmp/ccUgl6go.s 			page 12
+
+
+ 674              		.fpu softvfp
+ 676              	ADC_DMACmd:
+ 677              		@ args = 0, pretend = 0, frame = 0
+ 678              		@ frame_needed = 0, uses_anonymous_args = 0
+ 679              		@ link register save eliminated.
+ 680 0000 0029     		cmp	r1, #0
+ 681 0002 04D1     		bne	.L95
+ 682 0004 C368     		ldr	r3, [r0, #12]
+ 683 0006 0122     		movs	r2, #1
+ 684 0008 9343     		bics	r3, r2
+ 685 000a C360     		str	r3, [r0, #12]
+ 686              	.L92:
+ 687              		@ sp needed
+ 688 000c 7047     		bx	lr
+ 689              	.L95:
+ 690 000e C368     		ldr	r3, [r0, #12]
+ 691 0010 0122     		movs	r2, #1
+ 692 0012 1343     		orrs	r3, r2
+ 693 0014 C360     		str	r3, [r0, #12]
+ 694 0016 F9E7     		b	.L92
+ 696              		.section	.text.ADC_DMARequestModeConfig,"ax",%progbits
+ 697              		.align	1
+ 698              		.global	ADC_DMARequestModeConfig
+ 699              		.syntax unified
+ 700              		.code	16
+ 701              		.thumb_func
+ 702              		.fpu softvfp
+ 704              	ADC_DMARequestModeConfig:
+ 705              		@ args = 0, pretend = 0, frame = 0
+ 706              		@ frame_needed = 0, uses_anonymous_args = 0
+ 707              		@ link register save eliminated.
+ 708 0000 C368     		ldr	r3, [r0, #12]
+ 709 0002 0222     		movs	r2, #2
+ 710 0004 9343     		bics	r3, r2
+ 711 0006 C360     		str	r3, [r0, #12]
+ 712 0008 C368     		ldr	r3, [r0, #12]
+ 713 000a 1943     		orrs	r1, r3
+ 714 000c C160     		str	r1, [r0, #12]
+ 715              		@ sp needed
+ 716 000e 7047     		bx	lr
+ 718              		.section	.text.ADC_ITConfig,"ax",%progbits
+ 719              		.align	1
+ 720              		.global	ADC_ITConfig
+ 721              		.syntax unified
+ 722              		.code	16
+ 723              		.thumb_func
+ 724              		.fpu softvfp
+ 726              	ADC_ITConfig:
+ 727              		@ args = 0, pretend = 0, frame = 0
+ 728              		@ frame_needed = 0, uses_anonymous_args = 0
+ 729              		@ link register save eliminated.
+ 730 0000 002A     		cmp	r2, #0
+ 731 0002 03D1     		bne	.L100
+ 732 0004 4368     		ldr	r3, [r0, #4]
+ 733 0006 8B43     		bics	r3, r1
+ 734 0008 4360     		str	r3, [r0, #4]
+ 735              	.L97:
+ARM GAS  /tmp/ccUgl6go.s 			page 13
+
+
+ 736              		@ sp needed
+ 737 000a 7047     		bx	lr
+ 738              	.L100:
+ 739 000c 4368     		ldr	r3, [r0, #4]
+ 740 000e 1943     		orrs	r1, r3
+ 741 0010 4160     		str	r1, [r0, #4]
+ 742 0012 FAE7     		b	.L97
+ 744              		.section	.text.ADC_GetFlagStatus,"ax",%progbits
+ 745              		.align	1
+ 746              		.global	ADC_GetFlagStatus
+ 747              		.syntax unified
+ 748              		.code	16
+ 749              		.thumb_func
+ 750              		.fpu softvfp
+ 752              	ADC_GetFlagStatus:
+ 753              		@ args = 0, pretend = 0, frame = 0
+ 754              		@ frame_needed = 0, uses_anonymous_args = 0
+ 755              		@ link register save eliminated.
+ 756 0000 CB01     		lsls	r3, r1, #7
+ 757 0002 06D5     		bpl	.L102
+ 758 0004 8368     		ldr	r3, [r0, #8]
+ 759 0006 054A     		ldr	r2, .L107
+ 760 0008 1340     		ands	r3, r2
+ 761              	.L103:
+ 762 000a 1942     		tst	r1, r3
+ 763 000c 03D1     		bne	.L106
+ 764 000e 0020     		movs	r0, #0
+ 765              	.L104:
+ 766              		@ sp needed
+ 767 0010 7047     		bx	lr
+ 768              	.L102:
+ 769 0012 0368     		ldr	r3, [r0]
+ 770 0014 F9E7     		b	.L103
+ 771              	.L106:
+ 772 0016 0120     		movs	r0, #1
+ 773 0018 FAE7     		b	.L104
+ 774              	.L108:
+ 775 001a C046     		.align	2
+ 776              	.L107:
+ 777 001c FFFFFFFE 		.word	-16777217
+ 779              		.section	.text.ADC_ClearFlag,"ax",%progbits
+ 780              		.align	1
+ 781              		.global	ADC_ClearFlag
+ 782              		.syntax unified
+ 783              		.code	16
+ 784              		.thumb_func
+ 785              		.fpu softvfp
+ 787              	ADC_ClearFlag:
+ 788              		@ args = 0, pretend = 0, frame = 0
+ 789              		@ frame_needed = 0, uses_anonymous_args = 0
+ 790              		@ link register save eliminated.
+ 791 0000 0160     		str	r1, [r0]
+ 792              		@ sp needed
+ 793 0002 7047     		bx	lr
+ 795              		.section	.text.ADC_GetITStatus,"ax",%progbits
+ 796              		.align	1
+ 797              		.global	ADC_GetITStatus
+ARM GAS  /tmp/ccUgl6go.s 			page 14
+
+
+ 798              		.syntax unified
+ 799              		.code	16
+ 800              		.thumb_func
+ 801              		.fpu softvfp
+ 803              	ADC_GetITStatus:
+ 804              		@ args = 0, pretend = 0, frame = 0
+ 805              		@ frame_needed = 0, uses_anonymous_args = 0
+ 806              		@ link register save eliminated.
+ 807 0000 4368     		ldr	r3, [r0, #4]
+ 808 0002 0B40     		ands	r3, r1
+ 809 0004 0268     		ldr	r2, [r0]
+ 810 0006 1142     		tst	r1, r2
+ 811 0008 03D0     		beq	.L112
+ 812 000a 002B     		cmp	r3, #0
+ 813 000c 03D1     		bne	.L113
+ 814 000e 0020     		movs	r0, #0
+ 815 0010 00E0     		b	.L111
+ 816              	.L112:
+ 817 0012 0020     		movs	r0, #0
+ 818              	.L111:
+ 819              		@ sp needed
+ 820 0014 7047     		bx	lr
+ 821              	.L113:
+ 822 0016 0120     		movs	r0, #1
+ 823 0018 FCE7     		b	.L111
+ 825              		.section	.text.ADC_ClearITPendingBit,"ax",%progbits
+ 826              		.align	1
+ 827              		.global	ADC_ClearITPendingBit
+ 828              		.syntax unified
+ 829              		.code	16
+ 830              		.thumb_func
+ 831              		.fpu softvfp
+ 833              	ADC_ClearITPendingBit:
+ 834              		@ args = 0, pretend = 0, frame = 0
+ 835              		@ frame_needed = 0, uses_anonymous_args = 0
+ 836              		@ link register save eliminated.
+ 837 0000 0160     		str	r1, [r0]
+ 838              		@ sp needed
+ 839 0002 7047     		bx	lr
+ 841              		.ident	"GCC: (GNU Tools for Arm Embedded Processors 7-2018-q3-update) 7.3.1 20180622 (release) [AR
+ARM GAS  /tmp/ccUgl6go.s 			page 15
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32f0xx_adc.c
+     /tmp/ccUgl6go.s:14     .text.ADC_DeInit:00000000 $t
+     /tmp/ccUgl6go.s:21     .text.ADC_DeInit:00000000 ADC_DeInit
+     /tmp/ccUgl6go.s:44     .text.ADC_DeInit:00000020 $d
+     /tmp/ccUgl6go.s:47     .text.ADC_Init:00000000 $t
+     /tmp/ccUgl6go.s:54     .text.ADC_Init:00000000 ADC_Init
+     /tmp/ccUgl6go.s:80     .text.ADC_Init:00000028 $d
+     /tmp/ccUgl6go.s:83     .text.ADC_StructInit:00000000 $t
+     /tmp/ccUgl6go.s:90     .text.ADC_StructInit:00000000 ADC_StructInit
+     /tmp/ccUgl6go.s:105    .text.ADC_Cmd:00000000 $t
+     /tmp/ccUgl6go.s:112    .text.ADC_Cmd:00000000 ADC_Cmd
+     /tmp/ccUgl6go.s:133    .text.ADC_ClockModeConfig:00000000 $t
+     /tmp/ccUgl6go.s:140    .text.ADC_ClockModeConfig:00000000 ADC_ClockModeConfig
+     /tmp/ccUgl6go.s:149    .text.ADC_JitterCmd:00000000 $t
+     /tmp/ccUgl6go.s:156    .text.ADC_JitterCmd:00000000 ADC_JitterCmd
+     /tmp/ccUgl6go.s:175    .text.ADC_AutoPowerOffCmd:00000000 $t
+     /tmp/ccUgl6go.s:182    .text.ADC_AutoPowerOffCmd:00000000 ADC_AutoPowerOffCmd
+     /tmp/ccUgl6go.s:205    .text.ADC_AutoPowerOffCmd:0000001c $d
+     /tmp/ccUgl6go.s:208    .text.ADC_WaitModeCmd:00000000 $t
+     /tmp/ccUgl6go.s:215    .text.ADC_WaitModeCmd:00000000 ADC_WaitModeCmd
+     /tmp/ccUgl6go.s:238    .text.ADC_WaitModeCmd:0000001c $d
+     /tmp/ccUgl6go.s:241    .text.ADC_AnalogWatchdogCmd:00000000 $t
+     /tmp/ccUgl6go.s:248    .text.ADC_AnalogWatchdogCmd:00000000 ADC_AnalogWatchdogCmd
+     /tmp/ccUgl6go.s:271    .text.ADC_AnalogWatchdogCmd:0000001c $d
+     /tmp/ccUgl6go.s:274    .text.ADC_AnalogWatchdogThresholdsConfig:00000000 $t
+     /tmp/ccUgl6go.s:281    .text.ADC_AnalogWatchdogThresholdsConfig:00000000 ADC_AnalogWatchdogThresholdsConfig
+     /tmp/ccUgl6go.s:292    .text.ADC_AnalogWatchdogSingleChannelConfig:00000000 $t
+     /tmp/ccUgl6go.s:299    .text.ADC_AnalogWatchdogSingleChannelConfig:00000000 ADC_AnalogWatchdogSingleChannelConfig
+     /tmp/ccUgl6go.s:313    .text.ADC_AnalogWatchdogSingleChannelConfig:0000000c $d
+     /tmp/ccUgl6go.s:316    .text.ADC_AnalogWatchdogSingleChannelCmd:00000000 $t
+     /tmp/ccUgl6go.s:323    .text.ADC_AnalogWatchdogSingleChannelCmd:00000000 ADC_AnalogWatchdogSingleChannelCmd
+     /tmp/ccUgl6go.s:346    .text.ADC_AnalogWatchdogSingleChannelCmd:0000001c $d
+     /tmp/ccUgl6go.s:349    .text.ADC_TempSensorCmd:00000000 $t
+     /tmp/ccUgl6go.s:356    .text.ADC_TempSensorCmd:00000000 ADC_TempSensorCmd
+     /tmp/ccUgl6go.s:381    .text.ADC_TempSensorCmd:00000020 $d
+     /tmp/ccUgl6go.s:385    .text.ADC_VrefintCmd:00000000 $t
+     /tmp/ccUgl6go.s:392    .text.ADC_VrefintCmd:00000000 ADC_VrefintCmd
+     /tmp/ccUgl6go.s:417    .text.ADC_VrefintCmd:00000020 $d
+     /tmp/ccUgl6go.s:421    .text.ADC_VbatCmd:00000000 $t
+     /tmp/ccUgl6go.s:428    .text.ADC_VbatCmd:00000000 ADC_VbatCmd
+     /tmp/ccUgl6go.s:453    .text.ADC_VbatCmd:00000020 $d
+     /tmp/ccUgl6go.s:457    .text.ADC_ChannelConfig:00000000 $t
+     /tmp/ccUgl6go.s:464    .text.ADC_ChannelConfig:00000000 ADC_ChannelConfig
+     /tmp/ccUgl6go.s:476    .text.ADC_ContinuousModeCmd:00000000 $t
+     /tmp/ccUgl6go.s:483    .text.ADC_ContinuousModeCmd:00000000 ADC_ContinuousModeCmd
+     /tmp/ccUgl6go.s:506    .text.ADC_ContinuousModeCmd:0000001c $d
+     /tmp/ccUgl6go.s:509    .text.ADC_DiscModeCmd:00000000 $t
+     /tmp/ccUgl6go.s:516    .text.ADC_DiscModeCmd:00000000 ADC_DiscModeCmd
+     /tmp/ccUgl6go.s:539    .text.ADC_DiscModeCmd:0000001c $d
+     /tmp/ccUgl6go.s:542    .text.ADC_OverrunModeCmd:00000000 $t
+     /tmp/ccUgl6go.s:549    .text.ADC_OverrunModeCmd:00000000 ADC_OverrunModeCmd
+     /tmp/ccUgl6go.s:572    .text.ADC_OverrunModeCmd:0000001c $d
+     /tmp/ccUgl6go.s:575    .text.ADC_GetCalibrationFactor:00000000 $t
+     /tmp/ccUgl6go.s:582    .text.ADC_GetCalibrationFactor:00000000 ADC_GetCalibrationFactor
+     /tmp/ccUgl6go.s:614    .text.ADC_StopOfConversion:00000000 $t
+     /tmp/ccUgl6go.s:621    .text.ADC_StopOfConversion:00000000 ADC_StopOfConversion
+ARM GAS  /tmp/ccUgl6go.s 			page 16
+
+
+     /tmp/ccUgl6go.s:633    .text.ADC_StartOfConversion:00000000 $t
+     /tmp/ccUgl6go.s:640    .text.ADC_StartOfConversion:00000000 ADC_StartOfConversion
+     /tmp/ccUgl6go.s:652    .text.ADC_GetConversionValue:00000000 $t
+     /tmp/ccUgl6go.s:659    .text.ADC_GetConversionValue:00000000 ADC_GetConversionValue
+     /tmp/ccUgl6go.s:669    .text.ADC_DMACmd:00000000 $t
+     /tmp/ccUgl6go.s:676    .text.ADC_DMACmd:00000000 ADC_DMACmd
+     /tmp/ccUgl6go.s:697    .text.ADC_DMARequestModeConfig:00000000 $t
+     /tmp/ccUgl6go.s:704    .text.ADC_DMARequestModeConfig:00000000 ADC_DMARequestModeConfig
+     /tmp/ccUgl6go.s:719    .text.ADC_ITConfig:00000000 $t
+     /tmp/ccUgl6go.s:726    .text.ADC_ITConfig:00000000 ADC_ITConfig
+     /tmp/ccUgl6go.s:745    .text.ADC_GetFlagStatus:00000000 $t
+     /tmp/ccUgl6go.s:752    .text.ADC_GetFlagStatus:00000000 ADC_GetFlagStatus
+     /tmp/ccUgl6go.s:777    .text.ADC_GetFlagStatus:0000001c $d
+     /tmp/ccUgl6go.s:780    .text.ADC_ClearFlag:00000000 $t
+     /tmp/ccUgl6go.s:787    .text.ADC_ClearFlag:00000000 ADC_ClearFlag
+     /tmp/ccUgl6go.s:796    .text.ADC_GetITStatus:00000000 $t
+     /tmp/ccUgl6go.s:803    .text.ADC_GetITStatus:00000000 ADC_GetITStatus
+     /tmp/ccUgl6go.s:826    .text.ADC_ClearITPendingBit:00000000 $t
+     /tmp/ccUgl6go.s:833    .text.ADC_ClearITPendingBit:00000000 ADC_ClearITPendingBit
+
+UNDEFINED SYMBOLS
+RCC_APB2PeriphResetCmd

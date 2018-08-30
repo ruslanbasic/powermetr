@@ -1,0 +1,2161 @@
+ARM GAS  /tmp/cceG5OSD.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"main.c"
+  12              		.text
+  13              		.section	.text.SystemClock_Config,"ax",%progbits
+  14              		.align	1
+  15              		.global	SystemClock_Config
+  16              		.syntax unified
+  17              		.code	16
+  18              		.thumb_func
+  19              		.fpu softvfp
+  21              	SystemClock_Config:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 144B     		ldr	r3, .L4
+  26 0002 1122     		movs	r2, #17
+  27 0004 1A60     		str	r2, [r3]
+  28 0006 144B     		ldr	r3, .L4+4
+  29 0008 5A68     		ldr	r2, [r3, #4]
+  30 000a 5A60     		str	r2, [r3, #4]
+  31 000c 5A68     		ldr	r2, [r3, #4]
+  32 000e 5A60     		str	r2, [r3, #4]
+  33 0010 5A68     		ldr	r2, [r3, #4]
+  34 0012 1249     		ldr	r1, .L4+8
+  35 0014 0A40     		ands	r2, r1
+  36 0016 5A60     		str	r2, [r3, #4]
+  37 0018 5968     		ldr	r1, [r3, #4]
+  38 001a A022     		movs	r2, #160
+  39 001c 9203     		lsls	r2, r2, #14
+  40 001e 0A43     		orrs	r2, r1
+  41 0020 5A60     		str	r2, [r3, #4]
+  42 0022 1968     		ldr	r1, [r3]
+  43 0024 8022     		movs	r2, #128
+  44 0026 5204     		lsls	r2, r2, #17
+  45 0028 0A43     		orrs	r2, r1
+  46 002a 1A60     		str	r2, [r3]
+  47              	.L2:
+  48 002c 0A4B     		ldr	r3, .L4+4
+  49 002e 1B68     		ldr	r3, [r3]
+  50 0030 9B01     		lsls	r3, r3, #6
+  51 0032 FBD5     		bpl	.L2
+  52 0034 084B     		ldr	r3, .L4+4
+  53 0036 5A68     		ldr	r2, [r3, #4]
+  54 0038 0321     		movs	r1, #3
+  55 003a 8A43     		bics	r2, r1
+  56 003c 5A60     		str	r2, [r3, #4]
+  57 003e 5A68     		ldr	r2, [r3, #4]
+  58 0040 0139     		subs	r1, r1, #1
+ARM GAS  /tmp/cceG5OSD.s 			page 2
+
+
+  59 0042 0A43     		orrs	r2, r1
+  60 0044 5A60     		str	r2, [r3, #4]
+  61              	.L3:
+  62 0046 044B     		ldr	r3, .L4+4
+  63 0048 5A68     		ldr	r2, [r3, #4]
+  64 004a 0C23     		movs	r3, #12
+  65 004c 1340     		ands	r3, r2
+  66 004e 082B     		cmp	r3, #8
+  67 0050 F9D1     		bne	.L3
+  68              		@ sp needed
+  69 0052 7047     		bx	lr
+  70              	.L5:
+  71              		.align	2
+  72              	.L4:
+  73 0054 00200240 		.word	1073881088
+  74 0058 00100240 		.word	1073876992
+  75 005c FF7FC0FF 		.word	-4161537
+  77              		.section	.text.ADC_Inite,"ax",%progbits
+  78              		.align	1
+  79              		.global	ADC_Inite
+  80              		.syntax unified
+  81              		.code	16
+  82              		.thumb_func
+  83              		.fpu softvfp
+  85              	ADC_Inite:
+  86              		@ args = 0, pretend = 0, frame = 48
+  87              		@ frame_needed = 0, uses_anonymous_args = 0
+  88 0000 70B5     		push	{r4, r5, r6, lr}
+  89 0002 8CB0     		sub	sp, sp, #48
+  90 0004 8020     		movs	r0, #128
+  91 0006 0121     		movs	r1, #1
+  92 0008 8000     		lsls	r0, r0, #2
+  93 000a FFF7FEFF 		bl	RCC_APB2PeriphClockCmd
+  94 000e 8020     		movs	r0, #128
+  95 0010 0121     		movs	r1, #1
+  96 0012 8002     		lsls	r0, r0, #10
+  97 0014 FFF7FEFF 		bl	RCC_AHBPeriphClockCmd
+  98 0018 0121     		movs	r1, #1
+  99 001a 0220     		movs	r0, #2
+ 100 001c FFF7FEFF 		bl	RCC_APB1PeriphClockCmd
+ 101 0020 04AC     		add	r4, sp, #16
+ 102 0022 0323     		movs	r3, #3
+ 103 0024 2371     		strb	r3, [r4, #4]
+ 104 0026 023B     		subs	r3, r3, #2
+ 105 0028 6371     		strb	r3, [r4, #5]
+ 106 002a 0025     		movs	r5, #0
+ 107 002c A571     		strb	r5, [r4, #6]
+ 108 002e E571     		strb	r5, [r4, #7]
+ 109 0030 1F33     		adds	r3, r3, #31
+ 110 0032 0493     		str	r3, [sp, #16]
+ 111 0034 9026     		movs	r6, #144
+ 112 0036 F605     		lsls	r6, r6, #23
+ 113 0038 2100     		movs	r1, r4
+ 114 003a 3000     		movs	r0, r6
+ 115 003c FFF7FEFF 		bl	GPIO_Init
+ 116 0040 4023     		movs	r3, #64
+ 117 0042 0493     		str	r3, [sp, #16]
+ARM GAS  /tmp/cceG5OSD.s 			page 3
+
+
+ 118 0044 2100     		movs	r1, r4
+ 119 0046 3000     		movs	r0, r6
+ 120 0048 FFF7FEFF 		bl	GPIO_Init
+ 121 004c 06AC     		add	r4, sp, #24
+ 122 004e 2000     		movs	r0, r4
+ 123 0050 FFF7FEFF 		bl	ADC_StructInit
+ 124 0054 0695     		str	r5, [sp, #24]
+ 125 0056 2571     		strb	r5, [r4, #4]
+ 126 0058 8023     		movs	r3, #128
+ 127 005a DB00     		lsls	r3, r3, #3
+ 128 005c A360     		str	r3, [r4, #8]
+ 129 005e C023     		movs	r3, #192
+ 130 0060 E360     		str	r3, [r4, #12]
+ 131 0062 2561     		str	r5, [r4, #16]
+ 132 0064 6561     		str	r5, [r4, #20]
+ 133 0066 194D     		ldr	r5, .L8
+ 134 0068 2100     		movs	r1, r4
+ 135 006a 2800     		movs	r0, r5
+ 136 006c FFF7FEFF 		bl	ADC_Init
+ 137 0070 0122     		movs	r2, #1
+ 138 0072 2021     		movs	r1, #32
+ 139 0074 2800     		movs	r0, r5
+ 140 0076 FFF7FEFF 		bl	ADC_ChannelConfig
+ 141 007a 0122     		movs	r2, #1
+ 142 007c 4021     		movs	r1, #64
+ 143 007e 2800     		movs	r0, r5
+ 144 0080 FFF7FEFF 		bl	ADC_ChannelConfig
+ 145 0084 2800     		movs	r0, r5
+ 146 0086 FFF7FEFF 		bl	ADC_GetCalibrationFactor
+ 147 008a 0121     		movs	r1, #1
+ 148 008c 2800     		movs	r0, r5
+ 149 008e FFF7FEFF 		bl	ADC_Cmd
+ 150              	.L7:
+ 151 0092 0F49     		ldr	r1, .L8+4
+ 152 0094 0D48     		ldr	r0, .L8
+ 153 0096 FFF7FEFF 		bl	ADC_GetFlagStatus
+ 154 009a 0028     		cmp	r0, #0
+ 155 009c F9D0     		beq	.L7
+ 156 009e 01A9     		add	r1, sp, #4
+ 157 00a0 3123     		movs	r3, #49
+ 158 00a2 4B60     		str	r3, [r1, #4]
+ 159 00a4 023B     		subs	r3, r3, #2
+ 160 00a6 0B80     		strh	r3, [r1]
+ 161 00a8 0023     		movs	r3, #0
+ 162 00aa 0B81     		strh	r3, [r1, #8]
+ 163 00ac 4B80     		strh	r3, [r1, #2]
+ 164 00ae 8B72     		strb	r3, [r1, #10]
+ 165 00b0 084C     		ldr	r4, .L8+8
+ 166 00b2 2000     		movs	r0, r4
+ 167 00b4 FFF7FEFF 		bl	TIM_TimeBaseInit
+ 168 00b8 2021     		movs	r1, #32
+ 169 00ba 2000     		movs	r0, r4
+ 170 00bc FFF7FEFF 		bl	TIM_SelectOutputTrigger
+ 171 00c0 0248     		ldr	r0, .L8
+ 172 00c2 FFF7FEFF 		bl	ADC_StartOfConversion
+ 173 00c6 0CB0     		add	sp, sp, #48
+ 174              		@ sp needed
+ARM GAS  /tmp/cceG5OSD.s 			page 4
+
+
+ 175 00c8 70BD     		pop	{r4, r5, r6, pc}
+ 176              	.L9:
+ 177 00ca C046     		.align	2
+ 178              	.L8:
+ 179 00cc 00240140 		.word	1073816576
+ 180 00d0 01000001 		.word	16777217
+ 181 00d4 00040040 		.word	1073742848
+ 183              		.section	.text.USART1_UART_Inite,"ax",%progbits
+ 184              		.align	1
+ 185              		.global	USART1_UART_Inite
+ 186              		.syntax unified
+ 187              		.code	16
+ 188              		.thumb_func
+ 189              		.fpu softvfp
+ 191              	USART1_UART_Inite:
+ 192              		@ args = 0, pretend = 0, frame = 40
+ 193              		@ frame_needed = 0, uses_anonymous_args = 0
+ 194 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 195 0002 CE46     		mov	lr, r9
+ 196 0004 00B5     		push	{lr}
+ 197 0006 8AB0     		sub	sp, sp, #40
+ 198 0008 8020     		movs	r0, #128
+ 199 000a 0121     		movs	r1, #1
+ 200 000c C001     		lsls	r0, r0, #7
+ 201 000e FFF7FEFF 		bl	RCC_APB2PeriphClockCmd
+ 202 0012 8020     		movs	r0, #128
+ 203 0014 0121     		movs	r1, #1
+ 204 0016 8002     		lsls	r0, r0, #10
+ 205 0018 FFF7FEFF 		bl	RCC_AHBPeriphClockCmd
+ 206 001c 02AC     		add	r4, sp, #8
+ 207 001e 8023     		movs	r3, #128
+ 208 0020 DB00     		lsls	r3, r3, #3
+ 209 0022 0293     		str	r3, [sp, #8]
+ 210 0024 0223     		movs	r3, #2
+ 211 0026 9946     		mov	r9, r3
+ 212 0028 2371     		strb	r3, [r4, #4]
+ 213 002a 0326     		movs	r6, #3
+ 214 002c 6671     		strb	r6, [r4, #5]
+ 215 002e 0025     		movs	r5, #0
+ 216 0030 A571     		strb	r5, [r4, #6]
+ 217 0032 0127     		movs	r7, #1
+ 218 0034 E771     		strb	r7, [r4, #7]
+ 219 0036 2100     		movs	r1, r4
+ 220 0038 9020     		movs	r0, #144
+ 221 003a C005     		lsls	r0, r0, #23
+ 222 003c FFF7FEFF 		bl	GPIO_Init
+ 223 0040 8023     		movs	r3, #128
+ 224 0042 9B00     		lsls	r3, r3, #2
+ 225 0044 0293     		str	r3, [sp, #8]
+ 226 0046 4B46     		mov	r3, r9
+ 227 0048 2371     		strb	r3, [r4, #4]
+ 228 004a 6671     		strb	r6, [r4, #5]
+ 229 004c A571     		strb	r5, [r4, #6]
+ 230 004e E571     		strb	r5, [r4, #7]
+ 231 0050 2100     		movs	r1, r4
+ 232 0052 9020     		movs	r0, #144
+ 233 0054 C005     		lsls	r0, r0, #23
+ARM GAS  /tmp/cceG5OSD.s 			page 5
+
+
+ 234 0056 FFF7FEFF 		bl	GPIO_Init
+ 235 005a 0122     		movs	r2, #1
+ 236 005c 0921     		movs	r1, #9
+ 237 005e 9020     		movs	r0, #144
+ 238 0060 C005     		lsls	r0, r0, #23
+ 239 0062 FFF7FEFF 		bl	GPIO_PinAFConfig
+ 240 0066 0122     		movs	r2, #1
+ 241 0068 0A21     		movs	r1, #10
+ 242 006a 9020     		movs	r0, #144
+ 243 006c C005     		lsls	r0, r0, #23
+ 244 006e FFF7FEFF 		bl	GPIO_PinAFConfig
+ 245 0072 9623     		movs	r3, #150
+ 246 0074 9B01     		lsls	r3, r3, #6
+ 247 0076 0493     		str	r3, [sp, #16]
+ 248 0078 0595     		str	r5, [sp, #20]
+ 249 007a 0695     		str	r5, [sp, #24]
+ 250 007c 0795     		str	r5, [sp, #28]
+ 251 007e 0C23     		movs	r3, #12
+ 252 0080 0893     		str	r3, [sp, #32]
+ 253 0082 0995     		str	r5, [sp, #36]
+ 254 0084 0B4C     		ldr	r4, .L11
+ 255 0086 04A9     		add	r1, sp, #16
+ 256 0088 2000     		movs	r0, r4
+ 257 008a FFF7FEFF 		bl	USART_Init
+ 258 008e 0122     		movs	r2, #1
+ 259 0090 0949     		ldr	r1, .L11+4
+ 260 0092 2000     		movs	r0, r4
+ 261 0094 FFF7FEFF 		bl	USART_ITConfig
+ 262 0098 01A8     		add	r0, sp, #4
+ 263 009a 1B23     		movs	r3, #27
+ 264 009c 0370     		strb	r3, [r0]
+ 265 009e 8770     		strb	r7, [r0, #2]
+ 266 00a0 FFF7FEFF 		bl	NVIC_Init
+ 267 00a4 0121     		movs	r1, #1
+ 268 00a6 2000     		movs	r0, r4
+ 269 00a8 FFF7FEFF 		bl	USART_Cmd
+ 270 00ac 0AB0     		add	sp, sp, #40
+ 271              		@ sp needed
+ 272 00ae 04BC     		pop	{r2}
+ 273 00b0 9146     		mov	r9, r2
+ 274 00b2 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 275              	.L12:
+ 276              		.align	2
+ 277              	.L11:
+ 278 00b4 00380140 		.word	1073821696
+ 279 00b8 05010500 		.word	327941
+ 281              		.section	.text.DMA_Inite,"ax",%progbits
+ 282              		.align	1
+ 283              		.global	DMA_Inite
+ 284              		.syntax unified
+ 285              		.code	16
+ 286              		.thumb_func
+ 287              		.fpu softvfp
+ 289              	DMA_Inite:
+ 290              		@ args = 0, pretend = 0, frame = 48
+ 291              		@ frame_needed = 0, uses_anonymous_args = 0
+ 292 0000 30B5     		push	{r4, r5, lr}
+ARM GAS  /tmp/cceG5OSD.s 			page 6
+
+
+ 293 0002 8DB0     		sub	sp, sp, #52
+ 294 0004 0121     		movs	r1, #1
+ 295 0006 0120     		movs	r0, #1
+ 296 0008 FFF7FEFF 		bl	RCC_AHBPeriphClockCmd
+ 297 000c 1B4B     		ldr	r3, .L14
+ 298 000e 0193     		str	r3, [sp, #4]
+ 299 0010 1B4B     		ldr	r3, .L14+4
+ 300 0012 0293     		str	r3, [sp, #8]
+ 301 0014 0023     		movs	r3, #0
+ 302 0016 0393     		str	r3, [sp, #12]
+ 303 0018 C922     		movs	r2, #201
+ 304 001a 9200     		lsls	r2, r2, #2
+ 305 001c 0492     		str	r2, [sp, #16]
+ 306 001e 0593     		str	r3, [sp, #20]
+ 307 0020 8022     		movs	r2, #128
+ 308 0022 0692     		str	r2, [sp, #24]
+ 309 0024 8032     		adds	r2, r2, #128
+ 310 0026 0792     		str	r2, [sp, #28]
+ 311 0028 8022     		movs	r2, #128
+ 312 002a D200     		lsls	r2, r2, #3
+ 313 002c 0892     		str	r2, [sp, #32]
+ 314 002e 2022     		movs	r2, #32
+ 315 0030 0992     		str	r2, [sp, #36]
+ 316 0032 8022     		movs	r2, #128
+ 317 0034 9201     		lsls	r2, r2, #6
+ 318 0036 0A92     		str	r2, [sp, #40]
+ 319 0038 0B93     		str	r3, [sp, #44]
+ 320 003a 124C     		ldr	r4, .L14+8
+ 321 003c 01A9     		add	r1, sp, #4
+ 322 003e 2000     		movs	r0, r4
+ 323 0040 FFF7FEFF 		bl	DMA_Init
+ 324 0044 0121     		movs	r1, #1
+ 325 0046 2000     		movs	r0, r4
+ 326 0048 FFF7FEFF 		bl	DMA_Cmd
+ 327 004c 0E4D     		ldr	r5, .L14+12
+ 328 004e 0221     		movs	r1, #2
+ 329 0050 2800     		movs	r0, r5
+ 330 0052 FFF7FEFF 		bl	ADC_DMARequestModeConfig
+ 331 0056 0121     		movs	r1, #1
+ 332 0058 2800     		movs	r0, r5
+ 333 005a FFF7FEFF 		bl	ADC_DMACmd
+ 334 005e 0122     		movs	r2, #1
+ 335 0060 0221     		movs	r1, #2
+ 336 0062 2000     		movs	r0, r4
+ 337 0064 FFF7FEFF 		bl	DMA_ITConfig
+ 338 0068 0923     		movs	r3, #9
+ 339 006a 6A46     		mov	r2, sp
+ 340 006c 1370     		strb	r3, [r2]
+ 341 006e 083B     		subs	r3, r3, #8
+ 342 0070 9370     		strb	r3, [r2, #2]
+ 343 0072 6846     		mov	r0, sp
+ 344 0074 FFF7FEFF 		bl	NVIC_Init
+ 345 0078 0DB0     		add	sp, sp, #52
+ 346              		@ sp needed
+ 347 007a 30BD     		pop	{r4, r5, pc}
+ 348              	.L15:
+ 349              		.align	2
+ARM GAS  /tmp/cceG5OSD.s 			page 7
+
+
+ 350              	.L14:
+ 351 007c 40240140 		.word	1073816640
+ 352 0080 00000000 		.word	AdcData
+ 353 0084 08000240 		.word	1073872904
+ 354 0088 00240140 		.word	1073816576
+ 356              		.section	.text.GPIO_Inite,"ax",%progbits
+ 357              		.align	1
+ 358              		.global	GPIO_Inite
+ 359              		.syntax unified
+ 360              		.code	16
+ 361              		.thumb_func
+ 362              		.fpu softvfp
+ 364              	GPIO_Inite:
+ 365              		@ args = 0, pretend = 0, frame = 0
+ 366              		@ frame_needed = 0, uses_anonymous_args = 0
+ 367              		@ link register save eliminated.
+ 368              		@ sp needed
+ 369 0000 7047     		bx	lr
+ 371              		.section	.text._Error_Handler,"ax",%progbits
+ 372              		.align	1
+ 373              		.global	_Error_Handler
+ 374              		.syntax unified
+ 375              		.code	16
+ 376              		.thumb_func
+ 377              		.fpu softvfp
+ 379              	_Error_Handler:
+ 380              		@ Volatile: function does not return.
+ 381              		@ args = 0, pretend = 0, frame = 0
+ 382              		@ frame_needed = 0, uses_anonymous_args = 0
+ 383              		@ link register save eliminated.
+ 384              	.L18:
+ 385 0000 FEE7     		b	.L18
+ 387              		.section	.text.USART1_IRQHandler,"ax",%progbits
+ 388              		.align	1
+ 389              		.global	USART1_IRQHandler
+ 390              		.syntax unified
+ 391              		.code	16
+ 392              		.thumb_func
+ 393              		.fpu softvfp
+ 395              	USART1_IRQHandler:
+ 396              		@ args = 0, pretend = 0, frame = 0
+ 397              		@ frame_needed = 0, uses_anonymous_args = 0
+ 398 0000 10B5     		push	{r4, lr}
+ 399 0002 0849     		ldr	r1, .L22
+ 400 0004 0848     		ldr	r0, .L22+4
+ 401 0006 FFF7FEFF 		bl	USART_GetITStatus
+ 402 000a 0028     		cmp	r0, #0
+ 403 000c 00D1     		bne	.L21
+ 404              	.L19:
+ 405              		@ sp needed
+ 406 000e 10BD     		pop	{r4, pc}
+ 407              	.L21:
+ 408 0010 054C     		ldr	r4, .L22+4
+ 409 0012 2000     		movs	r0, r4
+ 410 0014 FFF7FEFF 		bl	USART_ReceiveData
+ 411 0018 0100     		movs	r1, r0
+ 412 001a 2000     		movs	r0, r4
+ARM GAS  /tmp/cceG5OSD.s 			page 8
+
+
+ 413 001c FFF7FEFF 		bl	USART_SendData
+ 414 0020 F5E7     		b	.L19
+ 415              	.L23:
+ 416 0022 C046     		.align	2
+ 417              	.L22:
+ 418 0024 05010500 		.word	327941
+ 419 0028 00380140 		.word	1073821696
+ 421              		.section	.text.DMA1_Channel1_IRQHandler,"ax",%progbits
+ 422              		.align	1
+ 423              		.global	DMA1_Channel1_IRQHandler
+ 424              		.syntax unified
+ 425              		.code	16
+ 426              		.thumb_func
+ 427              		.fpu softvfp
+ 429              	DMA1_Channel1_IRQHandler:
+ 430              		@ args = 0, pretend = 0, frame = 0
+ 431              		@ frame_needed = 0, uses_anonymous_args = 0
+ 432 0000 10B5     		push	{r4, lr}
+ 433 0002 0220     		movs	r0, #2
+ 434 0004 FFF7FEFF 		bl	DMA_GetITStatus
+ 435 0008 0028     		cmp	r0, #0
+ 436 000a 00D1     		bne	.L26
+ 437              	.L24:
+ 438              		@ sp needed
+ 439 000c 10BD     		pop	{r4, pc}
+ 440              	.L26:
+ 441 000e 0220     		movs	r0, #2
+ 442 0010 FFF7FEFF 		bl	DMA_ClearITPendingBit
+ 443 0014 0021     		movs	r1, #0
+ 444 0016 0348     		ldr	r0, .L27
+ 445 0018 FFF7FEFF 		bl	TIM_Cmd
+ 446 001c 024B     		ldr	r3, .L27+4
+ 447 001e 0122     		movs	r2, #1
+ 448 0020 1A70     		strb	r2, [r3]
+ 449 0022 F3E7     		b	.L24
+ 450              	.L28:
+ 451              		.align	2
+ 452              	.L27:
+ 453 0024 00040040 		.word	1073742848
+ 454 0028 00000000 		.word	meas
+ 456              		.section	.text.start_conv,"ax",%progbits
+ 457              		.align	1
+ 458              		.global	start_conv
+ 459              		.syntax unified
+ 460              		.code	16
+ 461              		.thumb_func
+ 462              		.fpu softvfp
+ 464              	start_conv:
+ 465              		@ args = 0, pretend = 0, frame = 0
+ 466              		@ frame_needed = 0, uses_anonymous_args = 0
+ 467 0000 10B5     		push	{r4, lr}
+ 468 0002 064C     		ldr	r4, .L30
+ 469 0004 0021     		movs	r1, #0
+ 470 0006 2000     		movs	r0, r4
+ 471 0008 FFF7FEFF 		bl	TIM_SetCounter
+ 472 000c 0121     		movs	r1, #1
+ 473 000e 2000     		movs	r0, r4
+ARM GAS  /tmp/cceG5OSD.s 			page 9
+
+
+ 474 0010 FFF7FEFF 		bl	TIM_Cmd
+ 475 0014 024B     		ldr	r3, .L30+4
+ 476 0016 0022     		movs	r2, #0
+ 477 0018 1A70     		strb	r2, [r3]
+ 478              		@ sp needed
+ 479 001a 10BD     		pop	{r4, pc}
+ 480              	.L31:
+ 481              		.align	2
+ 482              	.L30:
+ 483 001c 00040040 		.word	1073742848
+ 484 0020 00000000 		.word	meas
+ 486              		.global	__aeabi_uldivmod
+ 487              		.section	.text.fsqrt,"ax",%progbits
+ 488              		.align	1
+ 489              		.global	fsqrt
+ 490              		.syntax unified
+ 491              		.code	16
+ 492              		.thumb_func
+ 493              		.fpu softvfp
+ 495              	fsqrt:
+ 496              		@ args = 0, pretend = 0, frame = 8
+ 497              		@ frame_needed = 0, uses_anonymous_args = 0
+ 498 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 499 0002 C646     		mov	lr, r8
+ 500 0004 00B5     		push	{lr}
+ 501 0006 82B0     		sub	sp, sp, #8
+ 502 0008 0600     		movs	r6, r0
+ 503 000a 0F00     		movs	r7, r1
+ 504 000c 6422     		movs	r2, #100
+ 505 000e 0123     		movs	r3, #1
+ 506 0010 1BE0     		b	.L33
+ 507              	.L39:
+ 508 0012 3000     		movs	r0, r6
+ 509 0014 3900     		movs	r1, r7
+ 510 0016 001B     		subs	r0, r0, r4
+ 511 0018 A941     		sbcs	r1, r1, r5
+ 512 001a 0029     		cmp	r1, #0
+ 513 001c 23D0     		beq	.L40
+ 514              	.L34:
+ 515 001e 511E     		subs	r1, r2, #1
+ 516 0020 C9B2     		uxtb	r1, r1
+ 517 0022 8846     		mov	r8, r1
+ 518 0024 012A     		cmp	r2, #1
+ 519 0026 22D9     		bls	.L32
+ 520 0028 0093     		str	r3, [sp]
+ 521 002a 0023     		movs	r3, #0
+ 522 002c 0193     		str	r3, [sp, #4]
+ 523 002e 009A     		ldr	r2, [sp]
+ 524 0030 019B     		ldr	r3, [sp, #4]
+ 525 0032 3000     		movs	r0, r6
+ 526 0034 3900     		movs	r1, r7
+ 527 0036 FFF7FEFF 		bl	__aeabi_uldivmod
+ 528 003a 009A     		ldr	r2, [sp]
+ 529 003c 019B     		ldr	r3, [sp, #4]
+ 530 003e 8018     		adds	r0, r0, r2
+ 531 0040 5941     		adcs	r1, r1, r3
+ 532 0042 CB07     		lsls	r3, r1, #31
+ARM GAS  /tmp/cceG5OSD.s 			page 10
+
+
+ 533 0044 4008     		lsrs	r0, r0, #1
+ 534 0046 0343     		orrs	r3, r0
+ 535 0048 4246     		mov	r2, r8
+ 536              	.L33:
+ 537 004a 1900     		movs	r1, r3
+ 538 004c 5943     		muls	r1, r3
+ 539 004e 0C00     		movs	r4, r1
+ 540 0050 0025     		movs	r5, #0
+ 541 0052 0800     		movs	r0, r1
+ 542 0054 2900     		movs	r1, r5
+ 543 0056 801B     		subs	r0, r0, r6
+ 544 0058 B941     		sbcs	r1, r1, r7
+ 545 005a 0029     		cmp	r1, #0
+ 546 005c DFD1     		bne	.L34
+ 547 005e D8D1     		bne	.L39
+ 548 0060 0128     		cmp	r0, #1
+ 549 0062 DCD8     		bhi	.L34
+ 550 0064 D5E7     		b	.L39
+ 551              	.L40:
+ 552 0066 0029     		cmp	r1, #0
+ 553 0068 01D1     		bne	.L32
+ 554 006a 0128     		cmp	r0, #1
+ 555 006c D7D8     		bhi	.L34
+ 556              	.L32:
+ 557 006e 1800     		movs	r0, r3
+ 558 0070 02B0     		add	sp, sp, #8
+ 559              		@ sp needed
+ 560 0072 04BC     		pop	{r2}
+ 561 0074 9046     		mov	r8, r2
+ 562 0076 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 564              		.global	__aeabi_lmul
+ 565              		.global	__aeabi_uidiv
+ 566              		.section	.text.main,"ax",%progbits
+ 567              		.align	1
+ 568              		.global	main
+ 569              		.syntax unified
+ 570              		.code	16
+ 571              		.thumb_func
+ 572              		.fpu softvfp
+ 574              	main:
+ 575              		@ args = 0, pretend = 0, frame = 8
+ 576              		@ frame_needed = 0, uses_anonymous_args = 0
+ 577 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 578 0002 CE46     		mov	lr, r9
+ 579 0004 4746     		mov	r7, r8
+ 580 0006 80B5     		push	{r7, lr}
+ 581 0008 83B0     		sub	sp, sp, #12
+ 582 000a FFF7FEFF 		bl	SystemClock_Config
+ 583 000e FFF7FEFF 		bl	ADC_Inite
+ 584 0012 FFF7FEFF 		bl	DMA_Inite
+ 585 0016 FFF7FEFF 		bl	USART1_UART_Inite
+ 586 001a 00F09DFD 		bl	.L184	@ far jump
+ 587              	.L43:
+ 588 001e 013B     		subs	r3, r3, #1
+ 589              	.L42:
+ 590 0020 002B     		cmp	r3, #0
+ 591 0022 FCD1     		bne	.L43
+ARM GAS  /tmp/cceG5OSD.s 			page 11
+
+
+ 592 0024 FFF7FEFF 		bl	start_conv
+ 593 0028 0022     		movs	r2, #0
+ 594 002a 0023     		movs	r3, #0
+ 595 002c B849     		ldr	r1, .L187
+ 596 002e 0A60     		str	r2, [r1]
+ 597 0030 4B60     		str	r3, [r1, #4]
+ 598 0032 B849     		ldr	r1, .L187+4
+ 599 0034 0A60     		str	r2, [r1]
+ 600 0036 4B60     		str	r3, [r1, #4]
+ 601 0038 B749     		ldr	r1, .L187+8
+ 602 003a 0A60     		str	r2, [r1]
+ 603 003c 4B60     		str	r3, [r1, #4]
+ 604 003e B74B     		ldr	r3, .L187+12
+ 605 0040 1A80     		strh	r2, [r3]
+ 606 0042 B74B     		ldr	r3, .L187+16
+ 607 0044 B749     		ldr	r1, .L187+20
+ 608 0046 0B80     		strh	r3, [r1]
+ 609 0048 B749     		ldr	r1, .L187+24
+ 610 004a 0A80     		strh	r2, [r1]
+ 611 004c B74A     		ldr	r2, .L187+28
+ 612 004e 1380     		strh	r3, [r2]
+ 613 0050 0123     		movs	r3, #1
+ 614 0052 01E0     		b	.L44
+ 615              	.L48:
+ 616 0054 0133     		adds	r3, r3, #1
+ 617 0056 9BB2     		uxth	r3, r3
+ 618              	.L44:
+ 619 0058 C822     		movs	r2, #200
+ 620 005a 5200     		lsls	r2, r2, #1
+ 621 005c 9342     		cmp	r3, r2
+ 622 005e 20D8     		bhi	.L185
+ 623 0060 5A00     		lsls	r2, r3, #1
+ 624 0062 511C     		adds	r1, r2, #1
+ 625 0064 4900     		lsls	r1, r1, #1
+ 626 0066 B248     		ldr	r0, .L187+32
+ 627 0068 095A     		ldrh	r1, [r1, r0]
+ 628 006a AC48     		ldr	r0, .L187+12
+ 629 006c 0088     		ldrh	r0, [r0]
+ 630 006e 8142     		cmp	r1, r0
+ 631 0070 01D9     		bls	.L45
+ 632 0072 AA48     		ldr	r0, .L187+12
+ 633 0074 0180     		strh	r1, [r0]
+ 634              	.L45:
+ 635 0076 AB48     		ldr	r0, .L187+20
+ 636 0078 0088     		ldrh	r0, [r0]
+ 637 007a 8142     		cmp	r1, r0
+ 638 007c 01D2     		bcs	.L46
+ 639 007e A948     		ldr	r0, .L187+20
+ 640 0080 0180     		strh	r1, [r0]
+ 641              	.L46:
+ 642 0082 5200     		lsls	r2, r2, #1
+ 643 0084 AA49     		ldr	r1, .L187+32
+ 644 0086 525A     		ldrh	r2, [r2, r1]
+ 645 0088 A749     		ldr	r1, .L187+24
+ 646 008a 0988     		ldrh	r1, [r1]
+ 647 008c 8A42     		cmp	r2, r1
+ 648 008e 01D9     		bls	.L47
+ARM GAS  /tmp/cceG5OSD.s 			page 12
+
+
+ 649 0090 A549     		ldr	r1, .L187+24
+ 650 0092 0A80     		strh	r2, [r1]
+ 651              	.L47:
+ 652 0094 A549     		ldr	r1, .L187+28
+ 653 0096 0988     		ldrh	r1, [r1]
+ 654 0098 8A42     		cmp	r2, r1
+ 655 009a DBD2     		bcs	.L48
+ 656 009c A349     		ldr	r1, .L187+28
+ 657 009e 0A80     		strh	r2, [r1]
+ 658 00a0 D8E7     		b	.L48
+ 659              	.L185:
+ 660 00a2 A04B     		ldr	r3, .L187+20
+ 661 00a4 1A88     		ldrh	r2, [r3]
+ 662 00a6 9D4B     		ldr	r3, .L187+12
+ 663 00a8 1988     		ldrh	r1, [r3]
+ 664 00aa 891A     		subs	r1, r1, r2
+ 665 00ac CB0F     		lsrs	r3, r1, #31
+ 666 00ae 5B18     		adds	r3, r3, r1
+ 667 00b0 5B10     		asrs	r3, r3, #1
+ 668 00b2 D318     		adds	r3, r2, r3
+ 669 00b4 9BB2     		uxth	r3, r3
+ 670 00b6 9946     		mov	r9, r3
+ 671 00b8 9E4B     		ldr	r3, .L187+36
+ 672 00ba 4A46     		mov	r2, r9
+ 673 00bc 1A80     		strh	r2, [r3]
+ 674 00be 9B4B     		ldr	r3, .L187+28
+ 675 00c0 1A88     		ldrh	r2, [r3]
+ 676 00c2 994B     		ldr	r3, .L187+24
+ 677 00c4 1988     		ldrh	r1, [r3]
+ 678 00c6 891A     		subs	r1, r1, r2
+ 679 00c8 CB0F     		lsrs	r3, r1, #31
+ 680 00ca 5B18     		adds	r3, r3, r1
+ 681 00cc 5B10     		asrs	r3, r3, #1
+ 682 00ce D318     		adds	r3, r2, r3
+ 683 00d0 9BB2     		uxth	r3, r3
+ 684 00d2 9846     		mov	r8, r3
+ 685 00d4 984B     		ldr	r3, .L187+40
+ 686 00d6 4246     		mov	r2, r8
+ 687 00d8 1A80     		strh	r2, [r3]
+ 688 00da 0124     		movs	r4, #1
+ 689 00dc 3CE0     		b	.L50
+ 690              	.L51:
+ 691 00de 4946     		mov	r1, r9
+ 692 00e0 521A     		subs	r2, r2, r1
+ 693 00e2 9649     		ldr	r1, .L187+44
+ 694 00e4 0A80     		strh	r2, [r1]
+ 695 00e6 46E0     		b	.L52
+ 696              	.L53:
+ 697 00e8 4246     		mov	r2, r8
+ 698 00ea 9B1A     		subs	r3, r3, r2
+ 699 00ec 944A     		ldr	r2, .L187+48
+ 700 00ee 1380     		strh	r3, [r2]
+ 701              	.L54:
+ 702 00f0 934B     		ldr	r3, .L187+48
+ 703 00f2 1888     		ldrh	r0, [r3]
+ 704 00f4 0200     		movs	r2, r0
+ 705 00f6 0023     		movs	r3, #0
+ARM GAS  /tmp/cceG5OSD.s 			page 13
+
+
+ 706 00f8 0021     		movs	r1, #0
+ 707 00fa FFF7FEFF 		bl	__aeabi_lmul
+ 708 00fe 8F4B     		ldr	r3, .L187+44
+ 709 0100 1D88     		ldrh	r5, [r3]
+ 710 0102 2A00     		movs	r2, r5
+ 711 0104 0023     		movs	r3, #0
+ 712 0106 0090     		str	r0, [sp]
+ 713 0108 0191     		str	r1, [sp, #4]
+ 714 010a FFF7FEFF 		bl	__aeabi_lmul
+ 715 010e 0200     		movs	r2, r0
+ 716 0110 0B00     		movs	r3, r1
+ 717 0112 2800     		movs	r0, r5
+ 718 0114 0021     		movs	r1, #0
+ 719 0116 FFF7FEFF 		bl	__aeabi_lmul
+ 720 011a 7D4B     		ldr	r3, .L187
+ 721 011c 1E68     		ldr	r6, [r3]
+ 722 011e 5F68     		ldr	r7, [r3, #4]
+ 723 0120 8019     		adds	r0, r0, r6
+ 724 0122 7941     		adcs	r1, r1, r7
+ 725 0124 1860     		str	r0, [r3]
+ 726 0126 5960     		str	r1, [r3, #4]
+ 727 0128 7B4B     		ldr	r3, .L187+8
+ 728 012a 1968     		ldr	r1, [r3]
+ 729 012c 5A68     		ldr	r2, [r3, #4]
+ 730 012e 009E     		ldr	r6, [sp]
+ 731 0130 019F     		ldr	r7, [sp, #4]
+ 732 0132 7618     		adds	r6, r6, r1
+ 733 0134 5741     		adcs	r7, r7, r2
+ 734 0136 1E60     		str	r6, [r3]
+ 735 0138 5F60     		str	r7, [r3, #4]
+ 736 013a 2A00     		movs	r2, r5
+ 737 013c 0023     		movs	r3, #0
+ 738 013e 2800     		movs	r0, r5
+ 739 0140 0021     		movs	r1, #0
+ 740 0142 FFF7FEFF 		bl	__aeabi_lmul
+ 741 0146 734B     		ldr	r3, .L187+4
+ 742 0148 1D68     		ldr	r5, [r3]
+ 743 014a 5E68     		ldr	r6, [r3, #4]
+ 744 014c 4019     		adds	r0, r0, r5
+ 745 014e 7141     		adcs	r1, r1, r6
+ 746 0150 1860     		str	r0, [r3]
+ 747 0152 5960     		str	r1, [r3, #4]
+ 748 0154 0134     		adds	r4, r4, #1
+ 749 0156 A4B2     		uxth	r4, r4
+ 750              	.L50:
+ 751 0158 C823     		movs	r3, #200
+ 752 015a 5B00     		lsls	r3, r3, #1
+ 753 015c 9C42     		cmp	r4, r3
+ 754 015e 14D8     		bhi	.L186
+ 755 0160 6300     		lsls	r3, r4, #1
+ 756 0162 5A1C     		adds	r2, r3, #1
+ 757 0164 5200     		lsls	r2, r2, #1
+ 758 0166 7249     		ldr	r1, .L187+32
+ 759 0168 525A     		ldrh	r2, [r2, r1]
+ 760 016a 9145     		cmp	r9, r2
+ 761 016c B7D9     		bls	.L51
+ 762 016e 4946     		mov	r1, r9
+ARM GAS  /tmp/cceG5OSD.s 			page 14
+
+
+ 763 0170 8A1A     		subs	r2, r1, r2
+ 764 0172 7249     		ldr	r1, .L187+44
+ 765 0174 0A80     		strh	r2, [r1]
+ 766              	.L52:
+ 767 0176 5B00     		lsls	r3, r3, #1
+ 768 0178 6D4A     		ldr	r2, .L187+32
+ 769 017a 9B5A     		ldrh	r3, [r3, r2]
+ 770 017c 9845     		cmp	r8, r3
+ 771 017e B3D9     		bls	.L53
+ 772 0180 4246     		mov	r2, r8
+ 773 0182 D31A     		subs	r3, r2, r3
+ 774 0184 6E4A     		ldr	r2, .L187+48
+ 775 0186 1380     		strh	r3, [r2]
+ 776 0188 B2E7     		b	.L54
+ 777              	.L186:
+ 778 018a 614E     		ldr	r6, .L187
+ 779 018c C822     		movs	r2, #200
+ 780 018e 5200     		lsls	r2, r2, #1
+ 781 0190 0023     		movs	r3, #0
+ 782 0192 3068     		ldr	r0, [r6]
+ 783 0194 7168     		ldr	r1, [r6, #4]
+ 784 0196 FFF7FEFF 		bl	__aeabi_uldivmod
+ 785 019a 0400     		movs	r4, r0
+ 786 019c 0D00     		movs	r5, r1
+ 787 019e 3460     		str	r4, [r6]
+ 788 01a0 7560     		str	r5, [r6, #4]
+ 789 01a2 5D4B     		ldr	r3, .L187+8
+ 790 01a4 9846     		mov	r8, r3
+ 791 01a6 C822     		movs	r2, #200
+ 792 01a8 5200     		lsls	r2, r2, #1
+ 793 01aa 0023     		movs	r3, #0
+ 794 01ac 4146     		mov	r1, r8
+ 795 01ae 0868     		ldr	r0, [r1]
+ 796 01b0 4968     		ldr	r1, [r1, #4]
+ 797 01b2 FFF7FEFF 		bl	__aeabi_uldivmod
+ 798 01b6 0600     		movs	r6, r0
+ 799 01b8 0F00     		movs	r7, r1
+ 800 01ba 4346     		mov	r3, r8
+ 801 01bc 1E60     		str	r6, [r3]
+ 802 01be 5F60     		str	r7, [r3, #4]
+ 803 01c0 544B     		ldr	r3, .L187+4
+ 804 01c2 9846     		mov	r8, r3
+ 805 01c4 C822     		movs	r2, #200
+ 806 01c6 5200     		lsls	r2, r2, #1
+ 807 01c8 0023     		movs	r3, #0
+ 808 01ca 4146     		mov	r1, r8
+ 809 01cc 0868     		ldr	r0, [r1]
+ 810 01ce 4968     		ldr	r1, [r1, #4]
+ 811 01d0 FFF7FEFF 		bl	__aeabi_uldivmod
+ 812 01d4 0200     		movs	r2, r0
+ 813 01d6 0B00     		movs	r3, r1
+ 814 01d8 4146     		mov	r1, r8
+ 815 01da 0092     		str	r2, [sp]
+ 816 01dc 0193     		str	r3, [sp, #4]
+ 817 01de 0A60     		str	r2, [r1]
+ 818 01e0 4B60     		str	r3, [r1, #4]
+ 819 01e2 2000     		movs	r0, r4
+ARM GAS  /tmp/cceG5OSD.s 			page 15
+
+
+ 820 01e4 2900     		movs	r1, r5
+ 821 01e6 FFF7FEFF 		bl	fsqrt
+ 822 01ea 7A23     		movs	r3, #122
+ 823 01ec 5843     		muls	r0, r3
+ 824 01ee 6421     		movs	r1, #100
+ 825 01f0 FFF7FEFF 		bl	__aeabi_uidiv
+ 826 01f4 534B     		ldr	r3, .L187+52
+ 827 01f6 1860     		str	r0, [r3]
+ 828 01f8 3000     		movs	r0, r6
+ 829 01fa 3900     		movs	r1, r7
+ 830 01fc FFF7FEFF 		bl	fsqrt
+ 831 0200 6424     		movs	r4, #100
+ 832 0202 6043     		muls	r0, r4
+ 833 0204 5121     		movs	r1, #81
+ 834 0206 FFF7FEFF 		bl	__aeabi_uidiv
+ 835 020a 4F4B     		ldr	r3, .L187+56
+ 836 020c 1860     		str	r0, [r3]
+ 837 020e 0098     		ldr	r0, [sp]
+ 838 0210 0199     		ldr	r1, [sp, #4]
+ 839 0212 FFF7FEFF 		bl	fsqrt
+ 840 0216 6043     		muls	r0, r4
+ 841 0218 5221     		movs	r1, #82
+ 842 021a FFF7FEFF 		bl	__aeabi_uidiv
+ 843 021e 4B4B     		ldr	r3, .L187+60
+ 844 0220 1860     		str	r0, [r3]
+ 845              	.L56:
+ 846 0222 8021     		movs	r1, #128
+ 847 0224 4A48     		ldr	r0, .L187+64
+ 848 0226 FFF7FEFF 		bl	USART_GetFlagStatus
+ 849 022a 0028     		cmp	r0, #0
+ 850 022c F9D0     		beq	.L56
+ 851 022e 4B21     		movs	r1, #75
+ 852 0230 4748     		ldr	r0, .L187+64
+ 853 0232 FFF7FEFF 		bl	USART_SendData
+ 854              	.L57:
+ 855 0236 8021     		movs	r1, #128
+ 856 0238 4548     		ldr	r0, .L187+64
+ 857 023a FFF7FEFF 		bl	USART_GetFlagStatus
+ 858 023e 0028     		cmp	r0, #0
+ 859 0240 F9D0     		beq	.L57
+ 860 0242 5021     		movs	r1, #80
+ 861 0244 4248     		ldr	r0, .L187+64
+ 862 0246 FFF7FEFF 		bl	USART_SendData
+ 863              	.L58:
+ 864 024a 8021     		movs	r1, #128
+ 865 024c 4048     		ldr	r0, .L187+64
+ 866 024e FFF7FEFF 		bl	USART_GetFlagStatus
+ 867 0252 0028     		cmp	r0, #0
+ 868 0254 F9D0     		beq	.L58
+ 869 0256 6F21     		movs	r1, #111
+ 870 0258 3D48     		ldr	r0, .L187+64
+ 871 025a FFF7FEFF 		bl	USART_SendData
+ 872              	.L59:
+ 873 025e 8021     		movs	r1, #128
+ 874 0260 3B48     		ldr	r0, .L187+64
+ 875 0262 FFF7FEFF 		bl	USART_GetFlagStatus
+ 876 0266 0028     		cmp	r0, #0
+ARM GAS  /tmp/cceG5OSD.s 			page 16
+
+
+ 877 0268 F9D0     		beq	.L59
+ 878 026a 7721     		movs	r1, #119
+ 879 026c 3848     		ldr	r0, .L187+64
+ 880 026e FFF7FEFF 		bl	USART_SendData
+ 881              	.L60:
+ 882 0272 8021     		movs	r1, #128
+ 883 0274 3648     		ldr	r0, .L187+64
+ 884 0276 FFF7FEFF 		bl	USART_GetFlagStatus
+ 885 027a 0028     		cmp	r0, #0
+ 886 027c F9D0     		beq	.L60
+ 887 027e 3D21     		movs	r1, #61
+ 888 0280 3348     		ldr	r0, .L187+64
+ 889 0282 FFF7FEFF 		bl	USART_SendData
+ 890 0286 314B     		ldr	r3, .L187+60
+ 891 0288 1968     		ldr	r1, [r3]
+ 892 028a 2E4B     		ldr	r3, .L187+52
+ 893 028c 1868     		ldr	r0, [r3]
+ 894 028e FFF7FEFF 		bl	__aeabi_uidiv
+ 895 0292 4301     		lsls	r3, r0, #5
+ 896 0294 1B1A     		subs	r3, r3, r0
+ 897 0296 9B00     		lsls	r3, r3, #2
+ 898 0298 1B18     		adds	r3, r3, r0
+ 899 029a D800     		lsls	r0, r3, #3
+ 900 029c 2A4B     		ldr	r3, .L187+56
+ 901 029e 1968     		ldr	r1, [r3]
+ 902 02a0 FFF7FEFF 		bl	__aeabi_uidiv
+ 903 02a4 0400     		movs	r4, r0
+ 904 02a6 0025     		movs	r5, #0
+ 905 02a8 04E0     		b	.L61
+ 906              	.L62:
+ 907 02aa 2A4B     		ldr	r3, .L187+68
+ 908 02ac 9C46     		mov	ip, r3
+ 909 02ae 6444     		add	r4, r4, ip
+ 910 02b0 0135     		adds	r5, r5, #1
+ 911 02b2 ADB2     		uxth	r5, r5
+ 912              	.L61:
+ 913 02b4 284B     		ldr	r3, .L187+72
+ 914 02b6 9C42     		cmp	r4, r3
+ 915 02b8 F7D8     		bhi	.L62
+ 916              	.L63:
+ 917 02ba 8021     		movs	r1, #128
+ 918 02bc 2448     		ldr	r0, .L187+64
+ 919 02be FFF7FEFF 		bl	USART_GetFlagStatus
+ 920 02c2 0028     		cmp	r0, #0
+ 921 02c4 F9D0     		beq	.L63
+ 922 02c6 2900     		movs	r1, r5
+ 923 02c8 3031     		adds	r1, r1, #48
+ 924 02ca 89B2     		uxth	r1, r1
+ 925 02cc 2048     		ldr	r0, .L187+64
+ 926 02ce FFF7FEFF 		bl	USART_SendData
+ 927              	.L64:
+ 928 02d2 8021     		movs	r1, #128
+ 929 02d4 1E48     		ldr	r0, .L187+64
+ 930 02d6 FFF7FEFF 		bl	USART_GetFlagStatus
+ 931 02da 0028     		cmp	r0, #0
+ 932 02dc F9D0     		beq	.L64
+ 933 02de 2E21     		movs	r1, #46
+ARM GAS  /tmp/cceG5OSD.s 			page 17
+
+
+ 934 02e0 1B48     		ldr	r0, .L187+64
+ 935 02e2 FFF7FEFF 		bl	USART_SendData
+ 936 02e6 0025     		movs	r5, #0
+ 937 02e8 02E0     		b	.L65
+ 938              	.L66:
+ 939 02ea 643C     		subs	r4, r4, #100
+ 940 02ec 0135     		adds	r5, r5, #1
+ 941 02ee ADB2     		uxth	r5, r5
+ 942              	.L65:
+ 943 02f0 632C     		cmp	r4, #99
+ 944 02f2 FAD8     		bhi	.L66
+ 945              	.L67:
+ 946 02f4 8021     		movs	r1, #128
+ 947 02f6 1648     		ldr	r0, .L187+64
+ 948 02f8 FFF7FEFF 		bl	USART_GetFlagStatus
+ 949 02fc 0028     		cmp	r0, #0
+ 950 02fe F9D0     		beq	.L67
+ 951 0300 2900     		movs	r1, r5
+ 952 0302 3031     		adds	r1, r1, #48
+ 953 0304 89B2     		uxth	r1, r1
+ 954 0306 1248     		ldr	r0, .L187+64
+ 955 0308 FFF7FEFF 		bl	USART_SendData
+ 956 030c 0025     		movs	r5, #0
+ 957 030e 28E0     		b	.L68
+ 958              	.L188:
+ 959              		.align	2
+ 960              	.L187:
+ 961 0310 00000000 		.word	p_sum
+ 962 0314 00000000 		.word	v_sum
+ 963 0318 00000000 		.word	i_sum
+ 964 031c 00000000 		.word	va_max
+ 965 0320 FF0F0000 		.word	4095
+ 966 0324 00000000 		.word	va_min
+ 967 0328 00000000 		.word	ia_max
+ 968 032c 00000000 		.word	ia_min
+ 969 0330 00000000 		.word	AdcData
+ 970 0334 00000000 		.word	v_offset
+ 971 0338 00000000 		.word	i_offset
+ 972 033c 00000000 		.word	va
+ 973 0340 00000000 		.word	ia
+ 974 0344 00000000 		.word	p_out
+ 975 0348 00000000 		.word	i_out
+ 976 034c 00000000 		.word	v_out
+ 977 0350 00380140 		.word	1073821696
+ 978 0354 18FCFFFF 		.word	-1000
+ 979 0358 E7030000 		.word	999
+ 980              	.L69:
+ 981 035c 0A3C     		subs	r4, r4, #10
+ 982 035e 0135     		adds	r5, r5, #1
+ 983 0360 ADB2     		uxth	r5, r5
+ 984              	.L68:
+ 985 0362 092C     		cmp	r4, #9
+ 986 0364 FAD8     		bhi	.L69
+ 987              	.L70:
+ 988 0366 8021     		movs	r1, #128
+ 989 0368 AC48     		ldr	r0, .L189
+ 990 036a FFF7FEFF 		bl	USART_GetFlagStatus
+ARM GAS  /tmp/cceG5OSD.s 			page 18
+
+
+ 991 036e 0028     		cmp	r0, #0
+ 992 0370 F9D0     		beq	.L70
+ 993 0372 2900     		movs	r1, r5
+ 994 0374 3031     		adds	r1, r1, #48
+ 995 0376 89B2     		uxth	r1, r1
+ 996 0378 A848     		ldr	r0, .L189
+ 997 037a FFF7FEFF 		bl	USART_SendData
+ 998              	.L71:
+ 999 037e 8021     		movs	r1, #128
+ 1000 0380 A648     		ldr	r0, .L189
+ 1001 0382 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1002 0386 0028     		cmp	r0, #0
+ 1003 0388 F9D0     		beq	.L71
+ 1004 038a 2100     		movs	r1, r4
+ 1005 038c 3031     		adds	r1, r1, #48
+ 1006 038e 89B2     		uxth	r1, r1
+ 1007 0390 A248     		ldr	r0, .L189
+ 1008 0392 FFF7FEFF 		bl	USART_SendData
+ 1009              	.L72:
+ 1010 0396 8021     		movs	r1, #128
+ 1011 0398 A048     		ldr	r0, .L189
+ 1012 039a FFF7FEFF 		bl	USART_GetFlagStatus
+ 1013 039e 0028     		cmp	r0, #0
+ 1014 03a0 F9D0     		beq	.L72
+ 1015 03a2 0D21     		movs	r1, #13
+ 1016 03a4 9D48     		ldr	r0, .L189
+ 1017 03a6 FFF7FEFF 		bl	USART_SendData
+ 1018              	.L73:
+ 1019 03aa 8021     		movs	r1, #128
+ 1020 03ac 9B48     		ldr	r0, .L189
+ 1021 03ae FFF7FEFF 		bl	USART_GetFlagStatus
+ 1022 03b2 0028     		cmp	r0, #0
+ 1023 03b4 F9D0     		beq	.L73
+ 1024 03b6 0A21     		movs	r1, #10
+ 1025 03b8 9848     		ldr	r0, .L189
+ 1026 03ba FFF7FEFF 		bl	USART_SendData
+ 1027              	.L74:
+ 1028 03be 8021     		movs	r1, #128
+ 1029 03c0 9648     		ldr	r0, .L189
+ 1030 03c2 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1031 03c6 0028     		cmp	r0, #0
+ 1032 03c8 F9D0     		beq	.L74
+ 1033 03ca 5521     		movs	r1, #85
+ 1034 03cc 9348     		ldr	r0, .L189
+ 1035 03ce FFF7FEFF 		bl	USART_SendData
+ 1036              	.L75:
+ 1037 03d2 8021     		movs	r1, #128
+ 1038 03d4 9148     		ldr	r0, .L189
+ 1039 03d6 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1040 03da 0028     		cmp	r0, #0
+ 1041 03dc F9D0     		beq	.L75
+ 1042 03de 7221     		movs	r1, #114
+ 1043 03e0 8E48     		ldr	r0, .L189
+ 1044 03e2 FFF7FEFF 		bl	USART_SendData
+ 1045              	.L76:
+ 1046 03e6 8021     		movs	r1, #128
+ 1047 03e8 8C48     		ldr	r0, .L189
+ARM GAS  /tmp/cceG5OSD.s 			page 19
+
+
+ 1048 03ea FFF7FEFF 		bl	USART_GetFlagStatus
+ 1049 03ee 0028     		cmp	r0, #0
+ 1050 03f0 F9D0     		beq	.L76
+ 1051 03f2 6D21     		movs	r1, #109
+ 1052 03f4 8948     		ldr	r0, .L189
+ 1053 03f6 FFF7FEFF 		bl	USART_SendData
+ 1054              	.L77:
+ 1055 03fa 8021     		movs	r1, #128
+ 1056 03fc 8748     		ldr	r0, .L189
+ 1057 03fe FFF7FEFF 		bl	USART_GetFlagStatus
+ 1058 0402 0028     		cmp	r0, #0
+ 1059 0404 F9D0     		beq	.L77
+ 1060 0406 7321     		movs	r1, #115
+ 1061 0408 8448     		ldr	r0, .L189
+ 1062 040a FFF7FEFF 		bl	USART_SendData
+ 1063              	.L78:
+ 1064 040e 8021     		movs	r1, #128
+ 1065 0410 8248     		ldr	r0, .L189
+ 1066 0412 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1067 0416 0028     		cmp	r0, #0
+ 1068 0418 F9D0     		beq	.L78
+ 1069 041a 3D21     		movs	r1, #61
+ 1070 041c 7F48     		ldr	r0, .L189
+ 1071 041e FFF7FEFF 		bl	USART_SendData
+ 1072 0422 7F4B     		ldr	r3, .L189+4
+ 1073 0424 1C68     		ldr	r4, [r3]
+ 1074 0426 0025     		movs	r5, #0
+ 1075 0428 04E0     		b	.L79
+ 1076              	.L80:
+ 1077 042a 7E4B     		ldr	r3, .L189+8
+ 1078 042c 9C46     		mov	ip, r3
+ 1079 042e 6444     		add	r4, r4, ip
+ 1080 0430 0135     		adds	r5, r5, #1
+ 1081 0432 ADB2     		uxth	r5, r5
+ 1082              	.L79:
+ 1083 0434 7C4B     		ldr	r3, .L189+12
+ 1084 0436 9C42     		cmp	r4, r3
+ 1085 0438 F7D8     		bhi	.L80
+ 1086              	.L81:
+ 1087 043a 8021     		movs	r1, #128
+ 1088 043c 7748     		ldr	r0, .L189
+ 1089 043e FFF7FEFF 		bl	USART_GetFlagStatus
+ 1090 0442 0028     		cmp	r0, #0
+ 1091 0444 F9D0     		beq	.L81
+ 1092 0446 2900     		movs	r1, r5
+ 1093 0448 3031     		adds	r1, r1, #48
+ 1094 044a 89B2     		uxth	r1, r1
+ 1095 044c 7348     		ldr	r0, .L189
+ 1096 044e FFF7FEFF 		bl	USART_SendData
+ 1097 0452 0025     		movs	r5, #0
+ 1098 0454 04E0     		b	.L82
+ 1099              	.L83:
+ 1100 0456 754B     		ldr	r3, .L189+16
+ 1101 0458 9C46     		mov	ip, r3
+ 1102 045a 6444     		add	r4, r4, ip
+ 1103 045c 0135     		adds	r5, r5, #1
+ 1104 045e ADB2     		uxth	r5, r5
+ARM GAS  /tmp/cceG5OSD.s 			page 20
+
+
+ 1105              	.L82:
+ 1106 0460 734B     		ldr	r3, .L189+20
+ 1107 0462 9C42     		cmp	r4, r3
+ 1108 0464 F7D8     		bhi	.L83
+ 1109              	.L84:
+ 1110 0466 8021     		movs	r1, #128
+ 1111 0468 6C48     		ldr	r0, .L189
+ 1112 046a FFF7FEFF 		bl	USART_GetFlagStatus
+ 1113 046e 0028     		cmp	r0, #0
+ 1114 0470 F9D0     		beq	.L84
+ 1115 0472 2900     		movs	r1, r5
+ 1116 0474 3031     		adds	r1, r1, #48
+ 1117 0476 89B2     		uxth	r1, r1
+ 1118 0478 6848     		ldr	r0, .L189
+ 1119 047a FFF7FEFF 		bl	USART_SendData
+ 1120 047e 0025     		movs	r5, #0
+ 1121 0480 02E0     		b	.L85
+ 1122              	.L86:
+ 1123 0482 643C     		subs	r4, r4, #100
+ 1124 0484 0135     		adds	r5, r5, #1
+ 1125 0486 ADB2     		uxth	r5, r5
+ 1126              	.L85:
+ 1127 0488 632C     		cmp	r4, #99
+ 1128 048a FAD8     		bhi	.L86
+ 1129              	.L87:
+ 1130 048c 8021     		movs	r1, #128
+ 1131 048e 6348     		ldr	r0, .L189
+ 1132 0490 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1133 0494 0028     		cmp	r0, #0
+ 1134 0496 F9D0     		beq	.L87
+ 1135 0498 2900     		movs	r1, r5
+ 1136 049a 3031     		adds	r1, r1, #48
+ 1137 049c 89B2     		uxth	r1, r1
+ 1138 049e 5F48     		ldr	r0, .L189
+ 1139 04a0 FFF7FEFF 		bl	USART_SendData
+ 1140              	.L88:
+ 1141 04a4 8021     		movs	r1, #128
+ 1142 04a6 5D48     		ldr	r0, .L189
+ 1143 04a8 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1144 04ac 0028     		cmp	r0, #0
+ 1145 04ae F9D0     		beq	.L88
+ 1146 04b0 2E21     		movs	r1, #46
+ 1147 04b2 5A48     		ldr	r0, .L189
+ 1148 04b4 FFF7FEFF 		bl	USART_SendData
+ 1149 04b8 0025     		movs	r5, #0
+ 1150 04ba 02E0     		b	.L89
+ 1151              	.L90:
+ 1152 04bc 0A3C     		subs	r4, r4, #10
+ 1153 04be 0135     		adds	r5, r5, #1
+ 1154 04c0 ADB2     		uxth	r5, r5
+ 1155              	.L89:
+ 1156 04c2 092C     		cmp	r4, #9
+ 1157 04c4 FAD8     		bhi	.L90
+ 1158              	.L91:
+ 1159 04c6 8021     		movs	r1, #128
+ 1160 04c8 5448     		ldr	r0, .L189
+ 1161 04ca FFF7FEFF 		bl	USART_GetFlagStatus
+ARM GAS  /tmp/cceG5OSD.s 			page 21
+
+
+ 1162 04ce 0028     		cmp	r0, #0
+ 1163 04d0 F9D0     		beq	.L91
+ 1164 04d2 2900     		movs	r1, r5
+ 1165 04d4 3031     		adds	r1, r1, #48
+ 1166 04d6 89B2     		uxth	r1, r1
+ 1167 04d8 5048     		ldr	r0, .L189
+ 1168 04da FFF7FEFF 		bl	USART_SendData
+ 1169              	.L92:
+ 1170 04de 8021     		movs	r1, #128
+ 1171 04e0 4E48     		ldr	r0, .L189
+ 1172 04e2 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1173 04e6 0028     		cmp	r0, #0
+ 1174 04e8 F9D0     		beq	.L92
+ 1175 04ea 2100     		movs	r1, r4
+ 1176 04ec 3031     		adds	r1, r1, #48
+ 1177 04ee 89B2     		uxth	r1, r1
+ 1178 04f0 4A48     		ldr	r0, .L189
+ 1179 04f2 FFF7FEFF 		bl	USART_SendData
+ 1180              	.L93:
+ 1181 04f6 8021     		movs	r1, #128
+ 1182 04f8 4848     		ldr	r0, .L189
+ 1183 04fa FFF7FEFF 		bl	USART_GetFlagStatus
+ 1184 04fe 0028     		cmp	r0, #0
+ 1185 0500 F9D0     		beq	.L93
+ 1186 0502 0D21     		movs	r1, #13
+ 1187 0504 4548     		ldr	r0, .L189
+ 1188 0506 FFF7FEFF 		bl	USART_SendData
+ 1189              	.L94:
+ 1190 050a 8021     		movs	r1, #128
+ 1191 050c 4348     		ldr	r0, .L189
+ 1192 050e FFF7FEFF 		bl	USART_GetFlagStatus
+ 1193 0512 0028     		cmp	r0, #0
+ 1194 0514 F9D0     		beq	.L94
+ 1195 0516 0A21     		movs	r1, #10
+ 1196 0518 4048     		ldr	r0, .L189
+ 1197 051a FFF7FEFF 		bl	USART_SendData
+ 1198              	.L95:
+ 1199 051e 8021     		movs	r1, #128
+ 1200 0520 3E48     		ldr	r0, .L189
+ 1201 0522 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1202 0526 0028     		cmp	r0, #0
+ 1203 0528 F9D0     		beq	.L95
+ 1204 052a 4921     		movs	r1, #73
+ 1205 052c 3B48     		ldr	r0, .L189
+ 1206 052e FFF7FEFF 		bl	USART_SendData
+ 1207              	.L96:
+ 1208 0532 8021     		movs	r1, #128
+ 1209 0534 3948     		ldr	r0, .L189
+ 1210 0536 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1211 053a 0028     		cmp	r0, #0
+ 1212 053c F9D0     		beq	.L96
+ 1213 053e 7221     		movs	r1, #114
+ 1214 0540 3648     		ldr	r0, .L189
+ 1215 0542 FFF7FEFF 		bl	USART_SendData
+ 1216              	.L97:
+ 1217 0546 8021     		movs	r1, #128
+ 1218 0548 3448     		ldr	r0, .L189
+ARM GAS  /tmp/cceG5OSD.s 			page 22
+
+
+ 1219 054a FFF7FEFF 		bl	USART_GetFlagStatus
+ 1220 054e 0028     		cmp	r0, #0
+ 1221 0550 F9D0     		beq	.L97
+ 1222 0552 6D21     		movs	r1, #109
+ 1223 0554 3148     		ldr	r0, .L189
+ 1224 0556 FFF7FEFF 		bl	USART_SendData
+ 1225              	.L98:
+ 1226 055a 8021     		movs	r1, #128
+ 1227 055c 2F48     		ldr	r0, .L189
+ 1228 055e FFF7FEFF 		bl	USART_GetFlagStatus
+ 1229 0562 0028     		cmp	r0, #0
+ 1230 0564 F9D0     		beq	.L98
+ 1231 0566 7321     		movs	r1, #115
+ 1232 0568 2C48     		ldr	r0, .L189
+ 1233 056a FFF7FEFF 		bl	USART_SendData
+ 1234              	.L99:
+ 1235 056e 8021     		movs	r1, #128
+ 1236 0570 2A48     		ldr	r0, .L189
+ 1237 0572 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1238 0576 0028     		cmp	r0, #0
+ 1239 0578 F9D0     		beq	.L99
+ 1240 057a 3D21     		movs	r1, #61
+ 1241 057c 2748     		ldr	r0, .L189
+ 1242 057e FFF7FEFF 		bl	USART_SendData
+ 1243 0582 2C4B     		ldr	r3, .L189+24
+ 1244 0584 1C68     		ldr	r4, [r3]
+ 1245 0586 0025     		movs	r5, #0
+ 1246 0588 04E0     		b	.L100
+ 1247              	.L101:
+ 1248 058a 264B     		ldr	r3, .L189+8
+ 1249 058c 9C46     		mov	ip, r3
+ 1250 058e 6444     		add	r4, r4, ip
+ 1251 0590 0135     		adds	r5, r5, #1
+ 1252 0592 ADB2     		uxth	r5, r5
+ 1253              	.L100:
+ 1254 0594 244B     		ldr	r3, .L189+12
+ 1255 0596 9C42     		cmp	r4, r3
+ 1256 0598 F7D8     		bhi	.L101
+ 1257              	.L102:
+ 1258 059a 8021     		movs	r1, #128
+ 1259 059c 1F48     		ldr	r0, .L189
+ 1260 059e FFF7FEFF 		bl	USART_GetFlagStatus
+ 1261 05a2 0028     		cmp	r0, #0
+ 1262 05a4 F9D0     		beq	.L102
+ 1263 05a6 2900     		movs	r1, r5
+ 1264 05a8 3031     		adds	r1, r1, #48
+ 1265 05aa 89B2     		uxth	r1, r1
+ 1266 05ac 1B48     		ldr	r0, .L189
+ 1267 05ae FFF7FEFF 		bl	USART_SendData
+ 1268              	.L103:
+ 1269 05b2 8021     		movs	r1, #128
+ 1270 05b4 1948     		ldr	r0, .L189
+ 1271 05b6 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1272 05ba 0028     		cmp	r0, #0
+ 1273 05bc F9D0     		beq	.L103
+ 1274 05be 2E21     		movs	r1, #46
+ 1275 05c0 1648     		ldr	r0, .L189
+ARM GAS  /tmp/cceG5OSD.s 			page 23
+
+
+ 1276 05c2 FFF7FEFF 		bl	USART_SendData
+ 1277 05c6 0025     		movs	r5, #0
+ 1278 05c8 04E0     		b	.L104
+ 1279              	.L105:
+ 1280 05ca 184B     		ldr	r3, .L189+16
+ 1281 05cc 9C46     		mov	ip, r3
+ 1282 05ce 6444     		add	r4, r4, ip
+ 1283 05d0 0135     		adds	r5, r5, #1
+ 1284 05d2 ADB2     		uxth	r5, r5
+ 1285              	.L104:
+ 1286 05d4 164B     		ldr	r3, .L189+20
+ 1287 05d6 9C42     		cmp	r4, r3
+ 1288 05d8 F7D8     		bhi	.L105
+ 1289              	.L106:
+ 1290 05da 8021     		movs	r1, #128
+ 1291 05dc 0F48     		ldr	r0, .L189
+ 1292 05de FFF7FEFF 		bl	USART_GetFlagStatus
+ 1293 05e2 0028     		cmp	r0, #0
+ 1294 05e4 F9D0     		beq	.L106
+ 1295 05e6 2900     		movs	r1, r5
+ 1296 05e8 3031     		adds	r1, r1, #48
+ 1297 05ea 89B2     		uxth	r1, r1
+ 1298 05ec 0B48     		ldr	r0, .L189
+ 1299 05ee FFF7FEFF 		bl	USART_SendData
+ 1300 05f2 0025     		movs	r5, #0
+ 1301 05f4 02E0     		b	.L107
+ 1302              	.L108:
+ 1303 05f6 643C     		subs	r4, r4, #100
+ 1304 05f8 0135     		adds	r5, r5, #1
+ 1305 05fa ADB2     		uxth	r5, r5
+ 1306              	.L107:
+ 1307 05fc 632C     		cmp	r4, #99
+ 1308 05fe FAD8     		bhi	.L108
+ 1309              	.L109:
+ 1310 0600 8021     		movs	r1, #128
+ 1311 0602 0648     		ldr	r0, .L189
+ 1312 0604 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1313 0608 0028     		cmp	r0, #0
+ 1314 060a F9D0     		beq	.L109
+ 1315 060c 2900     		movs	r1, r5
+ 1316 060e 3031     		adds	r1, r1, #48
+ 1317 0610 89B2     		uxth	r1, r1
+ 1318 0612 0248     		ldr	r0, .L189
+ 1319 0614 FFF7FEFF 		bl	USART_SendData
+ 1320 0618 0025     		movs	r5, #0
+ 1321 061a 10E0     		b	.L110
+ 1322              	.L190:
+ 1323              		.align	2
+ 1324              	.L189:
+ 1325 061c 00380140 		.word	1073821696
+ 1326 0620 00000000 		.word	v_out
+ 1327 0624 F0D8FFFF 		.word	-10000
+ 1328 0628 0F270000 		.word	9999
+ 1329 062c 18FCFFFF 		.word	-1000
+ 1330 0630 E7030000 		.word	999
+ 1331 0634 00000000 		.word	i_out
+ 1332              	.L111:
+ARM GAS  /tmp/cceG5OSD.s 			page 24
+
+
+ 1333 0638 0A3C     		subs	r4, r4, #10
+ 1334 063a 0135     		adds	r5, r5, #1
+ 1335 063c ADB2     		uxth	r5, r5
+ 1336              	.L110:
+ 1337 063e 092C     		cmp	r4, #9
+ 1338 0640 FAD8     		bhi	.L111
+ 1339              	.L112:
+ 1340 0642 8021     		movs	r1, #128
+ 1341 0644 D048     		ldr	r0, .L191
+ 1342 0646 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1343 064a 0028     		cmp	r0, #0
+ 1344 064c F9D0     		beq	.L112
+ 1345 064e 2900     		movs	r1, r5
+ 1346 0650 3031     		adds	r1, r1, #48
+ 1347 0652 89B2     		uxth	r1, r1
+ 1348 0654 CC48     		ldr	r0, .L191
+ 1349 0656 FFF7FEFF 		bl	USART_SendData
+ 1350              	.L113:
+ 1351 065a 8021     		movs	r1, #128
+ 1352 065c CA48     		ldr	r0, .L191
+ 1353 065e FFF7FEFF 		bl	USART_GetFlagStatus
+ 1354 0662 0028     		cmp	r0, #0
+ 1355 0664 F9D0     		beq	.L113
+ 1356 0666 2100     		movs	r1, r4
+ 1357 0668 3031     		adds	r1, r1, #48
+ 1358 066a 89B2     		uxth	r1, r1
+ 1359 066c C648     		ldr	r0, .L191
+ 1360 066e FFF7FEFF 		bl	USART_SendData
+ 1361              	.L114:
+ 1362 0672 8021     		movs	r1, #128
+ 1363 0674 C448     		ldr	r0, .L191
+ 1364 0676 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1365 067a 0028     		cmp	r0, #0
+ 1366 067c F9D0     		beq	.L114
+ 1367 067e 0D21     		movs	r1, #13
+ 1368 0680 C148     		ldr	r0, .L191
+ 1369 0682 FFF7FEFF 		bl	USART_SendData
+ 1370              	.L115:
+ 1371 0686 8021     		movs	r1, #128
+ 1372 0688 BF48     		ldr	r0, .L191
+ 1373 068a FFF7FEFF 		bl	USART_GetFlagStatus
+ 1374 068e 0028     		cmp	r0, #0
+ 1375 0690 F9D0     		beq	.L115
+ 1376 0692 0A21     		movs	r1, #10
+ 1377 0694 BC48     		ldr	r0, .L191
+ 1378 0696 FFF7FEFF 		bl	USART_SendData
+ 1379              	.L116:
+ 1380 069a 8021     		movs	r1, #128
+ 1381 069c BA48     		ldr	r0, .L191
+ 1382 069e FFF7FEFF 		bl	USART_GetFlagStatus
+ 1383 06a2 0028     		cmp	r0, #0
+ 1384 06a4 F9D0     		beq	.L116
+ 1385 06a6 5021     		movs	r1, #80
+ 1386 06a8 B748     		ldr	r0, .L191
+ 1387 06aa FFF7FEFF 		bl	USART_SendData
+ 1388              	.L117:
+ 1389 06ae 8021     		movs	r1, #128
+ARM GAS  /tmp/cceG5OSD.s 			page 25
+
+
+ 1390 06b0 B548     		ldr	r0, .L191
+ 1391 06b2 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1392 06b6 0028     		cmp	r0, #0
+ 1393 06b8 F9D0     		beq	.L117
+ 1394 06ba 7221     		movs	r1, #114
+ 1395 06bc B248     		ldr	r0, .L191
+ 1396 06be FFF7FEFF 		bl	USART_SendData
+ 1397              	.L118:
+ 1398 06c2 8021     		movs	r1, #128
+ 1399 06c4 B048     		ldr	r0, .L191
+ 1400 06c6 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1401 06ca 0028     		cmp	r0, #0
+ 1402 06cc F9D0     		beq	.L118
+ 1403 06ce 6D21     		movs	r1, #109
+ 1404 06d0 AD48     		ldr	r0, .L191
+ 1405 06d2 FFF7FEFF 		bl	USART_SendData
+ 1406              	.L119:
+ 1407 06d6 8021     		movs	r1, #128
+ 1408 06d8 AB48     		ldr	r0, .L191
+ 1409 06da FFF7FEFF 		bl	USART_GetFlagStatus
+ 1410 06de 0028     		cmp	r0, #0
+ 1411 06e0 F9D0     		beq	.L119
+ 1412 06e2 7321     		movs	r1, #115
+ 1413 06e4 A848     		ldr	r0, .L191
+ 1414 06e6 FFF7FEFF 		bl	USART_SendData
+ 1415              	.L120:
+ 1416 06ea 8021     		movs	r1, #128
+ 1417 06ec A648     		ldr	r0, .L191
+ 1418 06ee FFF7FEFF 		bl	USART_GetFlagStatus
+ 1419 06f2 0028     		cmp	r0, #0
+ 1420 06f4 F9D0     		beq	.L120
+ 1421 06f6 3D21     		movs	r1, #61
+ 1422 06f8 A348     		ldr	r0, .L191
+ 1423 06fa FFF7FEFF 		bl	USART_SendData
+ 1424 06fe A34B     		ldr	r3, .L191+4
+ 1425 0700 1C68     		ldr	r4, [r3]
+ 1426 0702 0025     		movs	r5, #0
+ 1427 0704 04E0     		b	.L121
+ 1428              	.L122:
+ 1429 0706 A24B     		ldr	r3, .L191+8
+ 1430 0708 9C46     		mov	ip, r3
+ 1431 070a 6444     		add	r4, r4, ip
+ 1432 070c 0135     		adds	r5, r5, #1
+ 1433 070e ADB2     		uxth	r5, r5
+ 1434              	.L121:
+ 1435 0710 A04B     		ldr	r3, .L191+12
+ 1436 0712 9C42     		cmp	r4, r3
+ 1437 0714 F7D8     		bhi	.L122
+ 1438              	.L123:
+ 1439 0716 8021     		movs	r1, #128
+ 1440 0718 9B48     		ldr	r0, .L191
+ 1441 071a FFF7FEFF 		bl	USART_GetFlagStatus
+ 1442 071e 0028     		cmp	r0, #0
+ 1443 0720 F9D0     		beq	.L123
+ 1444 0722 2900     		movs	r1, r5
+ 1445 0724 3031     		adds	r1, r1, #48
+ 1446 0726 89B2     		uxth	r1, r1
+ARM GAS  /tmp/cceG5OSD.s 			page 26
+
+
+ 1447 0728 9748     		ldr	r0, .L191
+ 1448 072a FFF7FEFF 		bl	USART_SendData
+ 1449              	.L124:
+ 1450 072e 8021     		movs	r1, #128
+ 1451 0730 9548     		ldr	r0, .L191
+ 1452 0732 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1453 0736 0028     		cmp	r0, #0
+ 1454 0738 F9D0     		beq	.L124
+ 1455 073a 2E21     		movs	r1, #46
+ 1456 073c 9248     		ldr	r0, .L191
+ 1457 073e FFF7FEFF 		bl	USART_SendData
+ 1458 0742 0025     		movs	r5, #0
+ 1459 0744 04E0     		b	.L125
+ 1460              	.L126:
+ 1461 0746 944B     		ldr	r3, .L191+16
+ 1462 0748 9C46     		mov	ip, r3
+ 1463 074a 6444     		add	r4, r4, ip
+ 1464 074c 0135     		adds	r5, r5, #1
+ 1465 074e ADB2     		uxth	r5, r5
+ 1466              	.L125:
+ 1467 0750 924B     		ldr	r3, .L191+20
+ 1468 0752 9C42     		cmp	r4, r3
+ 1469 0754 F7D8     		bhi	.L126
+ 1470              	.L127:
+ 1471 0756 8021     		movs	r1, #128
+ 1472 0758 8B48     		ldr	r0, .L191
+ 1473 075a FFF7FEFF 		bl	USART_GetFlagStatus
+ 1474 075e 0028     		cmp	r0, #0
+ 1475 0760 F9D0     		beq	.L127
+ 1476 0762 2900     		movs	r1, r5
+ 1477 0764 3031     		adds	r1, r1, #48
+ 1478 0766 89B2     		uxth	r1, r1
+ 1479 0768 8748     		ldr	r0, .L191
+ 1480 076a FFF7FEFF 		bl	USART_SendData
+ 1481 076e 0025     		movs	r5, #0
+ 1482 0770 04E0     		b	.L128
+ 1483              	.L129:
+ 1484 0772 8B4B     		ldr	r3, .L191+24
+ 1485 0774 9C46     		mov	ip, r3
+ 1486 0776 6444     		add	r4, r4, ip
+ 1487 0778 0135     		adds	r5, r5, #1
+ 1488 077a ADB2     		uxth	r5, r5
+ 1489              	.L128:
+ 1490 077c 894B     		ldr	r3, .L191+28
+ 1491 077e 9C42     		cmp	r4, r3
+ 1492 0780 F7D8     		bhi	.L129
+ 1493              	.L130:
+ 1494 0782 8021     		movs	r1, #128
+ 1495 0784 8048     		ldr	r0, .L191
+ 1496 0786 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1497 078a 0028     		cmp	r0, #0
+ 1498 078c F9D0     		beq	.L130
+ 1499 078e 2900     		movs	r1, r5
+ 1500 0790 3031     		adds	r1, r1, #48
+ 1501 0792 89B2     		uxth	r1, r1
+ 1502 0794 7C48     		ldr	r0, .L191
+ 1503 0796 FFF7FEFF 		bl	USART_SendData
+ARM GAS  /tmp/cceG5OSD.s 			page 27
+
+
+ 1504 079a 0025     		movs	r5, #0
+ 1505 079c 04E0     		b	.L131
+ 1506              	.L132:
+ 1507 079e 824B     		ldr	r3, .L191+32
+ 1508 07a0 9C46     		mov	ip, r3
+ 1509 07a2 6444     		add	r4, r4, ip
+ 1510 07a4 0135     		adds	r5, r5, #1
+ 1511 07a6 ADB2     		uxth	r5, r5
+ 1512              	.L131:
+ 1513 07a8 804B     		ldr	r3, .L191+36
+ 1514 07aa 9C42     		cmp	r4, r3
+ 1515 07ac F7D8     		bhi	.L132
+ 1516              	.L133:
+ 1517 07ae 8021     		movs	r1, #128
+ 1518 07b0 7548     		ldr	r0, .L191
+ 1519 07b2 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1520 07b6 0028     		cmp	r0, #0
+ 1521 07b8 F9D0     		beq	.L133
+ 1522 07ba 2900     		movs	r1, r5
+ 1523 07bc 3031     		adds	r1, r1, #48
+ 1524 07be 89B2     		uxth	r1, r1
+ 1525 07c0 7148     		ldr	r0, .L191
+ 1526 07c2 FFF7FEFF 		bl	USART_SendData
+ 1527 07c6 0025     		movs	r5, #0
+ 1528 07c8 02E0     		b	.L134
+ 1529              	.L135:
+ 1530 07ca 643C     		subs	r4, r4, #100
+ 1531 07cc 0135     		adds	r5, r5, #1
+ 1532 07ce ADB2     		uxth	r5, r5
+ 1533              	.L134:
+ 1534 07d0 632C     		cmp	r4, #99
+ 1535 07d2 FAD8     		bhi	.L135
+ 1536              	.L136:
+ 1537 07d4 8021     		movs	r1, #128
+ 1538 07d6 6C48     		ldr	r0, .L191
+ 1539 07d8 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1540 07dc 0028     		cmp	r0, #0
+ 1541 07de F9D0     		beq	.L136
+ 1542 07e0 2900     		movs	r1, r5
+ 1543 07e2 3031     		adds	r1, r1, #48
+ 1544 07e4 89B2     		uxth	r1, r1
+ 1545 07e6 6848     		ldr	r0, .L191
+ 1546 07e8 FFF7FEFF 		bl	USART_SendData
+ 1547 07ec 0025     		movs	r5, #0
+ 1548 07ee 02E0     		b	.L137
+ 1549              	.L138:
+ 1550 07f0 0A3C     		subs	r4, r4, #10
+ 1551 07f2 0135     		adds	r5, r5, #1
+ 1552 07f4 ADB2     		uxth	r5, r5
+ 1553              	.L137:
+ 1554 07f6 092C     		cmp	r4, #9
+ 1555 07f8 FAD8     		bhi	.L138
+ 1556              	.L139:
+ 1557 07fa 8021     		movs	r1, #128
+ 1558 07fc 6248     		ldr	r0, .L191
+ 1559 07fe FFF7FEFF 		bl	USART_GetFlagStatus
+ 1560 0802 0028     		cmp	r0, #0
+ARM GAS  /tmp/cceG5OSD.s 			page 28
+
+
+ 1561 0804 F9D0     		beq	.L139
+ 1562 0806 2900     		movs	r1, r5
+ 1563 0808 3031     		adds	r1, r1, #48
+ 1564 080a 89B2     		uxth	r1, r1
+ 1565 080c 5E48     		ldr	r0, .L191
+ 1566 080e FFF7FEFF 		bl	USART_SendData
+ 1567              	.L140:
+ 1568 0812 8021     		movs	r1, #128
+ 1569 0814 5C48     		ldr	r0, .L191
+ 1570 0816 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1571 081a 0028     		cmp	r0, #0
+ 1572 081c F9D0     		beq	.L140
+ 1573 081e 2100     		movs	r1, r4
+ 1574 0820 3031     		adds	r1, r1, #48
+ 1575 0822 89B2     		uxth	r1, r1
+ 1576 0824 5848     		ldr	r0, .L191
+ 1577 0826 FFF7FEFF 		bl	USART_SendData
+ 1578              	.L141:
+ 1579 082a 8021     		movs	r1, #128
+ 1580 082c 5648     		ldr	r0, .L191
+ 1581 082e FFF7FEFF 		bl	USART_GetFlagStatus
+ 1582 0832 0028     		cmp	r0, #0
+ 1583 0834 F9D0     		beq	.L141
+ 1584 0836 0D21     		movs	r1, #13
+ 1585 0838 5348     		ldr	r0, .L191
+ 1586 083a FFF7FEFF 		bl	USART_SendData
+ 1587              	.L142:
+ 1588 083e 8021     		movs	r1, #128
+ 1589 0840 5148     		ldr	r0, .L191
+ 1590 0842 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1591 0846 0028     		cmp	r0, #0
+ 1592 0848 F9D0     		beq	.L142
+ 1593 084a 0A21     		movs	r1, #10
+ 1594 084c 4E48     		ldr	r0, .L191
+ 1595 084e FFF7FEFF 		bl	USART_SendData
+ 1596              	.L143:
+ 1597 0852 8021     		movs	r1, #128
+ 1598 0854 4C48     		ldr	r0, .L191
+ 1599 0856 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1600 085a 0028     		cmp	r0, #0
+ 1601 085c F9D0     		beq	.L143
+ 1602 085e 5021     		movs	r1, #80
+ 1603 0860 4948     		ldr	r0, .L191
+ 1604 0862 FFF7FEFF 		bl	USART_SendData
+ 1605              	.L144:
+ 1606 0866 8021     		movs	r1, #128
+ 1607 0868 4748     		ldr	r0, .L191
+ 1608 086a FFF7FEFF 		bl	USART_GetFlagStatus
+ 1609 086e 0028     		cmp	r0, #0
+ 1610 0870 F9D0     		beq	.L144
+ 1611 0872 2021     		movs	r1, #32
+ 1612 0874 4448     		ldr	r0, .L191
+ 1613 0876 FFF7FEFF 		bl	USART_SendData
+ 1614              	.L145:
+ 1615 087a 8021     		movs	r1, #128
+ 1616 087c 4248     		ldr	r0, .L191
+ 1617 087e FFF7FEFF 		bl	USART_GetFlagStatus
+ARM GAS  /tmp/cceG5OSD.s 			page 29
+
+
+ 1618 0882 0028     		cmp	r0, #0
+ 1619 0884 F9D0     		beq	.L145
+ 1620 0886 2021     		movs	r1, #32
+ 1621 0888 3F48     		ldr	r0, .L191
+ 1622 088a FFF7FEFF 		bl	USART_SendData
+ 1623              	.L146:
+ 1624 088e 8021     		movs	r1, #128
+ 1625 0890 3D48     		ldr	r0, .L191
+ 1626 0892 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1627 0896 0028     		cmp	r0, #0
+ 1628 0898 F9D0     		beq	.L146
+ 1629 089a 2021     		movs	r1, #32
+ 1630 089c 3A48     		ldr	r0, .L191
+ 1631 089e FFF7FEFF 		bl	USART_SendData
+ 1632              	.L147:
+ 1633 08a2 8021     		movs	r1, #128
+ 1634 08a4 3848     		ldr	r0, .L191
+ 1635 08a6 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1636 08aa 0028     		cmp	r0, #0
+ 1637 08ac F9D0     		beq	.L147
+ 1638 08ae 3D21     		movs	r1, #61
+ 1639 08b0 3548     		ldr	r0, .L191
+ 1640 08b2 FFF7FEFF 		bl	USART_SendData
+ 1641 08b6 3E4B     		ldr	r3, .L191+40
+ 1642 08b8 1B68     		ldr	r3, [r3]
+ 1643 08ba 3E4A     		ldr	r2, .L191+44
+ 1644 08bc 1468     		ldr	r4, [r2]
+ 1645 08be 5C43     		muls	r4, r3
+ 1646 08c0 0025     		movs	r5, #0
+ 1647 08c2 04E0     		b	.L148
+ 1648              	.L149:
+ 1649 08c4 324B     		ldr	r3, .L191+8
+ 1650 08c6 9C46     		mov	ip, r3
+ 1651 08c8 6444     		add	r4, r4, ip
+ 1652 08ca 0135     		adds	r5, r5, #1
+ 1653 08cc ADB2     		uxth	r5, r5
+ 1654              	.L148:
+ 1655 08ce 314B     		ldr	r3, .L191+12
+ 1656 08d0 9C42     		cmp	r4, r3
+ 1657 08d2 F7D8     		bhi	.L149
+ 1658              	.L150:
+ 1659 08d4 8021     		movs	r1, #128
+ 1660 08d6 2C48     		ldr	r0, .L191
+ 1661 08d8 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1662 08dc 0028     		cmp	r0, #0
+ 1663 08de F9D0     		beq	.L150
+ 1664 08e0 2900     		movs	r1, r5
+ 1665 08e2 3031     		adds	r1, r1, #48
+ 1666 08e4 89B2     		uxth	r1, r1
+ 1667 08e6 2848     		ldr	r0, .L191
+ 1668 08e8 FFF7FEFF 		bl	USART_SendData
+ 1669              	.L151:
+ 1670 08ec 8021     		movs	r1, #128
+ 1671 08ee 2648     		ldr	r0, .L191
+ 1672 08f0 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1673 08f4 0028     		cmp	r0, #0
+ 1674 08f6 F9D0     		beq	.L151
+ARM GAS  /tmp/cceG5OSD.s 			page 30
+
+
+ 1675 08f8 2E21     		movs	r1, #46
+ 1676 08fa 2348     		ldr	r0, .L191
+ 1677 08fc FFF7FEFF 		bl	USART_SendData
+ 1678 0900 0025     		movs	r5, #0
+ 1679 0902 04E0     		b	.L152
+ 1680              	.L153:
+ 1681 0904 244B     		ldr	r3, .L191+16
+ 1682 0906 9C46     		mov	ip, r3
+ 1683 0908 6444     		add	r4, r4, ip
+ 1684 090a 0135     		adds	r5, r5, #1
+ 1685 090c ADB2     		uxth	r5, r5
+ 1686              	.L152:
+ 1687 090e 234B     		ldr	r3, .L191+20
+ 1688 0910 9C42     		cmp	r4, r3
+ 1689 0912 F7D8     		bhi	.L153
+ 1690              	.L154:
+ 1691 0914 8021     		movs	r1, #128
+ 1692 0916 1C48     		ldr	r0, .L191
+ 1693 0918 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1694 091c 0028     		cmp	r0, #0
+ 1695 091e F9D0     		beq	.L154
+ 1696 0920 2900     		movs	r1, r5
+ 1697 0922 3031     		adds	r1, r1, #48
+ 1698 0924 89B2     		uxth	r1, r1
+ 1699 0926 1848     		ldr	r0, .L191
+ 1700 0928 FFF7FEFF 		bl	USART_SendData
+ 1701 092c 0025     		movs	r5, #0
+ 1702 092e 04E0     		b	.L155
+ 1703              	.L156:
+ 1704 0930 1B4B     		ldr	r3, .L191+24
+ 1705 0932 9C46     		mov	ip, r3
+ 1706 0934 6444     		add	r4, r4, ip
+ 1707 0936 0135     		adds	r5, r5, #1
+ 1708 0938 ADB2     		uxth	r5, r5
+ 1709              	.L155:
+ 1710 093a 1A4B     		ldr	r3, .L191+28
+ 1711 093c 9C42     		cmp	r4, r3
+ 1712 093e F7D8     		bhi	.L156
+ 1713              	.L157:
+ 1714 0940 8021     		movs	r1, #128
+ 1715 0942 1148     		ldr	r0, .L191
+ 1716 0944 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1717 0948 0028     		cmp	r0, #0
+ 1718 094a F9D0     		beq	.L157
+ 1719 094c 2900     		movs	r1, r5
+ 1720 094e 3031     		adds	r1, r1, #48
+ 1721 0950 89B2     		uxth	r1, r1
+ 1722 0952 0D48     		ldr	r0, .L191
+ 1723 0954 FFF7FEFF 		bl	USART_SendData
+ 1724 0958 0025     		movs	r5, #0
+ 1725 095a 04E0     		b	.L158
+ 1726              	.L159:
+ 1727 095c 124B     		ldr	r3, .L191+32
+ 1728 095e 9C46     		mov	ip, r3
+ 1729 0960 6444     		add	r4, r4, ip
+ 1730 0962 0135     		adds	r5, r5, #1
+ 1731 0964 ADB2     		uxth	r5, r5
+ARM GAS  /tmp/cceG5OSD.s 			page 31
+
+
+ 1732              	.L158:
+ 1733 0966 114B     		ldr	r3, .L191+36
+ 1734 0968 9C42     		cmp	r4, r3
+ 1735 096a F7D8     		bhi	.L159
+ 1736              	.L160:
+ 1737 096c 8021     		movs	r1, #128
+ 1738 096e 0648     		ldr	r0, .L191
+ 1739 0970 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1740 0974 0028     		cmp	r0, #0
+ 1741 0976 F9D0     		beq	.L160
+ 1742 0978 2900     		movs	r1, r5
+ 1743 097a 3031     		adds	r1, r1, #48
+ 1744 097c 89B2     		uxth	r1, r1
+ 1745 097e 0248     		ldr	r0, .L191
+ 1746 0980 FFF7FEFF 		bl	USART_SendData
+ 1747 0984 0025     		movs	r5, #0
+ 1748 0986 1AE0     		b	.L161
+ 1749              	.L192:
+ 1750              		.align	2
+ 1751              	.L191:
+ 1752 0988 00380140 		.word	1073821696
+ 1753 098c 00000000 		.word	p_out
+ 1754 0990 C0BDF0FF 		.word	-1000000
+ 1755 0994 3F420F00 		.word	999999
+ 1756 0998 6079FEFF 		.word	-100000
+ 1757 099c 9F860100 		.word	99999
+ 1758 09a0 F0D8FFFF 		.word	-10000
+ 1759 09a4 0F270000 		.word	9999
+ 1760 09a8 18FCFFFF 		.word	-1000
+ 1761 09ac E7030000 		.word	999
+ 1762 09b0 00000000 		.word	i_out
+ 1763 09b4 00000000 		.word	v_out
+ 1764              	.L162:
+ 1765 09b8 643C     		subs	r4, r4, #100
+ 1766 09ba 0135     		adds	r5, r5, #1
+ 1767 09bc ADB2     		uxth	r5, r5
+ 1768              	.L161:
+ 1769 09be 632C     		cmp	r4, #99
+ 1770 09c0 FAD8     		bhi	.L162
+ 1771              	.L163:
+ 1772 09c2 8021     		movs	r1, #128
+ 1773 09c4 6648     		ldr	r0, .L193
+ 1774 09c6 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1775 09ca 0028     		cmp	r0, #0
+ 1776 09cc F9D0     		beq	.L163
+ 1777 09ce 2900     		movs	r1, r5
+ 1778 09d0 3031     		adds	r1, r1, #48
+ 1779 09d2 89B2     		uxth	r1, r1
+ 1780 09d4 6248     		ldr	r0, .L193
+ 1781 09d6 FFF7FEFF 		bl	USART_SendData
+ 1782 09da 0025     		movs	r5, #0
+ 1783 09dc 02E0     		b	.L164
+ 1784              	.L165:
+ 1785 09de 0A3C     		subs	r4, r4, #10
+ 1786 09e0 0135     		adds	r5, r5, #1
+ 1787 09e2 ADB2     		uxth	r5, r5
+ 1788              	.L164:
+ARM GAS  /tmp/cceG5OSD.s 			page 32
+
+
+ 1789 09e4 092C     		cmp	r4, #9
+ 1790 09e6 FAD8     		bhi	.L165
+ 1791              	.L166:
+ 1792 09e8 8021     		movs	r1, #128
+ 1793 09ea 5D48     		ldr	r0, .L193
+ 1794 09ec FFF7FEFF 		bl	USART_GetFlagStatus
+ 1795 09f0 0028     		cmp	r0, #0
+ 1796 09f2 F9D0     		beq	.L166
+ 1797 09f4 2900     		movs	r1, r5
+ 1798 09f6 3031     		adds	r1, r1, #48
+ 1799 09f8 89B2     		uxth	r1, r1
+ 1800 09fa 5948     		ldr	r0, .L193
+ 1801 09fc FFF7FEFF 		bl	USART_SendData
+ 1802              	.L167:
+ 1803 0a00 8021     		movs	r1, #128
+ 1804 0a02 5748     		ldr	r0, .L193
+ 1805 0a04 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1806 0a08 0028     		cmp	r0, #0
+ 1807 0a0a F9D0     		beq	.L167
+ 1808 0a0c 2100     		movs	r1, r4
+ 1809 0a0e 3031     		adds	r1, r1, #48
+ 1810 0a10 89B2     		uxth	r1, r1
+ 1811 0a12 5348     		ldr	r0, .L193
+ 1812 0a14 FFF7FEFF 		bl	USART_SendData
+ 1813              	.L168:
+ 1814 0a18 8021     		movs	r1, #128
+ 1815 0a1a 5148     		ldr	r0, .L193
+ 1816 0a1c FFF7FEFF 		bl	USART_GetFlagStatus
+ 1817 0a20 0028     		cmp	r0, #0
+ 1818 0a22 F9D0     		beq	.L168
+ 1819 0a24 0D21     		movs	r1, #13
+ 1820 0a26 4E48     		ldr	r0, .L193
+ 1821 0a28 FFF7FEFF 		bl	USART_SendData
+ 1822              	.L169:
+ 1823 0a2c 8021     		movs	r1, #128
+ 1824 0a2e 4C48     		ldr	r0, .L193
+ 1825 0a30 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1826 0a34 0028     		cmp	r0, #0
+ 1827 0a36 F9D0     		beq	.L169
+ 1828 0a38 0A21     		movs	r1, #10
+ 1829 0a3a 4948     		ldr	r0, .L193
+ 1830 0a3c FFF7FEFF 		bl	USART_SendData
+ 1831              	.L170:
+ 1832 0a40 8021     		movs	r1, #128
+ 1833 0a42 4748     		ldr	r0, .L193
+ 1834 0a44 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1835 0a48 0028     		cmp	r0, #0
+ 1836 0a4a F9D0     		beq	.L170
+ 1837 0a4c 2D21     		movs	r1, #45
+ 1838 0a4e 4448     		ldr	r0, .L193
+ 1839 0a50 FFF7FEFF 		bl	USART_SendData
+ 1840              	.L171:
+ 1841 0a54 8021     		movs	r1, #128
+ 1842 0a56 4248     		ldr	r0, .L193
+ 1843 0a58 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1844 0a5c 0028     		cmp	r0, #0
+ 1845 0a5e F9D0     		beq	.L171
+ARM GAS  /tmp/cceG5OSD.s 			page 33
+
+
+ 1846 0a60 2D21     		movs	r1, #45
+ 1847 0a62 3F48     		ldr	r0, .L193
+ 1848 0a64 FFF7FEFF 		bl	USART_SendData
+ 1849              	.L172:
+ 1850 0a68 8021     		movs	r1, #128
+ 1851 0a6a 3D48     		ldr	r0, .L193
+ 1852 0a6c FFF7FEFF 		bl	USART_GetFlagStatus
+ 1853 0a70 0028     		cmp	r0, #0
+ 1854 0a72 F9D0     		beq	.L172
+ 1855 0a74 2D21     		movs	r1, #45
+ 1856 0a76 3A48     		ldr	r0, .L193
+ 1857 0a78 FFF7FEFF 		bl	USART_SendData
+ 1858              	.L173:
+ 1859 0a7c 8021     		movs	r1, #128
+ 1860 0a7e 3848     		ldr	r0, .L193
+ 1861 0a80 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1862 0a84 0028     		cmp	r0, #0
+ 1863 0a86 F9D0     		beq	.L173
+ 1864 0a88 2D21     		movs	r1, #45
+ 1865 0a8a 3548     		ldr	r0, .L193
+ 1866 0a8c FFF7FEFF 		bl	USART_SendData
+ 1867              	.L174:
+ 1868 0a90 8021     		movs	r1, #128
+ 1869 0a92 3348     		ldr	r0, .L193
+ 1870 0a94 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1871 0a98 0028     		cmp	r0, #0
+ 1872 0a9a F9D0     		beq	.L174
+ 1873 0a9c 2D21     		movs	r1, #45
+ 1874 0a9e 3048     		ldr	r0, .L193
+ 1875 0aa0 FFF7FEFF 		bl	USART_SendData
+ 1876              	.L175:
+ 1877 0aa4 8021     		movs	r1, #128
+ 1878 0aa6 2E48     		ldr	r0, .L193
+ 1879 0aa8 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1880 0aac 0028     		cmp	r0, #0
+ 1881 0aae F9D0     		beq	.L175
+ 1882 0ab0 2D21     		movs	r1, #45
+ 1883 0ab2 2B48     		ldr	r0, .L193
+ 1884 0ab4 FFF7FEFF 		bl	USART_SendData
+ 1885              	.L176:
+ 1886 0ab8 8021     		movs	r1, #128
+ 1887 0aba 2948     		ldr	r0, .L193
+ 1888 0abc FFF7FEFF 		bl	USART_GetFlagStatus
+ 1889 0ac0 0028     		cmp	r0, #0
+ 1890 0ac2 F9D0     		beq	.L176
+ 1891 0ac4 2D21     		movs	r1, #45
+ 1892 0ac6 2648     		ldr	r0, .L193
+ 1893 0ac8 FFF7FEFF 		bl	USART_SendData
+ 1894              	.L177:
+ 1895 0acc 8021     		movs	r1, #128
+ 1896 0ace 2448     		ldr	r0, .L193
+ 1897 0ad0 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1898 0ad4 0028     		cmp	r0, #0
+ 1899 0ad6 F9D0     		beq	.L177
+ 1900 0ad8 2D21     		movs	r1, #45
+ 1901 0ada 2148     		ldr	r0, .L193
+ 1902 0adc FFF7FEFF 		bl	USART_SendData
+ARM GAS  /tmp/cceG5OSD.s 			page 34
+
+
+ 1903              	.L178:
+ 1904 0ae0 8021     		movs	r1, #128
+ 1905 0ae2 1F48     		ldr	r0, .L193
+ 1906 0ae4 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1907 0ae8 0028     		cmp	r0, #0
+ 1908 0aea F9D0     		beq	.L178
+ 1909 0aec 0D21     		movs	r1, #13
+ 1910 0aee 1C48     		ldr	r0, .L193
+ 1911 0af0 FFF7FEFF 		bl	USART_SendData
+ 1912              	.L179:
+ 1913 0af4 8021     		movs	r1, #128
+ 1914 0af6 1A48     		ldr	r0, .L193
+ 1915 0af8 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1916 0afc 0028     		cmp	r0, #0
+ 1917 0afe F9D0     		beq	.L179
+ 1918 0b00 0A21     		movs	r1, #10
+ 1919 0b02 1748     		ldr	r0, .L193
+ 1920 0b04 FFF7FEFF 		bl	USART_SendData
+ 1921              	.L180:
+ 1922 0b08 8021     		movs	r1, #128
+ 1923 0b0a 1548     		ldr	r0, .L193
+ 1924 0b0c FFF7FEFF 		bl	USART_GetFlagStatus
+ 1925 0b10 0028     		cmp	r0, #0
+ 1926 0b12 F9D0     		beq	.L180
+ 1927 0b14 0D21     		movs	r1, #13
+ 1928 0b16 1248     		ldr	r0, .L193
+ 1929 0b18 FFF7FEFF 		bl	USART_SendData
+ 1930              	.L181:
+ 1931 0b1c 8021     		movs	r1, #128
+ 1932 0b1e 1048     		ldr	r0, .L193
+ 1933 0b20 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1934 0b24 0028     		cmp	r0, #0
+ 1935 0b26 F9D0     		beq	.L181
+ 1936 0b28 0A21     		movs	r1, #10
+ 1937 0b2a 0D48     		ldr	r0, .L193
+ 1938 0b2c FFF7FEFF 		bl	USART_SendData
+ 1939              	.L182:
+ 1940 0b30 8021     		movs	r1, #128
+ 1941 0b32 0B48     		ldr	r0, .L193
+ 1942 0b34 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1943 0b38 0028     		cmp	r0, #0
+ 1944 0b3a F9D0     		beq	.L182
+ 1945 0b3c 0D21     		movs	r1, #13
+ 1946 0b3e 0848     		ldr	r0, .L193
+ 1947 0b40 FFF7FEFF 		bl	USART_SendData
+ 1948              	.L183:
+ 1949 0b44 8021     		movs	r1, #128
+ 1950 0b46 0648     		ldr	r0, .L193
+ 1951 0b48 FFF7FEFF 		bl	USART_GetFlagStatus
+ 1952 0b4c 0028     		cmp	r0, #0
+ 1953 0b4e F9D0     		beq	.L183
+ 1954 0b50 0A21     		movs	r1, #10
+ 1955 0b52 0348     		ldr	r0, .L193
+ 1956 0b54 FFF7FEFF 		bl	USART_SendData
+ 1957              	.L184:
+ 1958 0b58 024B     		ldr	r3, .L193+4
+ 1959 0b5a FFF761FA 		bl	.L42	@ far jump
+ARM GAS  /tmp/cceG5OSD.s 			page 35
+
+
+ 1960              	.L194:
+ 1961 0b5e C046     		.align	2
+ 1962              	.L193:
+ 1963 0b60 00380140 		.word	1073821696
+ 1964 0b64 FFFFFF00 		.word	16777215
+ 1966              		.comm	p_out,4,4
+ 1967              		.comm	v_out,4,4
+ 1968              		.comm	i_out,4,4
+ 1969              		.comm	i_offset,2,2
+ 1970              		.comm	v_offset,2,2
+ 1971              		.comm	va,2,2
+ 1972              		.comm	ia,2,2
+ 1973              		.comm	ia_max,2,2
+ 1974              		.comm	va_max,2,2
+ 1975              		.comm	ia_min,2,2
+ 1976              		.comm	va_min,2,2
+ 1977              		.comm	i_sum,8,8
+ 1978              		.comm	v_sum,8,8
+ 1979              		.comm	p_sum,8,8
+ 1980              		.comm	AdcData,1608,4
+ 1981              		.comm	meas,1,1
+ 1982              		.ident	"GCC: (GNU Tools for Arm Embedded Processors 7-2018-q3-update) 7.3.1 20180622 (release) [AR
+ARM GAS  /tmp/cceG5OSD.s 			page 36
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+     /tmp/cceG5OSD.s:14     .text.SystemClock_Config:00000000 $t
+     /tmp/cceG5OSD.s:21     .text.SystemClock_Config:00000000 SystemClock_Config
+     /tmp/cceG5OSD.s:73     .text.SystemClock_Config:00000054 $d
+     /tmp/cceG5OSD.s:78     .text.ADC_Inite:00000000 $t
+     /tmp/cceG5OSD.s:85     .text.ADC_Inite:00000000 ADC_Inite
+     /tmp/cceG5OSD.s:179    .text.ADC_Inite:000000cc $d
+     /tmp/cceG5OSD.s:184    .text.USART1_UART_Inite:00000000 $t
+     /tmp/cceG5OSD.s:191    .text.USART1_UART_Inite:00000000 USART1_UART_Inite
+     /tmp/cceG5OSD.s:278    .text.USART1_UART_Inite:000000b4 $d
+     /tmp/cceG5OSD.s:282    .text.DMA_Inite:00000000 $t
+     /tmp/cceG5OSD.s:289    .text.DMA_Inite:00000000 DMA_Inite
+     /tmp/cceG5OSD.s:351    .text.DMA_Inite:0000007c $d
+                            *COM*:00000648 AdcData
+     /tmp/cceG5OSD.s:357    .text.GPIO_Inite:00000000 $t
+     /tmp/cceG5OSD.s:364    .text.GPIO_Inite:00000000 GPIO_Inite
+     /tmp/cceG5OSD.s:372    .text._Error_Handler:00000000 $t
+     /tmp/cceG5OSD.s:379    .text._Error_Handler:00000000 _Error_Handler
+     /tmp/cceG5OSD.s:388    .text.USART1_IRQHandler:00000000 $t
+     /tmp/cceG5OSD.s:395    .text.USART1_IRQHandler:00000000 USART1_IRQHandler
+     /tmp/cceG5OSD.s:418    .text.USART1_IRQHandler:00000024 $d
+     /tmp/cceG5OSD.s:422    .text.DMA1_Channel1_IRQHandler:00000000 $t
+     /tmp/cceG5OSD.s:429    .text.DMA1_Channel1_IRQHandler:00000000 DMA1_Channel1_IRQHandler
+     /tmp/cceG5OSD.s:453    .text.DMA1_Channel1_IRQHandler:00000024 $d
+                            *COM*:00000001 meas
+     /tmp/cceG5OSD.s:457    .text.start_conv:00000000 $t
+     /tmp/cceG5OSD.s:464    .text.start_conv:00000000 start_conv
+     /tmp/cceG5OSD.s:483    .text.start_conv:0000001c $d
+     /tmp/cceG5OSD.s:488    .text.fsqrt:00000000 $t
+     /tmp/cceG5OSD.s:495    .text.fsqrt:00000000 fsqrt
+     /tmp/cceG5OSD.s:567    .text.main:00000000 $t
+     /tmp/cceG5OSD.s:574    .text.main:00000000 main
+     /tmp/cceG5OSD.s:961    .text.main:00000310 $d
+                            *COM*:00000008 p_sum
+                            *COM*:00000008 v_sum
+                            *COM*:00000008 i_sum
+                            *COM*:00000002 va_max
+                            *COM*:00000002 va_min
+                            *COM*:00000002 ia_max
+                            *COM*:00000002 ia_min
+                            *COM*:00000002 v_offset
+                            *COM*:00000002 i_offset
+                            *COM*:00000002 va
+                            *COM*:00000002 ia
+                            *COM*:00000004 p_out
+                            *COM*:00000004 i_out
+                            *COM*:00000004 v_out
+     /tmp/cceG5OSD.s:981    .text.main:0000035c $t
+     /tmp/cceG5OSD.s:1325   .text.main:0000061c $d
+     /tmp/cceG5OSD.s:1333   .text.main:00000638 $t
+     /tmp/cceG5OSD.s:1752   .text.main:00000988 $d
+     /tmp/cceG5OSD.s:1765   .text.main:000009b8 $t
+     /tmp/cceG5OSD.s:1963   .text.main:00000b60 $d
+
+UNDEFINED SYMBOLS
+RCC_APB2PeriphClockCmd
+ARM GAS  /tmp/cceG5OSD.s 			page 37
+
+
+RCC_AHBPeriphClockCmd
+RCC_APB1PeriphClockCmd
+GPIO_Init
+ADC_StructInit
+ADC_Init
+ADC_ChannelConfig
+ADC_GetCalibrationFactor
+ADC_Cmd
+ADC_GetFlagStatus
+TIM_TimeBaseInit
+TIM_SelectOutputTrigger
+ADC_StartOfConversion
+GPIO_PinAFConfig
+USART_Init
+USART_ITConfig
+NVIC_Init
+USART_Cmd
+DMA_Init
+DMA_Cmd
+ADC_DMARequestModeConfig
+ADC_DMACmd
+DMA_ITConfig
+USART_GetITStatus
+USART_ReceiveData
+USART_SendData
+DMA_GetITStatus
+DMA_ClearITPendingBit
+TIM_Cmd
+TIM_SetCounter
+__aeabi_uldivmod
+__aeabi_lmul
+__aeabi_uidiv
+USART_GetFlagStatus

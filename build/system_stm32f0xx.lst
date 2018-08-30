@@ -1,0 +1,128 @@
+ARM GAS  /tmp/cc073YT2.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"system_stm32f0xx.c"
+  12              		.text
+  13              		.section	.text.SystemInit,"ax",%progbits
+  14              		.align	1
+  15              		.global	SystemInit
+  16              		.syntax unified
+  17              		.code	16
+  18              		.thumb_func
+  19              		.fpu softvfp
+  21              	SystemInit:
+  22              		@ args = 0, pretend = 0, frame = 0
+  23              		@ frame_needed = 0, uses_anonymous_args = 0
+  24              		@ link register save eliminated.
+  25 0000 114B     		ldr	r3, .L2
+  26 0002 1A68     		ldr	r2, [r3]
+  27 0004 0121     		movs	r1, #1
+  28 0006 0A43     		orrs	r2, r1
+  29 0008 1A60     		str	r2, [r3]
+  30 000a 5A68     		ldr	r2, [r3, #4]
+  31 000c 0F48     		ldr	r0, .L2+4
+  32 000e 0240     		ands	r2, r0
+  33 0010 5A60     		str	r2, [r3, #4]
+  34 0012 1A68     		ldr	r2, [r3]
+  35 0014 0E48     		ldr	r0, .L2+8
+  36 0016 0240     		ands	r2, r0
+  37 0018 1A60     		str	r2, [r3]
+  38 001a 1A68     		ldr	r2, [r3]
+  39 001c 0D48     		ldr	r0, .L2+12
+  40 001e 0240     		ands	r2, r0
+  41 0020 1A60     		str	r2, [r3]
+  42 0022 5A68     		ldr	r2, [r3, #4]
+  43 0024 0C48     		ldr	r0, .L2+16
+  44 0026 0240     		ands	r2, r0
+  45 0028 5A60     		str	r2, [r3, #4]
+  46 002a DA6A     		ldr	r2, [r3, #44]
+  47 002c 0F20     		movs	r0, #15
+  48 002e 8243     		bics	r2, r0
+  49 0030 DA62     		str	r2, [r3, #44]
+  50 0032 1A6B     		ldr	r2, [r3, #48]
+  51 0034 0948     		ldr	r0, .L2+20
+  52 0036 0240     		ands	r2, r0
+  53 0038 1A63     		str	r2, [r3, #48]
+  54 003a 5A6B     		ldr	r2, [r3, #52]
+  55 003c 8A43     		bics	r2, r1
+  56 003e 5A63     		str	r2, [r3, #52]
+  57 0040 0022     		movs	r2, #0
+  58 0042 9A60     		str	r2, [r3, #8]
+ARM GAS  /tmp/cc073YT2.s 			page 2
+
+
+  59              		@ sp needed
+  60 0044 7047     		bx	lr
+  61              	.L3:
+  62 0046 C046     		.align	2
+  63              	.L2:
+  64 0048 00100240 		.word	1073876992
+  65 004c 0CB8FF08 		.word	150976524
+  66 0050 FFFFF6FE 		.word	-17367041
+  67 0054 FFFFFBFF 		.word	-262145
+  68 0058 FFFFC0FF 		.word	-4128769
+  69 005c ECFEFFFF 		.word	-276
+  71              		.global	APBPrescTable
+  72              		.global	AHBPrescTable
+  73              		.global	SystemCoreClock
+  74              		.section	.data.SystemCoreClock,"aw",%progbits
+  75              		.align	2
+  78              	SystemCoreClock:
+  79 0000 00127A00 		.word	8000000
+  80              		.section	.rodata.AHBPrescTable,"a",%progbits
+  81              		.align	2
+  84              	AHBPrescTable:
+  85 0000 00       		.byte	0
+  86 0001 00       		.byte	0
+  87 0002 00       		.byte	0
+  88 0003 00       		.byte	0
+  89 0004 00       		.byte	0
+  90 0005 00       		.byte	0
+  91 0006 00       		.byte	0
+  92 0007 00       		.byte	0
+  93 0008 01       		.byte	1
+  94 0009 02       		.byte	2
+  95 000a 03       		.byte	3
+  96 000b 04       		.byte	4
+  97 000c 06       		.byte	6
+  98 000d 07       		.byte	7
+  99 000e 08       		.byte	8
+ 100 000f 09       		.byte	9
+ 101              		.section	.rodata.APBPrescTable,"a",%progbits
+ 102              		.align	2
+ 105              	APBPrescTable:
+ 106 0000 00       		.byte	0
+ 107 0001 00       		.byte	0
+ 108 0002 00       		.byte	0
+ 109 0003 00       		.byte	0
+ 110 0004 01       		.byte	1
+ 111 0005 02       		.byte	2
+ 112 0006 03       		.byte	3
+ 113 0007 04       		.byte	4
+ 114              		.ident	"GCC: (GNU Tools for Arm Embedded Processors 7-2018-q3-update) 7.3.1 20180622 (release) [AR
+ARM GAS  /tmp/cc073YT2.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 system_stm32f0xx.c
+     /tmp/cc073YT2.s:14     .text.SystemInit:00000000 $t
+     /tmp/cc073YT2.s:21     .text.SystemInit:00000000 SystemInit
+     /tmp/cc073YT2.s:64     .text.SystemInit:00000048 $d
+     /tmp/cc073YT2.s:105    .rodata.APBPrescTable:00000000 APBPrescTable
+     /tmp/cc073YT2.s:84     .rodata.AHBPrescTable:00000000 AHBPrescTable
+     /tmp/cc073YT2.s:78     .data.SystemCoreClock:00000000 SystemCoreClock
+     /tmp/cc073YT2.s:75     .data.SystemCoreClock:00000000 $d
+     /tmp/cc073YT2.s:81     .rodata.AHBPrescTable:00000000 $d
+     /tmp/cc073YT2.s:102    .rodata.APBPrescTable:00000000 $d
+
+NO UNDEFINED SYMBOLS

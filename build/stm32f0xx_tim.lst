@@ -1,0 +1,2866 @@
+ARM GAS  /tmp/ccIDOJbZ.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"stm32f0xx_tim.c"
+  12              		.text
+  13              		.section	.text.TI1_Config,"ax",%progbits
+  14              		.align	1
+  15              		.syntax unified
+  16              		.code	16
+  17              		.thumb_func
+  18              		.fpu softvfp
+  20              	TI1_Config:
+  21              		@ args = 0, pretend = 0, frame = 0
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23 0000 70B5     		push	{r4, r5, r6, lr}
+  24 0002 0D00     		movs	r5, r1
+  25 0004 018C     		ldrh	r1, [r0, #32]
+  26 0006 0124     		movs	r4, #1
+  27 0008 A143     		bics	r1, r4
+  28 000a 0184     		strh	r1, [r0, #32]
+  29 000c 048B     		ldrh	r4, [r0, #24]
+  30 000e 018C     		ldrh	r1, [r0, #32]
+  31 0010 F326     		movs	r6, #243
+  32 0012 B443     		bics	r4, r6
+  33 0014 1B01     		lsls	r3, r3, #4
+  34 0016 9BB2     		uxth	r3, r3
+  35 0018 1A43     		orrs	r2, r3
+  36 001a 2243     		orrs	r2, r4
+  37 001c 0A23     		movs	r3, #10
+  38 001e 9943     		bics	r1, r3
+  39 0020 2943     		orrs	r1, r5
+  40 0022 0123     		movs	r3, #1
+  41 0024 1943     		orrs	r1, r3
+  42 0026 0283     		strh	r2, [r0, #24]
+  43 0028 0184     		strh	r1, [r0, #32]
+  44              		@ sp needed
+  45 002a 70BD     		pop	{r4, r5, r6, pc}
+  47              		.section	.text.TI2_Config,"ax",%progbits
+  48              		.align	1
+  49              		.syntax unified
+  50              		.code	16
+  51              		.thumb_func
+  52              		.fpu softvfp
+  54              	TI2_Config:
+  55              		@ args = 0, pretend = 0, frame = 0
+  56              		@ frame_needed = 0, uses_anonymous_args = 0
+  57 0000 70B5     		push	{r4, r5, r6, lr}
+  58 0002 048C     		ldrh	r4, [r0, #32]
+  59 0004 1025     		movs	r5, #16
+  60 0006 AC43     		bics	r4, r5
+ARM GAS  /tmp/ccIDOJbZ.s 			page 2
+
+
+  61 0008 0484     		strh	r4, [r0, #32]
+  62 000a 058B     		ldrh	r5, [r0, #24]
+  63 000c 048C     		ldrh	r4, [r0, #32]
+  64 000e 0901     		lsls	r1, r1, #4
+  65 0010 89B2     		uxth	r1, r1
+  66 0012 084E     		ldr	r6, .L3
+  67 0014 3540     		ands	r5, r6
+  68 0016 1B03     		lsls	r3, r3, #12
+  69 0018 9BB2     		uxth	r3, r3
+  70 001a 2B43     		orrs	r3, r5
+  71 001c 1202     		lsls	r2, r2, #8
+  72 001e 92B2     		uxth	r2, r2
+  73 0020 1A43     		orrs	r2, r3
+  74 0022 A023     		movs	r3, #160
+  75 0024 9C43     		bics	r4, r3
+  76 0026 2143     		orrs	r1, r4
+  77 0028 1023     		movs	r3, #16
+  78 002a 1943     		orrs	r1, r3
+  79 002c 0283     		strh	r2, [r0, #24]
+  80 002e 0184     		strh	r1, [r0, #32]
+  81              		@ sp needed
+  82 0030 70BD     		pop	{r4, r5, r6, pc}
+  83              	.L4:
+  84 0032 C046     		.align	2
+  85              	.L3:
+  86 0034 FF0C0000 		.word	3327
+  88              		.section	.text.TI3_Config,"ax",%progbits
+  89              		.align	1
+  90              		.syntax unified
+  91              		.code	16
+  92              		.thumb_func
+  93              		.fpu softvfp
+  95              	TI3_Config:
+  96              		@ args = 0, pretend = 0, frame = 0
+  97              		@ frame_needed = 0, uses_anonymous_args = 0
+  98 0000 70B5     		push	{r4, r5, r6, lr}
+  99 0002 048C     		ldrh	r4, [r0, #32]
+ 100 0004 0A4D     		ldr	r5, .L6
+ 101 0006 2C40     		ands	r4, r5
+ 102 0008 0484     		strh	r4, [r0, #32]
+ 103 000a 848B     		ldrh	r4, [r0, #28]
+ 104 000c 058C     		ldrh	r5, [r0, #32]
+ 105 000e 0902     		lsls	r1, r1, #8
+ 106 0010 89B2     		uxth	r1, r1
+ 107 0012 F326     		movs	r6, #243
+ 108 0014 B443     		bics	r4, r6
+ 109 0016 1B01     		lsls	r3, r3, #4
+ 110 0018 9BB2     		uxth	r3, r3
+ 111 001a 1A43     		orrs	r2, r3
+ 112 001c 2243     		orrs	r2, r4
+ 113 001e 054B     		ldr	r3, .L6+4
+ 114 0020 2B40     		ands	r3, r5
+ 115 0022 0B43     		orrs	r3, r1
+ 116 0024 8021     		movs	r1, #128
+ 117 0026 4900     		lsls	r1, r1, #1
+ 118 0028 1943     		orrs	r1, r3
+ 119 002a 8283     		strh	r2, [r0, #28]
+ARM GAS  /tmp/ccIDOJbZ.s 			page 3
+
+
+ 120 002c 0184     		strh	r1, [r0, #32]
+ 121              		@ sp needed
+ 122 002e 70BD     		pop	{r4, r5, r6, pc}
+ 123              	.L7:
+ 124              		.align	2
+ 125              	.L6:
+ 126 0030 FFFEFFFF 		.word	-257
+ 127 0034 FFF5FFFF 		.word	-2561
+ 129              		.section	.text.TI4_Config,"ax",%progbits
+ 130              		.align	1
+ 131              		.syntax unified
+ 132              		.code	16
+ 133              		.thumb_func
+ 134              		.fpu softvfp
+ 136              	TI4_Config:
+ 137              		@ args = 0, pretend = 0, frame = 0
+ 138              		@ frame_needed = 0, uses_anonymous_args = 0
+ 139 0000 70B5     		push	{r4, r5, r6, lr}
+ 140 0002 048C     		ldrh	r4, [r0, #32]
+ 141 0004 0B4D     		ldr	r5, .L9
+ 142 0006 2C40     		ands	r4, r5
+ 143 0008 0484     		strh	r4, [r0, #32]
+ 144 000a 858B     		ldrh	r5, [r0, #28]
+ 145 000c 048C     		ldrh	r4, [r0, #32]
+ 146 000e 0903     		lsls	r1, r1, #12
+ 147 0010 89B2     		uxth	r1, r1
+ 148 0012 094E     		ldr	r6, .L9+4
+ 149 0014 3540     		ands	r5, r6
+ 150 0016 1202     		lsls	r2, r2, #8
+ 151 0018 92B2     		uxth	r2, r2
+ 152 001a 2A43     		orrs	r2, r5
+ 153 001c 1B03     		lsls	r3, r3, #12
+ 154 001e 9BB2     		uxth	r3, r3
+ 155 0020 1343     		orrs	r3, r2
+ 156 0022 064A     		ldr	r2, .L9+8
+ 157 0024 2240     		ands	r2, r4
+ 158 0026 0A43     		orrs	r2, r1
+ 159 0028 8021     		movs	r1, #128
+ 160 002a 4901     		lsls	r1, r1, #5
+ 161 002c 1143     		orrs	r1, r2
+ 162 002e 8383     		strh	r3, [r0, #28]
+ 163 0030 0184     		strh	r1, [r0, #32]
+ 164              		@ sp needed
+ 165 0032 70BD     		pop	{r4, r5, r6, pc}
+ 166              	.L10:
+ 167              		.align	2
+ 168              	.L9:
+ 169 0034 FFEFFFFF 		.word	-4097
+ 170 0038 FF0C0000 		.word	3327
+ 171 003c FF5F0000 		.word	24575
+ 173              		.section	.text.TIM_DeInit,"ax",%progbits
+ 174              		.align	1
+ 175              		.global	TIM_DeInit
+ 176              		.syntax unified
+ 177              		.code	16
+ 178              		.thumb_func
+ 179              		.fpu softvfp
+ARM GAS  /tmp/ccIDOJbZ.s 			page 4
+
+
+ 181              	TIM_DeInit:
+ 182              		@ args = 0, pretend = 0, frame = 0
+ 183              		@ frame_needed = 0, uses_anonymous_args = 0
+ 184 0000 10B5     		push	{r4, lr}
+ 185 0002 3C4B     		ldr	r3, .L30
+ 186 0004 9842     		cmp	r0, r3
+ 187 0006 19D0     		beq	.L21
+ 188 0008 8023     		movs	r3, #128
+ 189 000a DB05     		lsls	r3, r3, #23
+ 190 000c 9842     		cmp	r0, r3
+ 191 000e 20D0     		beq	.L22
+ 192 0010 394B     		ldr	r3, .L30+4
+ 193 0012 9842     		cmp	r0, r3
+ 194 0014 26D0     		beq	.L23
+ 195 0016 394B     		ldr	r3, .L30+8
+ 196 0018 9842     		cmp	r0, r3
+ 197 001a 2CD0     		beq	.L24
+ 198 001c 384B     		ldr	r3, .L30+12
+ 199 001e 9842     		cmp	r0, r3
+ 200 0020 32D0     		beq	.L25
+ 201 0022 384B     		ldr	r3, .L30+16
+ 202 0024 9842     		cmp	r0, r3
+ 203 0026 38D0     		beq	.L26
+ 204 0028 374B     		ldr	r3, .L30+20
+ 205 002a 9842     		cmp	r0, r3
+ 206 002c 40D0     		beq	.L27
+ 207 002e 374B     		ldr	r3, .L30+24
+ 208 0030 9842     		cmp	r0, r3
+ 209 0032 48D0     		beq	.L28
+ 210 0034 364B     		ldr	r3, .L30+28
+ 211 0036 9842     		cmp	r0, r3
+ 212 0038 50D0     		beq	.L29
+ 213              	.L11:
+ 214              		@ sp needed
+ 215 003a 10BD     		pop	{r4, pc}
+ 216              	.L21:
+ 217 003c 8024     		movs	r4, #128
+ 218 003e 2401     		lsls	r4, r4, #4
+ 219 0040 0121     		movs	r1, #1
+ 220 0042 2000     		movs	r0, r4
+ 221 0044 FFF7FEFF 		bl	RCC_APB2PeriphResetCmd
+ 222 0048 0021     		movs	r1, #0
+ 223 004a 2000     		movs	r0, r4
+ 224 004c FFF7FEFF 		bl	RCC_APB2PeriphResetCmd
+ 225 0050 F3E7     		b	.L11
+ 226              	.L22:
+ 227 0052 0121     		movs	r1, #1
+ 228 0054 0120     		movs	r0, #1
+ 229 0056 FFF7FEFF 		bl	RCC_APB1PeriphResetCmd
+ 230 005a 0021     		movs	r1, #0
+ 231 005c 0120     		movs	r0, #1
+ 232 005e FFF7FEFF 		bl	RCC_APB1PeriphResetCmd
+ 233 0062 EAE7     		b	.L11
+ 234              	.L23:
+ 235 0064 0121     		movs	r1, #1
+ 236 0066 0220     		movs	r0, #2
+ 237 0068 FFF7FEFF 		bl	RCC_APB1PeriphResetCmd
+ARM GAS  /tmp/ccIDOJbZ.s 			page 5
+
+
+ 238 006c 0021     		movs	r1, #0
+ 239 006e 0220     		movs	r0, #2
+ 240 0070 FFF7FEFF 		bl	RCC_APB1PeriphResetCmd
+ 241 0074 E1E7     		b	.L11
+ 242              	.L24:
+ 243 0076 0121     		movs	r1, #1
+ 244 0078 1020     		movs	r0, #16
+ 245 007a FFF7FEFF 		bl	RCC_APB1PeriphResetCmd
+ 246 007e 0021     		movs	r1, #0
+ 247 0080 1020     		movs	r0, #16
+ 248 0082 FFF7FEFF 		bl	RCC_APB1PeriphResetCmd
+ 249 0086 D8E7     		b	.L11
+ 250              	.L25:
+ 251 0088 0121     		movs	r1, #1
+ 252 008a 2020     		movs	r0, #32
+ 253 008c FFF7FEFF 		bl	RCC_APB1PeriphResetCmd
+ 254 0090 0021     		movs	r1, #0
+ 255 0092 2020     		movs	r0, #32
+ 256 0094 FFF7FEFF 		bl	RCC_APB1PeriphResetCmd
+ 257 0098 CFE7     		b	.L11
+ 258              	.L26:
+ 259 009a 8024     		movs	r4, #128
+ 260 009c 6400     		lsls	r4, r4, #1
+ 261 009e 0121     		movs	r1, #1
+ 262 00a0 2000     		movs	r0, r4
+ 263 00a2 FFF7FEFF 		bl	RCC_APB1PeriphResetCmd
+ 264 00a6 0021     		movs	r1, #0
+ 265 00a8 2000     		movs	r0, r4
+ 266 00aa FFF7FEFF 		bl	RCC_APB1PeriphResetCmd
+ 267 00ae C4E7     		b	.L11
+ 268              	.L27:
+ 269 00b0 8024     		movs	r4, #128
+ 270 00b2 6402     		lsls	r4, r4, #9
+ 271 00b4 0121     		movs	r1, #1
+ 272 00b6 2000     		movs	r0, r4
+ 273 00b8 FFF7FEFF 		bl	RCC_APB2PeriphResetCmd
+ 274 00bc 0021     		movs	r1, #0
+ 275 00be 2000     		movs	r0, r4
+ 276 00c0 FFF7FEFF 		bl	RCC_APB2PeriphResetCmd
+ 277 00c4 B9E7     		b	.L11
+ 278              	.L28:
+ 279 00c6 8024     		movs	r4, #128
+ 280 00c8 A402     		lsls	r4, r4, #10
+ 281 00ca 0121     		movs	r1, #1
+ 282 00cc 2000     		movs	r0, r4
+ 283 00ce FFF7FEFF 		bl	RCC_APB2PeriphResetCmd
+ 284 00d2 0021     		movs	r1, #0
+ 285 00d4 2000     		movs	r0, r4
+ 286 00d6 FFF7FEFF 		bl	RCC_APB2PeriphResetCmd
+ 287 00da AEE7     		b	.L11
+ 288              	.L29:
+ 289 00dc 8024     		movs	r4, #128
+ 290 00de E402     		lsls	r4, r4, #11
+ 291 00e0 0121     		movs	r1, #1
+ 292 00e2 2000     		movs	r0, r4
+ 293 00e4 FFF7FEFF 		bl	RCC_APB2PeriphResetCmd
+ 294 00e8 0021     		movs	r1, #0
+ARM GAS  /tmp/ccIDOJbZ.s 			page 6
+
+
+ 295 00ea 2000     		movs	r0, r4
+ 296 00ec FFF7FEFF 		bl	RCC_APB2PeriphResetCmd
+ 297 00f0 A3E7     		b	.L11
+ 298              	.L31:
+ 299 00f2 C046     		.align	2
+ 300              	.L30:
+ 301 00f4 002C0140 		.word	1073818624
+ 302 00f8 00040040 		.word	1073742848
+ 303 00fc 00100040 		.word	1073745920
+ 304 0100 00140040 		.word	1073746944
+ 305 0104 00200040 		.word	1073750016
+ 306 0108 00400140 		.word	1073823744
+ 307 010c 00440140 		.word	1073824768
+ 308 0110 00480140 		.word	1073825792
+ 310              		.section	.text.TIM_TimeBaseInit,"ax",%progbits
+ 311              		.align	1
+ 312              		.global	TIM_TimeBaseInit
+ 313              		.syntax unified
+ 314              		.code	16
+ 315              		.thumb_func
+ 316              		.fpu softvfp
+ 318              	TIM_TimeBaseInit:
+ 319              		@ args = 0, pretend = 0, frame = 0
+ 320              		@ frame_needed = 0, uses_anonymous_args = 0
+ 321              		@ link register save eliminated.
+ 322 0000 0388     		ldrh	r3, [r0]
+ 323 0002 9BB2     		uxth	r3, r3
+ 324 0004 154A     		ldr	r2, .L38
+ 325 0006 9042     		cmp	r0, r2
+ 326 0008 06D0     		beq	.L33
+ 327 000a 8022     		movs	r2, #128
+ 328 000c D205     		lsls	r2, r2, #23
+ 329 000e 9042     		cmp	r0, r2
+ 330 0010 02D0     		beq	.L33
+ 331 0012 134A     		ldr	r2, .L38+4
+ 332 0014 9042     		cmp	r0, r2
+ 333 0016 03D1     		bne	.L34
+ 334              	.L33:
+ 335 0018 7022     		movs	r2, #112
+ 336 001a 9343     		bics	r3, r2
+ 337 001c 4A88     		ldrh	r2, [r1, #2]
+ 338 001e 1343     		orrs	r3, r2
+ 339              	.L34:
+ 340 0020 104A     		ldr	r2, .L38+8
+ 341 0022 9042     		cmp	r0, r2
+ 342 0024 04D0     		beq	.L35
+ 343 0026 104A     		ldr	r2, .L38+12
+ 344 0028 1340     		ands	r3, r2
+ 345 002a 0A89     		ldrh	r2, [r1, #8]
+ 346 002c 1343     		orrs	r3, r2
+ 347 002e 9BB2     		uxth	r3, r3
+ 348              	.L35:
+ 349 0030 0380     		strh	r3, [r0]
+ 350 0032 4B68     		ldr	r3, [r1, #4]
+ 351 0034 C362     		str	r3, [r0, #44]
+ 352 0036 0B88     		ldrh	r3, [r1]
+ 353 0038 0385     		strh	r3, [r0, #40]
+ARM GAS  /tmp/ccIDOJbZ.s 			page 7
+
+
+ 354 003a 084B     		ldr	r3, .L38
+ 355 003c 9842     		cmp	r0, r3
+ 356 003e 08D0     		beq	.L36
+ 357 0040 0A4B     		ldr	r3, .L38+16
+ 358 0042 9842     		cmp	r0, r3
+ 359 0044 05D0     		beq	.L36
+ 360 0046 0A4B     		ldr	r3, .L38+20
+ 361 0048 9842     		cmp	r0, r3
+ 362 004a 02D0     		beq	.L36
+ 363 004c 094B     		ldr	r3, .L38+24
+ 364 004e 9842     		cmp	r0, r3
+ 365 0050 01D1     		bne	.L37
+ 366              	.L36:
+ 367 0052 8B7A     		ldrb	r3, [r1, #10]
+ 368 0054 0386     		strh	r3, [r0, #48]
+ 369              	.L37:
+ 370 0056 0123     		movs	r3, #1
+ 371 0058 8382     		strh	r3, [r0, #20]
+ 372              		@ sp needed
+ 373 005a 7047     		bx	lr
+ 374              	.L39:
+ 375              		.align	2
+ 376              	.L38:
+ 377 005c 002C0140 		.word	1073818624
+ 378 0060 00040040 		.word	1073742848
+ 379 0064 00100040 		.word	1073745920
+ 380 0068 FFFCFFFF 		.word	-769
+ 381 006c 00400140 		.word	1073823744
+ 382 0070 00440140 		.word	1073824768
+ 383 0074 00480140 		.word	1073825792
+ 385              		.section	.text.TIM_TimeBaseStructInit,"ax",%progbits
+ 386              		.align	1
+ 387              		.global	TIM_TimeBaseStructInit
+ 388              		.syntax unified
+ 389              		.code	16
+ 390              		.thumb_func
+ 391              		.fpu softvfp
+ 393              	TIM_TimeBaseStructInit:
+ 394              		@ args = 0, pretend = 0, frame = 0
+ 395              		@ frame_needed = 0, uses_anonymous_args = 0
+ 396              		@ link register save eliminated.
+ 397 0000 0123     		movs	r3, #1
+ 398 0002 5B42     		rsbs	r3, r3, #0
+ 399 0004 4360     		str	r3, [r0, #4]
+ 400 0006 0023     		movs	r3, #0
+ 401 0008 0380     		strh	r3, [r0]
+ 402 000a 0381     		strh	r3, [r0, #8]
+ 403 000c 4380     		strh	r3, [r0, #2]
+ 404 000e 8372     		strb	r3, [r0, #10]
+ 405              		@ sp needed
+ 406 0010 7047     		bx	lr
+ 408              		.section	.text.TIM_PrescalerConfig,"ax",%progbits
+ 409              		.align	1
+ 410              		.global	TIM_PrescalerConfig
+ 411              		.syntax unified
+ 412              		.code	16
+ 413              		.thumb_func
+ARM GAS  /tmp/ccIDOJbZ.s 			page 8
+
+
+ 414              		.fpu softvfp
+ 416              	TIM_PrescalerConfig:
+ 417              		@ args = 0, pretend = 0, frame = 0
+ 418              		@ frame_needed = 0, uses_anonymous_args = 0
+ 419              		@ link register save eliminated.
+ 420 0000 0185     		strh	r1, [r0, #40]
+ 421 0002 8282     		strh	r2, [r0, #20]
+ 422              		@ sp needed
+ 423 0004 7047     		bx	lr
+ 425              		.section	.text.TIM_CounterModeConfig,"ax",%progbits
+ 426              		.align	1
+ 427              		.global	TIM_CounterModeConfig
+ 428              		.syntax unified
+ 429              		.code	16
+ 430              		.thumb_func
+ 431              		.fpu softvfp
+ 433              	TIM_CounterModeConfig:
+ 434              		@ args = 0, pretend = 0, frame = 0
+ 435              		@ frame_needed = 0, uses_anonymous_args = 0
+ 436              		@ link register save eliminated.
+ 437 0000 0388     		ldrh	r3, [r0]
+ 438 0002 7022     		movs	r2, #112
+ 439 0004 9343     		bics	r3, r2
+ 440 0006 1943     		orrs	r1, r3
+ 441 0008 0180     		strh	r1, [r0]
+ 442              		@ sp needed
+ 443 000a 7047     		bx	lr
+ 445              		.section	.text.TIM_SetCounter,"ax",%progbits
+ 446              		.align	1
+ 447              		.global	TIM_SetCounter
+ 448              		.syntax unified
+ 449              		.code	16
+ 450              		.thumb_func
+ 451              		.fpu softvfp
+ 453              	TIM_SetCounter:
+ 454              		@ args = 0, pretend = 0, frame = 0
+ 455              		@ frame_needed = 0, uses_anonymous_args = 0
+ 456              		@ link register save eliminated.
+ 457 0000 4162     		str	r1, [r0, #36]
+ 458              		@ sp needed
+ 459 0002 7047     		bx	lr
+ 461              		.section	.text.TIM_SetAutoreload,"ax",%progbits
+ 462              		.align	1
+ 463              		.global	TIM_SetAutoreload
+ 464              		.syntax unified
+ 465              		.code	16
+ 466              		.thumb_func
+ 467              		.fpu softvfp
+ 469              	TIM_SetAutoreload:
+ 470              		@ args = 0, pretend = 0, frame = 0
+ 471              		@ frame_needed = 0, uses_anonymous_args = 0
+ 472              		@ link register save eliminated.
+ 473 0000 C162     		str	r1, [r0, #44]
+ 474              		@ sp needed
+ 475 0002 7047     		bx	lr
+ 477              		.section	.text.TIM_GetCounter,"ax",%progbits
+ 478              		.align	1
+ARM GAS  /tmp/ccIDOJbZ.s 			page 9
+
+
+ 479              		.global	TIM_GetCounter
+ 480              		.syntax unified
+ 481              		.code	16
+ 482              		.thumb_func
+ 483              		.fpu softvfp
+ 485              	TIM_GetCounter:
+ 486              		@ args = 0, pretend = 0, frame = 0
+ 487              		@ frame_needed = 0, uses_anonymous_args = 0
+ 488              		@ link register save eliminated.
+ 489 0000 406A     		ldr	r0, [r0, #36]
+ 490              		@ sp needed
+ 491 0002 7047     		bx	lr
+ 493              		.section	.text.TIM_GetPrescaler,"ax",%progbits
+ 494              		.align	1
+ 495              		.global	TIM_GetPrescaler
+ 496              		.syntax unified
+ 497              		.code	16
+ 498              		.thumb_func
+ 499              		.fpu softvfp
+ 501              	TIM_GetPrescaler:
+ 502              		@ args = 0, pretend = 0, frame = 0
+ 503              		@ frame_needed = 0, uses_anonymous_args = 0
+ 504              		@ link register save eliminated.
+ 505 0000 008D     		ldrh	r0, [r0, #40]
+ 506 0002 80B2     		uxth	r0, r0
+ 507              		@ sp needed
+ 508 0004 7047     		bx	lr
+ 510              		.section	.text.TIM_UpdateDisableConfig,"ax",%progbits
+ 511              		.align	1
+ 512              		.global	TIM_UpdateDisableConfig
+ 513              		.syntax unified
+ 514              		.code	16
+ 515              		.thumb_func
+ 516              		.fpu softvfp
+ 518              	TIM_UpdateDisableConfig:
+ 519              		@ args = 0, pretend = 0, frame = 0
+ 520              		@ frame_needed = 0, uses_anonymous_args = 0
+ 521              		@ link register save eliminated.
+ 522 0000 0029     		cmp	r1, #0
+ 523 0002 04D1     		bne	.L50
+ 524 0004 0388     		ldrh	r3, [r0]
+ 525 0006 0222     		movs	r2, #2
+ 526 0008 9343     		bics	r3, r2
+ 527 000a 0380     		strh	r3, [r0]
+ 528              	.L47:
+ 529              		@ sp needed
+ 530 000c 7047     		bx	lr
+ 531              	.L50:
+ 532 000e 0388     		ldrh	r3, [r0]
+ 533 0010 0222     		movs	r2, #2
+ 534 0012 1343     		orrs	r3, r2
+ 535 0014 0380     		strh	r3, [r0]
+ 536 0016 F9E7     		b	.L47
+ 538              		.section	.text.TIM_UpdateRequestConfig,"ax",%progbits
+ 539              		.align	1
+ 540              		.global	TIM_UpdateRequestConfig
+ 541              		.syntax unified
+ARM GAS  /tmp/ccIDOJbZ.s 			page 10
+
+
+ 542              		.code	16
+ 543              		.thumb_func
+ 544              		.fpu softvfp
+ 546              	TIM_UpdateRequestConfig:
+ 547              		@ args = 0, pretend = 0, frame = 0
+ 548              		@ frame_needed = 0, uses_anonymous_args = 0
+ 549              		@ link register save eliminated.
+ 550 0000 0029     		cmp	r1, #0
+ 551 0002 04D1     		bne	.L54
+ 552 0004 0388     		ldrh	r3, [r0]
+ 553 0006 0422     		movs	r2, #4
+ 554 0008 9343     		bics	r3, r2
+ 555 000a 0380     		strh	r3, [r0]
+ 556              	.L51:
+ 557              		@ sp needed
+ 558 000c 7047     		bx	lr
+ 559              	.L54:
+ 560 000e 0388     		ldrh	r3, [r0]
+ 561 0010 0422     		movs	r2, #4
+ 562 0012 1343     		orrs	r3, r2
+ 563 0014 0380     		strh	r3, [r0]
+ 564 0016 F9E7     		b	.L51
+ 566              		.section	.text.TIM_ARRPreloadConfig,"ax",%progbits
+ 567              		.align	1
+ 568              		.global	TIM_ARRPreloadConfig
+ 569              		.syntax unified
+ 570              		.code	16
+ 571              		.thumb_func
+ 572              		.fpu softvfp
+ 574              	TIM_ARRPreloadConfig:
+ 575              		@ args = 0, pretend = 0, frame = 0
+ 576              		@ frame_needed = 0, uses_anonymous_args = 0
+ 577              		@ link register save eliminated.
+ 578 0000 0029     		cmp	r1, #0
+ 579 0002 04D1     		bne	.L58
+ 580 0004 0388     		ldrh	r3, [r0]
+ 581 0006 8022     		movs	r2, #128
+ 582 0008 9343     		bics	r3, r2
+ 583 000a 0380     		strh	r3, [r0]
+ 584              	.L55:
+ 585              		@ sp needed
+ 586 000c 7047     		bx	lr
+ 587              	.L58:
+ 588 000e 0388     		ldrh	r3, [r0]
+ 589 0010 8022     		movs	r2, #128
+ 590 0012 1343     		orrs	r3, r2
+ 591 0014 0380     		strh	r3, [r0]
+ 592 0016 F9E7     		b	.L55
+ 594              		.section	.text.TIM_SelectOnePulseMode,"ax",%progbits
+ 595              		.align	1
+ 596              		.global	TIM_SelectOnePulseMode
+ 597              		.syntax unified
+ 598              		.code	16
+ 599              		.thumb_func
+ 600              		.fpu softvfp
+ 602              	TIM_SelectOnePulseMode:
+ 603              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  /tmp/ccIDOJbZ.s 			page 11
+
+
+ 604              		@ frame_needed = 0, uses_anonymous_args = 0
+ 605              		@ link register save eliminated.
+ 606 0000 0388     		ldrh	r3, [r0]
+ 607 0002 0822     		movs	r2, #8
+ 608 0004 9343     		bics	r3, r2
+ 609 0006 0380     		strh	r3, [r0]
+ 610 0008 0388     		ldrh	r3, [r0]
+ 611 000a 1943     		orrs	r1, r3
+ 612 000c 0180     		strh	r1, [r0]
+ 613              		@ sp needed
+ 614 000e 7047     		bx	lr
+ 616              		.section	.text.TIM_SetClockDivision,"ax",%progbits
+ 617              		.align	1
+ 618              		.global	TIM_SetClockDivision
+ 619              		.syntax unified
+ 620              		.code	16
+ 621              		.thumb_func
+ 622              		.fpu softvfp
+ 624              	TIM_SetClockDivision:
+ 625              		@ args = 0, pretend = 0, frame = 0
+ 626              		@ frame_needed = 0, uses_anonymous_args = 0
+ 627              		@ link register save eliminated.
+ 628 0000 0388     		ldrh	r3, [r0]
+ 629 0002 034A     		ldr	r2, .L61
+ 630 0004 1340     		ands	r3, r2
+ 631 0006 0380     		strh	r3, [r0]
+ 632 0008 0388     		ldrh	r3, [r0]
+ 633 000a 1943     		orrs	r1, r3
+ 634 000c 0180     		strh	r1, [r0]
+ 635              		@ sp needed
+ 636 000e 7047     		bx	lr
+ 637              	.L62:
+ 638              		.align	2
+ 639              	.L61:
+ 640 0010 FFFCFFFF 		.word	-769
+ 642              		.section	.text.TIM_Cmd,"ax",%progbits
+ 643              		.align	1
+ 644              		.global	TIM_Cmd
+ 645              		.syntax unified
+ 646              		.code	16
+ 647              		.thumb_func
+ 648              		.fpu softvfp
+ 650              	TIM_Cmd:
+ 651              		@ args = 0, pretend = 0, frame = 0
+ 652              		@ frame_needed = 0, uses_anonymous_args = 0
+ 653              		@ link register save eliminated.
+ 654 0000 0029     		cmp	r1, #0
+ 655 0002 04D1     		bne	.L66
+ 656 0004 0388     		ldrh	r3, [r0]
+ 657 0006 0122     		movs	r2, #1
+ 658 0008 9343     		bics	r3, r2
+ 659 000a 0380     		strh	r3, [r0]
+ 660              	.L63:
+ 661              		@ sp needed
+ 662 000c 7047     		bx	lr
+ 663              	.L66:
+ 664 000e 0388     		ldrh	r3, [r0]
+ARM GAS  /tmp/ccIDOJbZ.s 			page 12
+
+
+ 665 0010 0122     		movs	r2, #1
+ 666 0012 1343     		orrs	r3, r2
+ 667 0014 0380     		strh	r3, [r0]
+ 668 0016 F9E7     		b	.L63
+ 670              		.section	.text.TIM_BDTRConfig,"ax",%progbits
+ 671              		.align	1
+ 672              		.global	TIM_BDTRConfig
+ 673              		.syntax unified
+ 674              		.code	16
+ 675              		.thumb_func
+ 676              		.fpu softvfp
+ 678              	TIM_BDTRConfig:
+ 679              		@ args = 0, pretend = 0, frame = 0
+ 680              		@ frame_needed = 0, uses_anonymous_args = 0
+ 681 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 682 0002 0F88     		ldrh	r7, [r1]
+ 683 0004 4B88     		ldrh	r3, [r1, #2]
+ 684 0006 9C46     		mov	ip, r3
+ 685 0008 8E88     		ldrh	r6, [r1, #4]
+ 686 000a CD88     		ldrh	r5, [r1, #6]
+ 687 000c 0C89     		ldrh	r4, [r1, #8]
+ 688 000e 4A89     		ldrh	r2, [r1, #10]
+ 689 0010 8B89     		ldrh	r3, [r1, #12]
+ 690 0012 6146     		mov	r1, ip
+ 691 0014 3943     		orrs	r1, r7
+ 692 0016 3143     		orrs	r1, r6
+ 693 0018 2943     		orrs	r1, r5
+ 694 001a 2143     		orrs	r1, r4
+ 695 001c 0A43     		orrs	r2, r1
+ 696 001e 1343     		orrs	r3, r2
+ 697 0020 4422     		movs	r2, #68
+ 698 0022 8352     		strh	r3, [r0, r2]
+ 699              		@ sp needed
+ 700 0024 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 702              		.section	.text.TIM_BDTRStructInit,"ax",%progbits
+ 703              		.align	1
+ 704              		.global	TIM_BDTRStructInit
+ 705              		.syntax unified
+ 706              		.code	16
+ 707              		.thumb_func
+ 708              		.fpu softvfp
+ 710              	TIM_BDTRStructInit:
+ 711              		@ args = 0, pretend = 0, frame = 0
+ 712              		@ frame_needed = 0, uses_anonymous_args = 0
+ 713              		@ link register save eliminated.
+ 714 0000 0023     		movs	r3, #0
+ 715 0002 0380     		strh	r3, [r0]
+ 716 0004 4380     		strh	r3, [r0, #2]
+ 717 0006 8380     		strh	r3, [r0, #4]
+ 718 0008 C380     		strh	r3, [r0, #6]
+ 719 000a 0381     		strh	r3, [r0, #8]
+ 720 000c 4381     		strh	r3, [r0, #10]
+ 721 000e 8381     		strh	r3, [r0, #12]
+ 722              		@ sp needed
+ 723 0010 7047     		bx	lr
+ 725              		.section	.text.TIM_CtrlPWMOutputs,"ax",%progbits
+ 726              		.align	1
+ARM GAS  /tmp/ccIDOJbZ.s 			page 13
+
+
+ 727              		.global	TIM_CtrlPWMOutputs
+ 728              		.syntax unified
+ 729              		.code	16
+ 730              		.thumb_func
+ 731              		.fpu softvfp
+ 733              	TIM_CtrlPWMOutputs:
+ 734              		@ args = 0, pretend = 0, frame = 0
+ 735              		@ frame_needed = 0, uses_anonymous_args = 0
+ 736              		@ link register save eliminated.
+ 737 0000 0029     		cmp	r1, #0
+ 738 0002 05D1     		bne	.L72
+ 739 0004 4422     		movs	r2, #68
+ 740 0006 835A     		ldrh	r3, [r0, r2]
+ 741 0008 5B04     		lsls	r3, r3, #17
+ 742 000a 5B0C     		lsrs	r3, r3, #17
+ 743 000c 8352     		strh	r3, [r0, r2]
+ 744              	.L69:
+ 745              		@ sp needed
+ 746 000e 7047     		bx	lr
+ 747              	.L72:
+ 748 0010 4422     		movs	r2, #68
+ 749 0012 835A     		ldrh	r3, [r0, r2]
+ 750 0014 0249     		ldr	r1, .L73
+ 751 0016 0B43     		orrs	r3, r1
+ 752 0018 9BB2     		uxth	r3, r3
+ 753 001a 8352     		strh	r3, [r0, r2]
+ 754 001c F7E7     		b	.L69
+ 755              	.L74:
+ 756 001e C046     		.align	2
+ 757              	.L73:
+ 758 0020 0080FFFF 		.word	-32768
+ 760              		.section	.text.TIM_OC1Init,"ax",%progbits
+ 761              		.align	1
+ 762              		.global	TIM_OC1Init
+ 763              		.syntax unified
+ 764              		.code	16
+ 765              		.thumb_func
+ 766              		.fpu softvfp
+ 768              	TIM_OC1Init:
+ 769              		@ args = 0, pretend = 0, frame = 0
+ 770              		@ frame_needed = 0, uses_anonymous_args = 0
+ 771 0000 30B5     		push	{r4, r5, lr}
+ 772 0002 038C     		ldrh	r3, [r0, #32]
+ 773 0004 0122     		movs	r2, #1
+ 774 0006 9343     		bics	r3, r2
+ 775 0008 0384     		strh	r3, [r0, #32]
+ 776 000a 038C     		ldrh	r3, [r0, #32]
+ 777 000c 8288     		ldrh	r2, [r0, #4]
+ 778 000e 92B2     		uxth	r2, r2
+ 779 0010 048B     		ldrh	r4, [r0, #24]
+ 780 0012 7325     		movs	r5, #115
+ 781 0014 AC43     		bics	r4, r5
+ 782 0016 0D88     		ldrh	r5, [r1]
+ 783 0018 2C43     		orrs	r4, r5
+ 784 001a 0225     		movs	r5, #2
+ 785 001c AB43     		bics	r3, r5
+ 786 001e 1D00     		movs	r5, r3
+ARM GAS  /tmp/ccIDOJbZ.s 			page 14
+
+
+ 787 0020 8B89     		ldrh	r3, [r1, #12]
+ 788 0022 2B43     		orrs	r3, r5
+ 789 0024 4D88     		ldrh	r5, [r1, #2]
+ 790 0026 2B43     		orrs	r3, r5
+ 791 0028 104D     		ldr	r5, .L78
+ 792 002a A842     		cmp	r0, r5
+ 793 002c 08D0     		beq	.L76
+ 794 002e 104D     		ldr	r5, .L78+4
+ 795 0030 A842     		cmp	r0, r5
+ 796 0032 05D0     		beq	.L76
+ 797 0034 0F4D     		ldr	r5, .L78+8
+ 798 0036 A842     		cmp	r0, r5
+ 799 0038 02D0     		beq	.L76
+ 800 003a 0F4D     		ldr	r5, .L78+12
+ 801 003c A842     		cmp	r0, r5
+ 802 003e 0ED1     		bne	.L77
+ 803              	.L76:
+ 804 0040 0825     		movs	r5, #8
+ 805 0042 AB43     		bics	r3, r5
+ 806 0044 1D00     		movs	r5, r3
+ 807 0046 CB89     		ldrh	r3, [r1, #14]
+ 808 0048 2B43     		orrs	r3, r5
+ 809 004a 0425     		movs	r5, #4
+ 810 004c AB43     		bics	r3, r5
+ 811 004e 8D88     		ldrh	r5, [r1, #4]
+ 812 0050 2B43     		orrs	r3, r5
+ 813 0052 0A4D     		ldr	r5, .L78+16
+ 814 0054 1540     		ands	r5, r2
+ 815 0056 0A8A     		ldrh	r2, [r1, #16]
+ 816 0058 2A43     		orrs	r2, r5
+ 817 005a 4D8A     		ldrh	r5, [r1, #18]
+ 818 005c 2A43     		orrs	r2, r5
+ 819              	.L77:
+ 820 005e 8280     		strh	r2, [r0, #4]
+ 821 0060 0483     		strh	r4, [r0, #24]
+ 822 0062 8A68     		ldr	r2, [r1, #8]
+ 823 0064 4263     		str	r2, [r0, #52]
+ 824 0066 0384     		strh	r3, [r0, #32]
+ 825              		@ sp needed
+ 826 0068 30BD     		pop	{r4, r5, pc}
+ 827              	.L79:
+ 828 006a C046     		.align	2
+ 829              	.L78:
+ 830 006c 002C0140 		.word	1073818624
+ 831 0070 00400140 		.word	1073823744
+ 832 0074 00440140 		.word	1073824768
+ 833 0078 00480140 		.word	1073825792
+ 834 007c FFFCFFFF 		.word	-769
+ 836              		.section	.text.TIM_OC2Init,"ax",%progbits
+ 837              		.align	1
+ 838              		.global	TIM_OC2Init
+ 839              		.syntax unified
+ 840              		.code	16
+ 841              		.thumb_func
+ 842              		.fpu softvfp
+ 844              	TIM_OC2Init:
+ 845              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  /tmp/ccIDOJbZ.s 			page 15
+
+
+ 846              		@ frame_needed = 0, uses_anonymous_args = 0
+ 847 0000 70B5     		push	{r4, r5, r6, lr}
+ 848 0002 038C     		ldrh	r3, [r0, #32]
+ 849 0004 1022     		movs	r2, #16
+ 850 0006 9343     		bics	r3, r2
+ 851 0008 0384     		strh	r3, [r0, #32]
+ 852 000a 048C     		ldrh	r4, [r0, #32]
+ 853 000c 8388     		ldrh	r3, [r0, #4]
+ 854 000e 9BB2     		uxth	r3, r3
+ 855 0010 068B     		ldrh	r6, [r0, #24]
+ 856 0012 1D4A     		ldr	r2, .L83
+ 857 0014 3240     		ands	r2, r6
+ 858 0016 0E88     		ldrh	r6, [r1]
+ 859 0018 3602     		lsls	r6, r6, #8
+ 860 001a B6B2     		uxth	r6, r6
+ 861 001c 1643     		orrs	r6, r2
+ 862 001e 2022     		movs	r2, #32
+ 863 0020 9443     		bics	r4, r2
+ 864 0022 8A89     		ldrh	r2, [r1, #12]
+ 865 0024 1201     		lsls	r2, r2, #4
+ 866 0026 95B2     		uxth	r5, r2
+ 867 0028 2C43     		orrs	r4, r5
+ 868 002a 4A88     		ldrh	r2, [r1, #2]
+ 869 002c 1201     		lsls	r2, r2, #4
+ 870 002e 92B2     		uxth	r2, r2
+ 871 0030 2243     		orrs	r2, r4
+ 872 0032 164C     		ldr	r4, .L83+4
+ 873 0034 A042     		cmp	r0, r4
+ 874 0036 08D0     		beq	.L81
+ 875 0038 154C     		ldr	r4, .L83+8
+ 876 003a A042     		cmp	r0, r4
+ 877 003c 05D0     		beq	.L81
+ 878              	.L82:
+ 879 003e 8380     		strh	r3, [r0, #4]
+ 880 0040 0683     		strh	r6, [r0, #24]
+ 881 0042 8B68     		ldr	r3, [r1, #8]
+ 882 0044 8363     		str	r3, [r0, #56]
+ 883 0046 0284     		strh	r2, [r0, #32]
+ 884              		@ sp needed
+ 885 0048 70BD     		pop	{r4, r5, r6, pc}
+ 886              	.L81:
+ 887 004a 124D     		ldr	r5, .L83+12
+ 888 004c 1D40     		ands	r5, r3
+ 889 004e 0B8A     		ldrh	r3, [r1, #16]
+ 890 0050 9B00     		lsls	r3, r3, #2
+ 891 0052 9BB2     		uxth	r3, r3
+ 892 0054 2B43     		orrs	r3, r5
+ 893 0056 0D4C     		ldr	r4, .L83+4
+ 894 0058 A042     		cmp	r0, r4
+ 895 005a F0D1     		bne	.L82
+ 896 005c 8024     		movs	r4, #128
+ 897 005e A243     		bics	r2, r4
+ 898 0060 CC89     		ldrh	r4, [r1, #14]
+ 899 0062 2401     		lsls	r4, r4, #4
+ 900 0064 A5B2     		uxth	r5, r4
+ 901 0066 2A43     		orrs	r2, r5
+ 902 0068 4024     		movs	r4, #64
+ARM GAS  /tmp/ccIDOJbZ.s 			page 16
+
+
+ 903 006a A243     		bics	r2, r4
+ 904 006c 1400     		movs	r4, r2
+ 905 006e 8A88     		ldrh	r2, [r1, #4]
+ 906 0070 1201     		lsls	r2, r2, #4
+ 907 0072 92B2     		uxth	r2, r2
+ 908 0074 2243     		orrs	r2, r4
+ 909 0076 084D     		ldr	r5, .L83+16
+ 910 0078 1D40     		ands	r5, r3
+ 911 007a 4C8A     		ldrh	r4, [r1, #18]
+ 912 007c A400     		lsls	r4, r4, #2
+ 913 007e A3B2     		uxth	r3, r4
+ 914 0080 2B43     		orrs	r3, r5
+ 915 0082 9BB2     		uxth	r3, r3
+ 916 0084 DBE7     		b	.L82
+ 917              	.L84:
+ 918 0086 C046     		.align	2
+ 919              	.L83:
+ 920 0088 FF8CFFFF 		.word	-29441
+ 921 008c 002C0140 		.word	1073818624
+ 922 0090 00400140 		.word	1073823744
+ 923 0094 FFFBFFFF 		.word	-1025
+ 924 0098 FFF7FFFF 		.word	-2049
+ 926              		.section	.text.TIM_OC3Init,"ax",%progbits
+ 927              		.align	1
+ 928              		.global	TIM_OC3Init
+ 929              		.syntax unified
+ 930              		.code	16
+ 931              		.thumb_func
+ 932              		.fpu softvfp
+ 934              	TIM_OC3Init:
+ 935              		@ args = 0, pretend = 0, frame = 0
+ 936              		@ frame_needed = 0, uses_anonymous_args = 0
+ 937 0000 70B5     		push	{r4, r5, r6, lr}
+ 938 0002 038C     		ldrh	r3, [r0, #32]
+ 939 0004 1A4A     		ldr	r2, .L88
+ 940 0006 1340     		ands	r3, r2
+ 941 0008 0384     		strh	r3, [r0, #32]
+ 942 000a 028C     		ldrh	r2, [r0, #32]
+ 943 000c 8588     		ldrh	r5, [r0, #4]
+ 944 000e ADB2     		uxth	r5, r5
+ 945 0010 868B     		ldrh	r6, [r0, #28]
+ 946 0012 7323     		movs	r3, #115
+ 947 0014 9E43     		bics	r6, r3
+ 948 0016 0B88     		ldrh	r3, [r1]
+ 949 0018 1E43     		orrs	r6, r3
+ 950 001a 164B     		ldr	r3, .L88+4
+ 951 001c 1A40     		ands	r2, r3
+ 952 001e 8B89     		ldrh	r3, [r1, #12]
+ 953 0020 1B02     		lsls	r3, r3, #8
+ 954 0022 9CB2     		uxth	r4, r3
+ 955 0024 2243     		orrs	r2, r4
+ 956 0026 4B88     		ldrh	r3, [r1, #2]
+ 957 0028 1B02     		lsls	r3, r3, #8
+ 958 002a 9BB2     		uxth	r3, r3
+ 959 002c 1343     		orrs	r3, r2
+ 960 002e 124A     		ldr	r2, .L88+8
+ 961 0030 9042     		cmp	r0, r2
+ARM GAS  /tmp/ccIDOJbZ.s 			page 17
+
+
+ 962 0032 05D0     		beq	.L87
+ 963              	.L86:
+ 964 0034 8580     		strh	r5, [r0, #4]
+ 965 0036 8683     		strh	r6, [r0, #28]
+ 966 0038 8A68     		ldr	r2, [r1, #8]
+ 967 003a C263     		str	r2, [r0, #60]
+ 968 003c 0384     		strh	r3, [r0, #32]
+ 969              		@ sp needed
+ 970 003e 70BD     		pop	{r4, r5, r6, pc}
+ 971              	.L87:
+ 972 0040 0E4A     		ldr	r2, .L88+12
+ 973 0042 1A40     		ands	r2, r3
+ 974 0044 CB89     		ldrh	r3, [r1, #14]
+ 975 0046 1B02     		lsls	r3, r3, #8
+ 976 0048 9BB2     		uxth	r3, r3
+ 977 004a 1343     		orrs	r3, r2
+ 978 004c 0C4A     		ldr	r2, .L88+16
+ 979 004e 1A40     		ands	r2, r3
+ 980 0050 8B88     		ldrh	r3, [r1, #4]
+ 981 0052 1B02     		lsls	r3, r3, #8
+ 982 0054 9BB2     		uxth	r3, r3
+ 983 0056 1343     		orrs	r3, r2
+ 984 0058 0A4C     		ldr	r4, .L88+20
+ 985 005a 2C40     		ands	r4, r5
+ 986 005c 0A8A     		ldrh	r2, [r1, #16]
+ 987 005e 1201     		lsls	r2, r2, #4
+ 988 0060 95B2     		uxth	r5, r2
+ 989 0062 2543     		orrs	r5, r4
+ 990 0064 4A8A     		ldrh	r2, [r1, #18]
+ 991 0066 1201     		lsls	r2, r2, #4
+ 992 0068 92B2     		uxth	r2, r2
+ 993 006a 1543     		orrs	r5, r2
+ 994 006c E2E7     		b	.L86
+ 995              	.L89:
+ 996 006e C046     		.align	2
+ 997              	.L88:
+ 998 0070 FFFEFFFF 		.word	-257
+ 999 0074 FFFDFFFF 		.word	-513
+ 1000 0078 002C0140 		.word	1073818624
+ 1001 007c FFF7FFFF 		.word	-2049
+ 1002 0080 FFFBFFFF 		.word	-1025
+ 1003 0084 FFCFFFFF 		.word	-12289
+ 1005              		.section	.text.TIM_OC4Init,"ax",%progbits
+ 1006              		.align	1
+ 1007              		.global	TIM_OC4Init
+ 1008              		.syntax unified
+ 1009              		.code	16
+ 1010              		.thumb_func
+ 1011              		.fpu softvfp
+ 1013              	TIM_OC4Init:
+ 1014              		@ args = 0, pretend = 0, frame = 0
+ 1015              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1016 0000 70B5     		push	{r4, r5, r6, lr}
+ 1017 0002 038C     		ldrh	r3, [r0, #32]
+ 1018 0004 134A     		ldr	r2, .L93
+ 1019 0006 1340     		ands	r3, r2
+ 1020 0008 0384     		strh	r3, [r0, #32]
+ARM GAS  /tmp/ccIDOJbZ.s 			page 18
+
+
+ 1021 000a 048C     		ldrh	r4, [r0, #32]
+ 1022 000c 8688     		ldrh	r6, [r0, #4]
+ 1023 000e B6B2     		uxth	r6, r6
+ 1024 0010 828B     		ldrh	r2, [r0, #28]
+ 1025 0012 114B     		ldr	r3, .L93+4
+ 1026 0014 1340     		ands	r3, r2
+ 1027 0016 0A88     		ldrh	r2, [r1]
+ 1028 0018 1202     		lsls	r2, r2, #8
+ 1029 001a 92B2     		uxth	r2, r2
+ 1030 001c 1A43     		orrs	r2, r3
+ 1031 001e 0F4B     		ldr	r3, .L93+8
+ 1032 0020 1C40     		ands	r4, r3
+ 1033 0022 8B89     		ldrh	r3, [r1, #12]
+ 1034 0024 1B03     		lsls	r3, r3, #12
+ 1035 0026 9DB2     		uxth	r5, r3
+ 1036 0028 2C43     		orrs	r4, r5
+ 1037 002a 4B88     		ldrh	r3, [r1, #2]
+ 1038 002c 1B03     		lsls	r3, r3, #12
+ 1039 002e 9BB2     		uxth	r3, r3
+ 1040 0030 2343     		orrs	r3, r4
+ 1041 0032 0B4C     		ldr	r4, .L93+12
+ 1042 0034 A042     		cmp	r0, r4
+ 1043 0036 05D0     		beq	.L92
+ 1044              	.L91:
+ 1045 0038 8680     		strh	r6, [r0, #4]
+ 1046 003a 8283     		strh	r2, [r0, #28]
+ 1047 003c 8A68     		ldr	r2, [r1, #8]
+ 1048 003e 0264     		str	r2, [r0, #64]
+ 1049 0040 0384     		strh	r3, [r0, #32]
+ 1050              		@ sp needed
+ 1051 0042 70BD     		pop	{r4, r5, r6, pc}
+ 1052              	.L92:
+ 1053 0044 074D     		ldr	r5, .L93+16
+ 1054 0046 3540     		ands	r5, r6
+ 1055 0048 0E8A     		ldrh	r6, [r1, #16]
+ 1056 004a B601     		lsls	r6, r6, #6
+ 1057 004c B6B2     		uxth	r6, r6
+ 1058 004e 2E43     		orrs	r6, r5
+ 1059 0050 F2E7     		b	.L91
+ 1060              	.L94:
+ 1061 0052 C046     		.align	2
+ 1062              	.L93:
+ 1063 0054 FFEFFFFF 		.word	-4097
+ 1064 0058 FF8CFFFF 		.word	-29441
+ 1065 005c FFDFFFFF 		.word	-8193
+ 1066 0060 002C0140 		.word	1073818624
+ 1067 0064 FFBFFFFF 		.word	-16385
+ 1069              		.section	.text.TIM_OCStructInit,"ax",%progbits
+ 1070              		.align	1
+ 1071              		.global	TIM_OCStructInit
+ 1072              		.syntax unified
+ 1073              		.code	16
+ 1074              		.thumb_func
+ 1075              		.fpu softvfp
+ 1077              	TIM_OCStructInit:
+ 1078              		@ args = 0, pretend = 0, frame = 0
+ 1079              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /tmp/ccIDOJbZ.s 			page 19
+
+
+ 1080              		@ link register save eliminated.
+ 1081 0000 0023     		movs	r3, #0
+ 1082 0002 0380     		strh	r3, [r0]
+ 1083 0004 4380     		strh	r3, [r0, #2]
+ 1084 0006 8380     		strh	r3, [r0, #4]
+ 1085 0008 8360     		str	r3, [r0, #8]
+ 1086 000a 8381     		strh	r3, [r0, #12]
+ 1087 000c C381     		strh	r3, [r0, #14]
+ 1088 000e 0382     		strh	r3, [r0, #16]
+ 1089 0010 4382     		strh	r3, [r0, #18]
+ 1090              		@ sp needed
+ 1091 0012 7047     		bx	lr
+ 1093              		.section	.text.TIM_SelectOCxM,"ax",%progbits
+ 1094              		.align	1
+ 1095              		.global	TIM_SelectOCxM
+ 1096              		.syntax unified
+ 1097              		.code	16
+ 1098              		.thumb_func
+ 1099              		.fpu softvfp
+ 1101              	TIM_SelectOCxM:
+ 1102              		@ args = 0, pretend = 0, frame = 0
+ 1103              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1104 0000 30B5     		push	{r4, r5, lr}
+ 1105 0002 0500     		movs	r5, r0
+ 1106 0004 1835     		adds	r5, r5, #24
+ 1107 0006 0123     		movs	r3, #1
+ 1108 0008 8B40     		lsls	r3, r3, r1
+ 1109 000a 9BB2     		uxth	r3, r3
+ 1110 000c 048C     		ldrh	r4, [r0, #32]
+ 1111 000e 9C43     		bics	r4, r3
+ 1112 0010 0484     		strh	r4, [r0, #32]
+ 1113 0012 0029     		cmp	r1, #0
+ 1114 0014 0FD0     		beq	.L97
+ 1115 0016 0829     		cmp	r1, #8
+ 1116 0018 0DD0     		beq	.L97
+ 1117 001a 0439     		subs	r1, r1, #4
+ 1118 001c 89B2     		uxth	r1, r1
+ 1119 001e 4908     		lsrs	r1, r1, #1
+ 1120 0020 4919     		adds	r1, r1, r5
+ 1121 0022 0B68     		ldr	r3, [r1]
+ 1122 0024 0948     		ldr	r0, .L100
+ 1123 0026 0340     		ands	r3, r0
+ 1124 0028 0B60     		str	r3, [r1]
+ 1125 002a 0B68     		ldr	r3, [r1]
+ 1126 002c 1202     		lsls	r2, r2, #8
+ 1127 002e 92B2     		uxth	r2, r2
+ 1128 0030 1A43     		orrs	r2, r3
+ 1129 0032 0A60     		str	r2, [r1]
+ 1130 0034 08E0     		b	.L96
+ 1131              	.L97:
+ 1132 0036 4908     		lsrs	r1, r1, #1
+ 1133 0038 4919     		adds	r1, r1, r5
+ 1134 003a 0B68     		ldr	r3, [r1]
+ 1135 003c 7020     		movs	r0, #112
+ 1136 003e 8343     		bics	r3, r0
+ 1137 0040 0B60     		str	r3, [r1]
+ 1138 0042 0B68     		ldr	r3, [r1]
+ARM GAS  /tmp/ccIDOJbZ.s 			page 20
+
+
+ 1139 0044 1A43     		orrs	r2, r3
+ 1140 0046 0A60     		str	r2, [r1]
+ 1141              	.L96:
+ 1142              		@ sp needed
+ 1143 0048 30BD     		pop	{r4, r5, pc}
+ 1144              	.L101:
+ 1145 004a C046     		.align	2
+ 1146              	.L100:
+ 1147 004c FF8FFFFF 		.word	-28673
+ 1149              		.section	.text.TIM_SetCompare1,"ax",%progbits
+ 1150              		.align	1
+ 1151              		.global	TIM_SetCompare1
+ 1152              		.syntax unified
+ 1153              		.code	16
+ 1154              		.thumb_func
+ 1155              		.fpu softvfp
+ 1157              	TIM_SetCompare1:
+ 1158              		@ args = 0, pretend = 0, frame = 0
+ 1159              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1160              		@ link register save eliminated.
+ 1161 0000 4163     		str	r1, [r0, #52]
+ 1162              		@ sp needed
+ 1163 0002 7047     		bx	lr
+ 1165              		.section	.text.TIM_SetCompare2,"ax",%progbits
+ 1166              		.align	1
+ 1167              		.global	TIM_SetCompare2
+ 1168              		.syntax unified
+ 1169              		.code	16
+ 1170              		.thumb_func
+ 1171              		.fpu softvfp
+ 1173              	TIM_SetCompare2:
+ 1174              		@ args = 0, pretend = 0, frame = 0
+ 1175              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1176              		@ link register save eliminated.
+ 1177 0000 8163     		str	r1, [r0, #56]
+ 1178              		@ sp needed
+ 1179 0002 7047     		bx	lr
+ 1181              		.section	.text.TIM_SetCompare3,"ax",%progbits
+ 1182              		.align	1
+ 1183              		.global	TIM_SetCompare3
+ 1184              		.syntax unified
+ 1185              		.code	16
+ 1186              		.thumb_func
+ 1187              		.fpu softvfp
+ 1189              	TIM_SetCompare3:
+ 1190              		@ args = 0, pretend = 0, frame = 0
+ 1191              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1192              		@ link register save eliminated.
+ 1193 0000 C163     		str	r1, [r0, #60]
+ 1194              		@ sp needed
+ 1195 0002 7047     		bx	lr
+ 1197              		.section	.text.TIM_SetCompare4,"ax",%progbits
+ 1198              		.align	1
+ 1199              		.global	TIM_SetCompare4
+ 1200              		.syntax unified
+ 1201              		.code	16
+ 1202              		.thumb_func
+ARM GAS  /tmp/ccIDOJbZ.s 			page 21
+
+
+ 1203              		.fpu softvfp
+ 1205              	TIM_SetCompare4:
+ 1206              		@ args = 0, pretend = 0, frame = 0
+ 1207              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1208              		@ link register save eliminated.
+ 1209 0000 0164     		str	r1, [r0, #64]
+ 1210              		@ sp needed
+ 1211 0002 7047     		bx	lr
+ 1213              		.section	.text.TIM_ForcedOC1Config,"ax",%progbits
+ 1214              		.align	1
+ 1215              		.global	TIM_ForcedOC1Config
+ 1216              		.syntax unified
+ 1217              		.code	16
+ 1218              		.thumb_func
+ 1219              		.fpu softvfp
+ 1221              	TIM_ForcedOC1Config:
+ 1222              		@ args = 0, pretend = 0, frame = 0
+ 1223              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1224              		@ link register save eliminated.
+ 1225 0000 038B     		ldrh	r3, [r0, #24]
+ 1226 0002 7022     		movs	r2, #112
+ 1227 0004 9343     		bics	r3, r2
+ 1228 0006 1943     		orrs	r1, r3
+ 1229 0008 0183     		strh	r1, [r0, #24]
+ 1230              		@ sp needed
+ 1231 000a 7047     		bx	lr
+ 1233              		.section	.text.TIM_ForcedOC2Config,"ax",%progbits
+ 1234              		.align	1
+ 1235              		.global	TIM_ForcedOC2Config
+ 1236              		.syntax unified
+ 1237              		.code	16
+ 1238              		.thumb_func
+ 1239              		.fpu softvfp
+ 1241              	TIM_ForcedOC2Config:
+ 1242              		@ args = 0, pretend = 0, frame = 0
+ 1243              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1244              		@ link register save eliminated.
+ 1245 0000 038B     		ldrh	r3, [r0, #24]
+ 1246 0002 034A     		ldr	r2, .L108
+ 1247 0004 1340     		ands	r3, r2
+ 1248 0006 0902     		lsls	r1, r1, #8
+ 1249 0008 89B2     		uxth	r1, r1
+ 1250 000a 1943     		orrs	r1, r3
+ 1251 000c 0183     		strh	r1, [r0, #24]
+ 1252              		@ sp needed
+ 1253 000e 7047     		bx	lr
+ 1254              	.L109:
+ 1255              		.align	2
+ 1256              	.L108:
+ 1257 0010 FF8FFFFF 		.word	-28673
+ 1259              		.section	.text.TIM_ForcedOC3Config,"ax",%progbits
+ 1260              		.align	1
+ 1261              		.global	TIM_ForcedOC3Config
+ 1262              		.syntax unified
+ 1263              		.code	16
+ 1264              		.thumb_func
+ 1265              		.fpu softvfp
+ARM GAS  /tmp/ccIDOJbZ.s 			page 22
+
+
+ 1267              	TIM_ForcedOC3Config:
+ 1268              		@ args = 0, pretend = 0, frame = 0
+ 1269              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1270              		@ link register save eliminated.
+ 1271 0000 838B     		ldrh	r3, [r0, #28]
+ 1272 0002 7022     		movs	r2, #112
+ 1273 0004 9343     		bics	r3, r2
+ 1274 0006 1943     		orrs	r1, r3
+ 1275 0008 8183     		strh	r1, [r0, #28]
+ 1276              		@ sp needed
+ 1277 000a 7047     		bx	lr
+ 1279              		.section	.text.TIM_ForcedOC4Config,"ax",%progbits
+ 1280              		.align	1
+ 1281              		.global	TIM_ForcedOC4Config
+ 1282              		.syntax unified
+ 1283              		.code	16
+ 1284              		.thumb_func
+ 1285              		.fpu softvfp
+ 1287              	TIM_ForcedOC4Config:
+ 1288              		@ args = 0, pretend = 0, frame = 0
+ 1289              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1290              		@ link register save eliminated.
+ 1291 0000 838B     		ldrh	r3, [r0, #28]
+ 1292 0002 034A     		ldr	r2, .L112
+ 1293 0004 1340     		ands	r3, r2
+ 1294 0006 0902     		lsls	r1, r1, #8
+ 1295 0008 89B2     		uxth	r1, r1
+ 1296 000a 1943     		orrs	r1, r3
+ 1297 000c 8183     		strh	r1, [r0, #28]
+ 1298              		@ sp needed
+ 1299 000e 7047     		bx	lr
+ 1300              	.L113:
+ 1301              		.align	2
+ 1302              	.L112:
+ 1303 0010 FF8FFFFF 		.word	-28673
+ 1305              		.section	.text.TIM_CCPreloadControl,"ax",%progbits
+ 1306              		.align	1
+ 1307              		.global	TIM_CCPreloadControl
+ 1308              		.syntax unified
+ 1309              		.code	16
+ 1310              		.thumb_func
+ 1311              		.fpu softvfp
+ 1313              	TIM_CCPreloadControl:
+ 1314              		@ args = 0, pretend = 0, frame = 0
+ 1315              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1316              		@ link register save eliminated.
+ 1317 0000 0029     		cmp	r1, #0
+ 1318 0002 04D1     		bne	.L117
+ 1319 0004 8388     		ldrh	r3, [r0, #4]
+ 1320 0006 0122     		movs	r2, #1
+ 1321 0008 9343     		bics	r3, r2
+ 1322 000a 8380     		strh	r3, [r0, #4]
+ 1323              	.L114:
+ 1324              		@ sp needed
+ 1325 000c 7047     		bx	lr
+ 1326              	.L117:
+ 1327 000e 8388     		ldrh	r3, [r0, #4]
+ARM GAS  /tmp/ccIDOJbZ.s 			page 23
+
+
+ 1328 0010 0122     		movs	r2, #1
+ 1329 0012 1343     		orrs	r3, r2
+ 1330 0014 8380     		strh	r3, [r0, #4]
+ 1331 0016 F9E7     		b	.L114
+ 1333              		.section	.text.TIM_OC1PreloadConfig,"ax",%progbits
+ 1334              		.align	1
+ 1335              		.global	TIM_OC1PreloadConfig
+ 1336              		.syntax unified
+ 1337              		.code	16
+ 1338              		.thumb_func
+ 1339              		.fpu softvfp
+ 1341              	TIM_OC1PreloadConfig:
+ 1342              		@ args = 0, pretend = 0, frame = 0
+ 1343              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1344              		@ link register save eliminated.
+ 1345 0000 038B     		ldrh	r3, [r0, #24]
+ 1346 0002 0822     		movs	r2, #8
+ 1347 0004 9343     		bics	r3, r2
+ 1348 0006 1943     		orrs	r1, r3
+ 1349 0008 0183     		strh	r1, [r0, #24]
+ 1350              		@ sp needed
+ 1351 000a 7047     		bx	lr
+ 1353              		.section	.text.TIM_OC2PreloadConfig,"ax",%progbits
+ 1354              		.align	1
+ 1355              		.global	TIM_OC2PreloadConfig
+ 1356              		.syntax unified
+ 1357              		.code	16
+ 1358              		.thumb_func
+ 1359              		.fpu softvfp
+ 1361              	TIM_OC2PreloadConfig:
+ 1362              		@ args = 0, pretend = 0, frame = 0
+ 1363              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1364              		@ link register save eliminated.
+ 1365 0000 038B     		ldrh	r3, [r0, #24]
+ 1366 0002 034A     		ldr	r2, .L120
+ 1367 0004 1340     		ands	r3, r2
+ 1368 0006 0902     		lsls	r1, r1, #8
+ 1369 0008 89B2     		uxth	r1, r1
+ 1370 000a 1943     		orrs	r1, r3
+ 1371 000c 0183     		strh	r1, [r0, #24]
+ 1372              		@ sp needed
+ 1373 000e 7047     		bx	lr
+ 1374              	.L121:
+ 1375              		.align	2
+ 1376              	.L120:
+ 1377 0010 FFF7FFFF 		.word	-2049
+ 1379              		.section	.text.TIM_OC3PreloadConfig,"ax",%progbits
+ 1380              		.align	1
+ 1381              		.global	TIM_OC3PreloadConfig
+ 1382              		.syntax unified
+ 1383              		.code	16
+ 1384              		.thumb_func
+ 1385              		.fpu softvfp
+ 1387              	TIM_OC3PreloadConfig:
+ 1388              		@ args = 0, pretend = 0, frame = 0
+ 1389              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1390              		@ link register save eliminated.
+ARM GAS  /tmp/ccIDOJbZ.s 			page 24
+
+
+ 1391 0000 838B     		ldrh	r3, [r0, #28]
+ 1392 0002 0822     		movs	r2, #8
+ 1393 0004 9343     		bics	r3, r2
+ 1394 0006 1943     		orrs	r1, r3
+ 1395 0008 8183     		strh	r1, [r0, #28]
+ 1396              		@ sp needed
+ 1397 000a 7047     		bx	lr
+ 1399              		.section	.text.TIM_OC4PreloadConfig,"ax",%progbits
+ 1400              		.align	1
+ 1401              		.global	TIM_OC4PreloadConfig
+ 1402              		.syntax unified
+ 1403              		.code	16
+ 1404              		.thumb_func
+ 1405              		.fpu softvfp
+ 1407              	TIM_OC4PreloadConfig:
+ 1408              		@ args = 0, pretend = 0, frame = 0
+ 1409              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1410              		@ link register save eliminated.
+ 1411 0000 838B     		ldrh	r3, [r0, #28]
+ 1412 0002 034A     		ldr	r2, .L124
+ 1413 0004 1340     		ands	r3, r2
+ 1414 0006 0902     		lsls	r1, r1, #8
+ 1415 0008 89B2     		uxth	r1, r1
+ 1416 000a 1943     		orrs	r1, r3
+ 1417 000c 8183     		strh	r1, [r0, #28]
+ 1418              		@ sp needed
+ 1419 000e 7047     		bx	lr
+ 1420              	.L125:
+ 1421              		.align	2
+ 1422              	.L124:
+ 1423 0010 FFF7FFFF 		.word	-2049
+ 1425              		.section	.text.TIM_OC1FastConfig,"ax",%progbits
+ 1426              		.align	1
+ 1427              		.global	TIM_OC1FastConfig
+ 1428              		.syntax unified
+ 1429              		.code	16
+ 1430              		.thumb_func
+ 1431              		.fpu softvfp
+ 1433              	TIM_OC1FastConfig:
+ 1434              		@ args = 0, pretend = 0, frame = 0
+ 1435              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1436              		@ link register save eliminated.
+ 1437 0000 038B     		ldrh	r3, [r0, #24]
+ 1438 0002 0422     		movs	r2, #4
+ 1439 0004 9343     		bics	r3, r2
+ 1440 0006 1943     		orrs	r1, r3
+ 1441 0008 0183     		strh	r1, [r0, #24]
+ 1442              		@ sp needed
+ 1443 000a 7047     		bx	lr
+ 1445              		.section	.text.TIM_OC2FastConfig,"ax",%progbits
+ 1446              		.align	1
+ 1447              		.global	TIM_OC2FastConfig
+ 1448              		.syntax unified
+ 1449              		.code	16
+ 1450              		.thumb_func
+ 1451              		.fpu softvfp
+ 1453              	TIM_OC2FastConfig:
+ARM GAS  /tmp/ccIDOJbZ.s 			page 25
+
+
+ 1454              		@ args = 0, pretend = 0, frame = 0
+ 1455              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1456              		@ link register save eliminated.
+ 1457 0000 038B     		ldrh	r3, [r0, #24]
+ 1458 0002 034A     		ldr	r2, .L128
+ 1459 0004 1340     		ands	r3, r2
+ 1460 0006 0902     		lsls	r1, r1, #8
+ 1461 0008 89B2     		uxth	r1, r1
+ 1462 000a 1943     		orrs	r1, r3
+ 1463 000c 0183     		strh	r1, [r0, #24]
+ 1464              		@ sp needed
+ 1465 000e 7047     		bx	lr
+ 1466              	.L129:
+ 1467              		.align	2
+ 1468              	.L128:
+ 1469 0010 FFFBFFFF 		.word	-1025
+ 1471              		.section	.text.TIM_OC3FastConfig,"ax",%progbits
+ 1472              		.align	1
+ 1473              		.global	TIM_OC3FastConfig
+ 1474              		.syntax unified
+ 1475              		.code	16
+ 1476              		.thumb_func
+ 1477              		.fpu softvfp
+ 1479              	TIM_OC3FastConfig:
+ 1480              		@ args = 0, pretend = 0, frame = 0
+ 1481              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1482              		@ link register save eliminated.
+ 1483 0000 838B     		ldrh	r3, [r0, #28]
+ 1484 0002 0422     		movs	r2, #4
+ 1485 0004 9343     		bics	r3, r2
+ 1486 0006 1943     		orrs	r1, r3
+ 1487 0008 8183     		strh	r1, [r0, #28]
+ 1488              		@ sp needed
+ 1489 000a 7047     		bx	lr
+ 1491              		.section	.text.TIM_OC4FastConfig,"ax",%progbits
+ 1492              		.align	1
+ 1493              		.global	TIM_OC4FastConfig
+ 1494              		.syntax unified
+ 1495              		.code	16
+ 1496              		.thumb_func
+ 1497              		.fpu softvfp
+ 1499              	TIM_OC4FastConfig:
+ 1500              		@ args = 0, pretend = 0, frame = 0
+ 1501              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1502              		@ link register save eliminated.
+ 1503 0000 838B     		ldrh	r3, [r0, #28]
+ 1504 0002 034A     		ldr	r2, .L132
+ 1505 0004 1340     		ands	r3, r2
+ 1506 0006 0902     		lsls	r1, r1, #8
+ 1507 0008 89B2     		uxth	r1, r1
+ 1508 000a 1943     		orrs	r1, r3
+ 1509 000c 8183     		strh	r1, [r0, #28]
+ 1510              		@ sp needed
+ 1511 000e 7047     		bx	lr
+ 1512              	.L133:
+ 1513              		.align	2
+ 1514              	.L132:
+ARM GAS  /tmp/ccIDOJbZ.s 			page 26
+
+
+ 1515 0010 FFFBFFFF 		.word	-1025
+ 1517              		.section	.text.TIM_ClearOC1Ref,"ax",%progbits
+ 1518              		.align	1
+ 1519              		.global	TIM_ClearOC1Ref
+ 1520              		.syntax unified
+ 1521              		.code	16
+ 1522              		.thumb_func
+ 1523              		.fpu softvfp
+ 1525              	TIM_ClearOC1Ref:
+ 1526              		@ args = 0, pretend = 0, frame = 0
+ 1527              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1528              		@ link register save eliminated.
+ 1529 0000 038B     		ldrh	r3, [r0, #24]
+ 1530 0002 8022     		movs	r2, #128
+ 1531 0004 9343     		bics	r3, r2
+ 1532 0006 1943     		orrs	r1, r3
+ 1533 0008 0183     		strh	r1, [r0, #24]
+ 1534              		@ sp needed
+ 1535 000a 7047     		bx	lr
+ 1537              		.section	.text.TIM_ClearOC2Ref,"ax",%progbits
+ 1538              		.align	1
+ 1539              		.global	TIM_ClearOC2Ref
+ 1540              		.syntax unified
+ 1541              		.code	16
+ 1542              		.thumb_func
+ 1543              		.fpu softvfp
+ 1545              	TIM_ClearOC2Ref:
+ 1546              		@ args = 0, pretend = 0, frame = 0
+ 1547              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1548              		@ link register save eliminated.
+ 1549 0000 038B     		ldrh	r3, [r0, #24]
+ 1550 0002 5B04     		lsls	r3, r3, #17
+ 1551 0004 5B0C     		lsrs	r3, r3, #17
+ 1552 0006 0902     		lsls	r1, r1, #8
+ 1553 0008 89B2     		uxth	r1, r1
+ 1554 000a 1943     		orrs	r1, r3
+ 1555 000c 0183     		strh	r1, [r0, #24]
+ 1556              		@ sp needed
+ 1557 000e 7047     		bx	lr
+ 1559              		.section	.text.TIM_ClearOC3Ref,"ax",%progbits
+ 1560              		.align	1
+ 1561              		.global	TIM_ClearOC3Ref
+ 1562              		.syntax unified
+ 1563              		.code	16
+ 1564              		.thumb_func
+ 1565              		.fpu softvfp
+ 1567              	TIM_ClearOC3Ref:
+ 1568              		@ args = 0, pretend = 0, frame = 0
+ 1569              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1570              		@ link register save eliminated.
+ 1571 0000 838B     		ldrh	r3, [r0, #28]
+ 1572 0002 8022     		movs	r2, #128
+ 1573 0004 9343     		bics	r3, r2
+ 1574 0006 1943     		orrs	r1, r3
+ 1575 0008 8183     		strh	r1, [r0, #28]
+ 1576              		@ sp needed
+ 1577 000a 7047     		bx	lr
+ARM GAS  /tmp/ccIDOJbZ.s 			page 27
+
+
+ 1579              		.section	.text.TIM_ClearOC4Ref,"ax",%progbits
+ 1580              		.align	1
+ 1581              		.global	TIM_ClearOC4Ref
+ 1582              		.syntax unified
+ 1583              		.code	16
+ 1584              		.thumb_func
+ 1585              		.fpu softvfp
+ 1587              	TIM_ClearOC4Ref:
+ 1588              		@ args = 0, pretend = 0, frame = 0
+ 1589              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1590              		@ link register save eliminated.
+ 1591 0000 838B     		ldrh	r3, [r0, #28]
+ 1592 0002 5B04     		lsls	r3, r3, #17
+ 1593 0004 5B0C     		lsrs	r3, r3, #17
+ 1594 0006 0902     		lsls	r1, r1, #8
+ 1595 0008 89B2     		uxth	r1, r1
+ 1596 000a 1943     		orrs	r1, r3
+ 1597 000c 8183     		strh	r1, [r0, #28]
+ 1598              		@ sp needed
+ 1599 000e 7047     		bx	lr
+ 1601              		.section	.text.TIM_OC1PolarityConfig,"ax",%progbits
+ 1602              		.align	1
+ 1603              		.global	TIM_OC1PolarityConfig
+ 1604              		.syntax unified
+ 1605              		.code	16
+ 1606              		.thumb_func
+ 1607              		.fpu softvfp
+ 1609              	TIM_OC1PolarityConfig:
+ 1610              		@ args = 0, pretend = 0, frame = 0
+ 1611              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1612              		@ link register save eliminated.
+ 1613 0000 038C     		ldrh	r3, [r0, #32]
+ 1614 0002 0222     		movs	r2, #2
+ 1615 0004 9343     		bics	r3, r2
+ 1616 0006 1943     		orrs	r1, r3
+ 1617 0008 0184     		strh	r1, [r0, #32]
+ 1618              		@ sp needed
+ 1619 000a 7047     		bx	lr
+ 1621              		.section	.text.TIM_OC1NPolarityConfig,"ax",%progbits
+ 1622              		.align	1
+ 1623              		.global	TIM_OC1NPolarityConfig
+ 1624              		.syntax unified
+ 1625              		.code	16
+ 1626              		.thumb_func
+ 1627              		.fpu softvfp
+ 1629              	TIM_OC1NPolarityConfig:
+ 1630              		@ args = 0, pretend = 0, frame = 0
+ 1631              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1632              		@ link register save eliminated.
+ 1633 0000 038C     		ldrh	r3, [r0, #32]
+ 1634 0002 0822     		movs	r2, #8
+ 1635 0004 9343     		bics	r3, r2
+ 1636 0006 1943     		orrs	r1, r3
+ 1637 0008 0184     		strh	r1, [r0, #32]
+ 1638              		@ sp needed
+ 1639 000a 7047     		bx	lr
+ 1641              		.section	.text.TIM_OC2PolarityConfig,"ax",%progbits
+ARM GAS  /tmp/ccIDOJbZ.s 			page 28
+
+
+ 1642              		.align	1
+ 1643              		.global	TIM_OC2PolarityConfig
+ 1644              		.syntax unified
+ 1645              		.code	16
+ 1646              		.thumb_func
+ 1647              		.fpu softvfp
+ 1649              	TIM_OC2PolarityConfig:
+ 1650              		@ args = 0, pretend = 0, frame = 0
+ 1651              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1652              		@ link register save eliminated.
+ 1653 0000 038C     		ldrh	r3, [r0, #32]
+ 1654 0002 2022     		movs	r2, #32
+ 1655 0004 9343     		bics	r3, r2
+ 1656 0006 0901     		lsls	r1, r1, #4
+ 1657 0008 89B2     		uxth	r1, r1
+ 1658 000a 1943     		orrs	r1, r3
+ 1659 000c 0184     		strh	r1, [r0, #32]
+ 1660              		@ sp needed
+ 1661 000e 7047     		bx	lr
+ 1663              		.section	.text.TIM_OC2NPolarityConfig,"ax",%progbits
+ 1664              		.align	1
+ 1665              		.global	TIM_OC2NPolarityConfig
+ 1666              		.syntax unified
+ 1667              		.code	16
+ 1668              		.thumb_func
+ 1669              		.fpu softvfp
+ 1671              	TIM_OC2NPolarityConfig:
+ 1672              		@ args = 0, pretend = 0, frame = 0
+ 1673              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1674              		@ link register save eliminated.
+ 1675 0000 038C     		ldrh	r3, [r0, #32]
+ 1676 0002 8022     		movs	r2, #128
+ 1677 0004 9343     		bics	r3, r2
+ 1678 0006 0901     		lsls	r1, r1, #4
+ 1679 0008 89B2     		uxth	r1, r1
+ 1680 000a 1943     		orrs	r1, r3
+ 1681 000c 0184     		strh	r1, [r0, #32]
+ 1682              		@ sp needed
+ 1683 000e 7047     		bx	lr
+ 1685              		.section	.text.TIM_OC3PolarityConfig,"ax",%progbits
+ 1686              		.align	1
+ 1687              		.global	TIM_OC3PolarityConfig
+ 1688              		.syntax unified
+ 1689              		.code	16
+ 1690              		.thumb_func
+ 1691              		.fpu softvfp
+ 1693              	TIM_OC3PolarityConfig:
+ 1694              		@ args = 0, pretend = 0, frame = 0
+ 1695              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1696              		@ link register save eliminated.
+ 1697 0000 038C     		ldrh	r3, [r0, #32]
+ 1698 0002 034A     		ldr	r2, .L143
+ 1699 0004 1340     		ands	r3, r2
+ 1700 0006 0902     		lsls	r1, r1, #8
+ 1701 0008 89B2     		uxth	r1, r1
+ 1702 000a 1943     		orrs	r1, r3
+ 1703 000c 0184     		strh	r1, [r0, #32]
+ARM GAS  /tmp/ccIDOJbZ.s 			page 29
+
+
+ 1704              		@ sp needed
+ 1705 000e 7047     		bx	lr
+ 1706              	.L144:
+ 1707              		.align	2
+ 1708              	.L143:
+ 1709 0010 FFFDFFFF 		.word	-513
+ 1711              		.section	.text.TIM_OC3NPolarityConfig,"ax",%progbits
+ 1712              		.align	1
+ 1713              		.global	TIM_OC3NPolarityConfig
+ 1714              		.syntax unified
+ 1715              		.code	16
+ 1716              		.thumb_func
+ 1717              		.fpu softvfp
+ 1719              	TIM_OC3NPolarityConfig:
+ 1720              		@ args = 0, pretend = 0, frame = 0
+ 1721              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1722              		@ link register save eliminated.
+ 1723 0000 038C     		ldrh	r3, [r0, #32]
+ 1724 0002 034A     		ldr	r2, .L146
+ 1725 0004 1340     		ands	r3, r2
+ 1726 0006 0902     		lsls	r1, r1, #8
+ 1727 0008 89B2     		uxth	r1, r1
+ 1728 000a 1943     		orrs	r1, r3
+ 1729 000c 0184     		strh	r1, [r0, #32]
+ 1730              		@ sp needed
+ 1731 000e 7047     		bx	lr
+ 1732              	.L147:
+ 1733              		.align	2
+ 1734              	.L146:
+ 1735 0010 FFF7FFFF 		.word	-2049
+ 1737              		.section	.text.TIM_OC4PolarityConfig,"ax",%progbits
+ 1738              		.align	1
+ 1739              		.global	TIM_OC4PolarityConfig
+ 1740              		.syntax unified
+ 1741              		.code	16
+ 1742              		.thumb_func
+ 1743              		.fpu softvfp
+ 1745              	TIM_OC4PolarityConfig:
+ 1746              		@ args = 0, pretend = 0, frame = 0
+ 1747              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1748              		@ link register save eliminated.
+ 1749 0000 038C     		ldrh	r3, [r0, #32]
+ 1750 0002 034A     		ldr	r2, .L149
+ 1751 0004 1340     		ands	r3, r2
+ 1752 0006 0903     		lsls	r1, r1, #12
+ 1753 0008 89B2     		uxth	r1, r1
+ 1754 000a 1943     		orrs	r1, r3
+ 1755 000c 0184     		strh	r1, [r0, #32]
+ 1756              		@ sp needed
+ 1757 000e 7047     		bx	lr
+ 1758              	.L150:
+ 1759              		.align	2
+ 1760              	.L149:
+ 1761 0010 FFDFFFFF 		.word	-8193
+ 1763              		.section	.text.TIM_SelectOCREFClear,"ax",%progbits
+ 1764              		.align	1
+ 1765              		.global	TIM_SelectOCREFClear
+ARM GAS  /tmp/ccIDOJbZ.s 			page 30
+
+
+ 1766              		.syntax unified
+ 1767              		.code	16
+ 1768              		.thumb_func
+ 1769              		.fpu softvfp
+ 1771              	TIM_SelectOCREFClear:
+ 1772              		@ args = 0, pretend = 0, frame = 0
+ 1773              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1774              		@ link register save eliminated.
+ 1775 0000 0389     		ldrh	r3, [r0, #8]
+ 1776 0002 0822     		movs	r2, #8
+ 1777 0004 9343     		bics	r3, r2
+ 1778 0006 0381     		strh	r3, [r0, #8]
+ 1779 0008 0389     		ldrh	r3, [r0, #8]
+ 1780 000a 1943     		orrs	r1, r3
+ 1781 000c 0181     		strh	r1, [r0, #8]
+ 1782              		@ sp needed
+ 1783 000e 7047     		bx	lr
+ 1785              		.section	.text.TIM_CCxCmd,"ax",%progbits
+ 1786              		.align	1
+ 1787              		.global	TIM_CCxCmd
+ 1788              		.syntax unified
+ 1789              		.code	16
+ 1790              		.thumb_func
+ 1791              		.fpu softvfp
+ 1793              	TIM_CCxCmd:
+ 1794              		@ args = 0, pretend = 0, frame = 0
+ 1795              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1796 0000 10B5     		push	{r4, lr}
+ 1797 0002 0123     		movs	r3, #1
+ 1798 0004 8B40     		lsls	r3, r3, r1
+ 1799 0006 9BB2     		uxth	r3, r3
+ 1800 0008 048C     		ldrh	r4, [r0, #32]
+ 1801 000a 9C43     		bics	r4, r3
+ 1802 000c 0484     		strh	r4, [r0, #32]
+ 1803 000e 038C     		ldrh	r3, [r0, #32]
+ 1804 0010 8A40     		lsls	r2, r2, r1
+ 1805 0012 92B2     		uxth	r2, r2
+ 1806 0014 1A43     		orrs	r2, r3
+ 1807 0016 0284     		strh	r2, [r0, #32]
+ 1808              		@ sp needed
+ 1809 0018 10BD     		pop	{r4, pc}
+ 1811              		.section	.text.TIM_CCxNCmd,"ax",%progbits
+ 1812              		.align	1
+ 1813              		.global	TIM_CCxNCmd
+ 1814              		.syntax unified
+ 1815              		.code	16
+ 1816              		.thumb_func
+ 1817              		.fpu softvfp
+ 1819              	TIM_CCxNCmd:
+ 1820              		@ args = 0, pretend = 0, frame = 0
+ 1821              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1822 0000 10B5     		push	{r4, lr}
+ 1823 0002 0423     		movs	r3, #4
+ 1824 0004 8B40     		lsls	r3, r3, r1
+ 1825 0006 9BB2     		uxth	r3, r3
+ 1826 0008 048C     		ldrh	r4, [r0, #32]
+ 1827 000a 9C43     		bics	r4, r3
+ARM GAS  /tmp/ccIDOJbZ.s 			page 31
+
+
+ 1828 000c 0484     		strh	r4, [r0, #32]
+ 1829 000e 038C     		ldrh	r3, [r0, #32]
+ 1830 0010 8A40     		lsls	r2, r2, r1
+ 1831 0012 92B2     		uxth	r2, r2
+ 1832 0014 1A43     		orrs	r2, r3
+ 1833 0016 0284     		strh	r2, [r0, #32]
+ 1834              		@ sp needed
+ 1835 0018 10BD     		pop	{r4, pc}
+ 1837              		.section	.text.TIM_SelectCOM,"ax",%progbits
+ 1838              		.align	1
+ 1839              		.global	TIM_SelectCOM
+ 1840              		.syntax unified
+ 1841              		.code	16
+ 1842              		.thumb_func
+ 1843              		.fpu softvfp
+ 1845              	TIM_SelectCOM:
+ 1846              		@ args = 0, pretend = 0, frame = 0
+ 1847              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1848              		@ link register save eliminated.
+ 1849 0000 0029     		cmp	r1, #0
+ 1850 0002 04D1     		bne	.L157
+ 1851 0004 8388     		ldrh	r3, [r0, #4]
+ 1852 0006 0422     		movs	r2, #4
+ 1853 0008 9343     		bics	r3, r2
+ 1854 000a 8380     		strh	r3, [r0, #4]
+ 1855              	.L154:
+ 1856              		@ sp needed
+ 1857 000c 7047     		bx	lr
+ 1858              	.L157:
+ 1859 000e 8388     		ldrh	r3, [r0, #4]
+ 1860 0010 0422     		movs	r2, #4
+ 1861 0012 1343     		orrs	r3, r2
+ 1862 0014 8380     		strh	r3, [r0, #4]
+ 1863 0016 F9E7     		b	.L154
+ 1865              		.section	.text.TIM_ICStructInit,"ax",%progbits
+ 1866              		.align	1
+ 1867              		.global	TIM_ICStructInit
+ 1868              		.syntax unified
+ 1869              		.code	16
+ 1870              		.thumb_func
+ 1871              		.fpu softvfp
+ 1873              	TIM_ICStructInit:
+ 1874              		@ args = 0, pretend = 0, frame = 0
+ 1875              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1876              		@ link register save eliminated.
+ 1877 0000 0023     		movs	r3, #0
+ 1878 0002 0380     		strh	r3, [r0]
+ 1879 0004 4380     		strh	r3, [r0, #2]
+ 1880 0006 0122     		movs	r2, #1
+ 1881 0008 8280     		strh	r2, [r0, #4]
+ 1882 000a C380     		strh	r3, [r0, #6]
+ 1883 000c 0381     		strh	r3, [r0, #8]
+ 1884              		@ sp needed
+ 1885 000e 7047     		bx	lr
+ 1887              		.section	.text.TIM_GetCapture1,"ax",%progbits
+ 1888              		.align	1
+ 1889              		.global	TIM_GetCapture1
+ARM GAS  /tmp/ccIDOJbZ.s 			page 32
+
+
+ 1890              		.syntax unified
+ 1891              		.code	16
+ 1892              		.thumb_func
+ 1893              		.fpu softvfp
+ 1895              	TIM_GetCapture1:
+ 1896              		@ args = 0, pretend = 0, frame = 0
+ 1897              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1898              		@ link register save eliminated.
+ 1899 0000 406B     		ldr	r0, [r0, #52]
+ 1900              		@ sp needed
+ 1901 0002 7047     		bx	lr
+ 1903              		.section	.text.TIM_GetCapture2,"ax",%progbits
+ 1904              		.align	1
+ 1905              		.global	TIM_GetCapture2
+ 1906              		.syntax unified
+ 1907              		.code	16
+ 1908              		.thumb_func
+ 1909              		.fpu softvfp
+ 1911              	TIM_GetCapture2:
+ 1912              		@ args = 0, pretend = 0, frame = 0
+ 1913              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1914              		@ link register save eliminated.
+ 1915 0000 806B     		ldr	r0, [r0, #56]
+ 1916              		@ sp needed
+ 1917 0002 7047     		bx	lr
+ 1919              		.section	.text.TIM_GetCapture3,"ax",%progbits
+ 1920              		.align	1
+ 1921              		.global	TIM_GetCapture3
+ 1922              		.syntax unified
+ 1923              		.code	16
+ 1924              		.thumb_func
+ 1925              		.fpu softvfp
+ 1927              	TIM_GetCapture3:
+ 1928              		@ args = 0, pretend = 0, frame = 0
+ 1929              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1930              		@ link register save eliminated.
+ 1931 0000 C06B     		ldr	r0, [r0, #60]
+ 1932              		@ sp needed
+ 1933 0002 7047     		bx	lr
+ 1935              		.section	.text.TIM_GetCapture4,"ax",%progbits
+ 1936              		.align	1
+ 1937              		.global	TIM_GetCapture4
+ 1938              		.syntax unified
+ 1939              		.code	16
+ 1940              		.thumb_func
+ 1941              		.fpu softvfp
+ 1943              	TIM_GetCapture4:
+ 1944              		@ args = 0, pretend = 0, frame = 0
+ 1945              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1946              		@ link register save eliminated.
+ 1947 0000 006C     		ldr	r0, [r0, #64]
+ 1948              		@ sp needed
+ 1949 0002 7047     		bx	lr
+ 1951              		.section	.text.TIM_SetIC1Prescaler,"ax",%progbits
+ 1952              		.align	1
+ 1953              		.global	TIM_SetIC1Prescaler
+ 1954              		.syntax unified
+ARM GAS  /tmp/ccIDOJbZ.s 			page 33
+
+
+ 1955              		.code	16
+ 1956              		.thumb_func
+ 1957              		.fpu softvfp
+ 1959              	TIM_SetIC1Prescaler:
+ 1960              		@ args = 0, pretend = 0, frame = 0
+ 1961              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1962              		@ link register save eliminated.
+ 1963 0000 038B     		ldrh	r3, [r0, #24]
+ 1964 0002 0C22     		movs	r2, #12
+ 1965 0004 9343     		bics	r3, r2
+ 1966 0006 0383     		strh	r3, [r0, #24]
+ 1967 0008 038B     		ldrh	r3, [r0, #24]
+ 1968 000a 1943     		orrs	r1, r3
+ 1969 000c 0183     		strh	r1, [r0, #24]
+ 1970              		@ sp needed
+ 1971 000e 7047     		bx	lr
+ 1973              		.section	.text.TIM_SetIC2Prescaler,"ax",%progbits
+ 1974              		.align	1
+ 1975              		.global	TIM_SetIC2Prescaler
+ 1976              		.syntax unified
+ 1977              		.code	16
+ 1978              		.thumb_func
+ 1979              		.fpu softvfp
+ 1981              	TIM_SetIC2Prescaler:
+ 1982              		@ args = 0, pretend = 0, frame = 0
+ 1983              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1984              		@ link register save eliminated.
+ 1985 0000 038B     		ldrh	r3, [r0, #24]
+ 1986 0002 044A     		ldr	r2, .L165
+ 1987 0004 1340     		ands	r3, r2
+ 1988 0006 0383     		strh	r3, [r0, #24]
+ 1989 0008 038B     		ldrh	r3, [r0, #24]
+ 1990 000a 0902     		lsls	r1, r1, #8
+ 1991 000c 89B2     		uxth	r1, r1
+ 1992 000e 1943     		orrs	r1, r3
+ 1993 0010 0183     		strh	r1, [r0, #24]
+ 1994              		@ sp needed
+ 1995 0012 7047     		bx	lr
+ 1996              	.L166:
+ 1997              		.align	2
+ 1998              	.L165:
+ 1999 0014 FFF3FFFF 		.word	-3073
+ 2001              		.section	.text.TIM_PWMIConfig,"ax",%progbits
+ 2002              		.align	1
+ 2003              		.global	TIM_PWMIConfig
+ 2004              		.syntax unified
+ 2005              		.code	16
+ 2006              		.thumb_func
+ 2007              		.fpu softvfp
+ 2009              	TIM_PWMIConfig:
+ 2010              		@ args = 0, pretend = 0, frame = 0
+ 2011              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2012 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 2013 0002 0500     		movs	r5, r0
+ 2014 0004 0C00     		movs	r4, r1
+ 2015 0006 4988     		ldrh	r1, [r1, #2]
+ 2016 0008 0029     		cmp	r1, #0
+ARM GAS  /tmp/ccIDOJbZ.s 			page 34
+
+
+ 2017 000a 1AD1     		bne	.L172
+ 2018 000c 0226     		movs	r6, #2
+ 2019              	.L168:
+ 2020 000e A288     		ldrh	r2, [r4, #4]
+ 2021 0010 012A     		cmp	r2, #1
+ 2022 0012 18D0     		beq	.L174
+ 2023 0014 0127     		movs	r7, #1
+ 2024              	.L169:
+ 2025 0016 2388     		ldrh	r3, [r4]
+ 2026 0018 002B     		cmp	r3, #0
+ 2027 001a 16D0     		beq	.L175
+ 2028 001c 2389     		ldrh	r3, [r4, #8]
+ 2029 001e 2800     		movs	r0, r5
+ 2030 0020 FFF7FEFF 		bl	TI2_Config
+ 2031 0024 E188     		ldrh	r1, [r4, #6]
+ 2032 0026 2800     		movs	r0, r5
+ 2033 0028 FFF7FEFF 		bl	TIM_SetIC2Prescaler
+ 2034 002c 2389     		ldrh	r3, [r4, #8]
+ 2035 002e 3A00     		movs	r2, r7
+ 2036 0030 3100     		movs	r1, r6
+ 2037 0032 2800     		movs	r0, r5
+ 2038 0034 FFF7FEFF 		bl	TI1_Config
+ 2039 0038 E188     		ldrh	r1, [r4, #6]
+ 2040 003a 2800     		movs	r0, r5
+ 2041 003c FFF7FEFF 		bl	TIM_SetIC1Prescaler
+ 2042              	.L167:
+ 2043              		@ sp needed
+ 2044 0040 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 2045              	.L172:
+ 2046 0042 0026     		movs	r6, #0
+ 2047 0044 E3E7     		b	.L168
+ 2048              	.L174:
+ 2049 0046 0227     		movs	r7, #2
+ 2050 0048 E5E7     		b	.L169
+ 2051              	.L175:
+ 2052 004a 2389     		ldrh	r3, [r4, #8]
+ 2053 004c 2800     		movs	r0, r5
+ 2054 004e FFF7FEFF 		bl	TI1_Config
+ 2055 0052 E188     		ldrh	r1, [r4, #6]
+ 2056 0054 2800     		movs	r0, r5
+ 2057 0056 FFF7FEFF 		bl	TIM_SetIC1Prescaler
+ 2058 005a 2389     		ldrh	r3, [r4, #8]
+ 2059 005c 3A00     		movs	r2, r7
+ 2060 005e 3100     		movs	r1, r6
+ 2061 0060 2800     		movs	r0, r5
+ 2062 0062 FFF7FEFF 		bl	TI2_Config
+ 2063 0066 E188     		ldrh	r1, [r4, #6]
+ 2064 0068 2800     		movs	r0, r5
+ 2065 006a FFF7FEFF 		bl	TIM_SetIC2Prescaler
+ 2066 006e E7E7     		b	.L167
+ 2068              		.section	.text.TIM_SetIC3Prescaler,"ax",%progbits
+ 2069              		.align	1
+ 2070              		.global	TIM_SetIC3Prescaler
+ 2071              		.syntax unified
+ 2072              		.code	16
+ 2073              		.thumb_func
+ 2074              		.fpu softvfp
+ARM GAS  /tmp/ccIDOJbZ.s 			page 35
+
+
+ 2076              	TIM_SetIC3Prescaler:
+ 2077              		@ args = 0, pretend = 0, frame = 0
+ 2078              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2079              		@ link register save eliminated.
+ 2080 0000 838B     		ldrh	r3, [r0, #28]
+ 2081 0002 0C22     		movs	r2, #12
+ 2082 0004 9343     		bics	r3, r2
+ 2083 0006 8383     		strh	r3, [r0, #28]
+ 2084 0008 838B     		ldrh	r3, [r0, #28]
+ 2085 000a 1943     		orrs	r1, r3
+ 2086 000c 8183     		strh	r1, [r0, #28]
+ 2087              		@ sp needed
+ 2088 000e 7047     		bx	lr
+ 2090              		.section	.text.TIM_SetIC4Prescaler,"ax",%progbits
+ 2091              		.align	1
+ 2092              		.global	TIM_SetIC4Prescaler
+ 2093              		.syntax unified
+ 2094              		.code	16
+ 2095              		.thumb_func
+ 2096              		.fpu softvfp
+ 2098              	TIM_SetIC4Prescaler:
+ 2099              		@ args = 0, pretend = 0, frame = 0
+ 2100              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2101              		@ link register save eliminated.
+ 2102 0000 838B     		ldrh	r3, [r0, #28]
+ 2103 0002 044A     		ldr	r2, .L178
+ 2104 0004 1340     		ands	r3, r2
+ 2105 0006 8383     		strh	r3, [r0, #28]
+ 2106 0008 838B     		ldrh	r3, [r0, #28]
+ 2107 000a 0902     		lsls	r1, r1, #8
+ 2108 000c 89B2     		uxth	r1, r1
+ 2109 000e 1943     		orrs	r1, r3
+ 2110 0010 8183     		strh	r1, [r0, #28]
+ 2111              		@ sp needed
+ 2112 0012 7047     		bx	lr
+ 2113              	.L179:
+ 2114              		.align	2
+ 2115              	.L178:
+ 2116 0014 FFF3FFFF 		.word	-3073
+ 2118              		.section	.text.TIM_ICInit,"ax",%progbits
+ 2119              		.align	1
+ 2120              		.global	TIM_ICInit
+ 2121              		.syntax unified
+ 2122              		.code	16
+ 2123              		.thumb_func
+ 2124              		.fpu softvfp
+ 2126              	TIM_ICInit:
+ 2127              		@ args = 0, pretend = 0, frame = 0
+ 2128              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2129 0000 70B5     		push	{r4, r5, r6, lr}
+ 2130 0002 0500     		movs	r5, r0
+ 2131 0004 0C00     		movs	r4, r1
+ 2132 0006 0B88     		ldrh	r3, [r1]
+ 2133 0008 002B     		cmp	r3, #0
+ 2134 000a 0DD0     		beq	.L185
+ 2135 000c 042B     		cmp	r3, #4
+ 2136 000e 15D0     		beq	.L186
+ARM GAS  /tmp/ccIDOJbZ.s 			page 36
+
+
+ 2137 0010 082B     		cmp	r3, #8
+ 2138 0012 1DD0     		beq	.L187
+ 2139 0014 0B89     		ldrh	r3, [r1, #8]
+ 2140 0016 8A88     		ldrh	r2, [r1, #4]
+ 2141 0018 4988     		ldrh	r1, [r1, #2]
+ 2142 001a FFF7FEFF 		bl	TI4_Config
+ 2143 001e E188     		ldrh	r1, [r4, #6]
+ 2144 0020 2800     		movs	r0, r5
+ 2145 0022 FFF7FEFF 		bl	TIM_SetIC4Prescaler
+ 2146              	.L180:
+ 2147              		@ sp needed
+ 2148 0026 70BD     		pop	{r4, r5, r6, pc}
+ 2149              	.L185:
+ 2150 0028 0B89     		ldrh	r3, [r1, #8]
+ 2151 002a 8A88     		ldrh	r2, [r1, #4]
+ 2152 002c 4988     		ldrh	r1, [r1, #2]
+ 2153 002e FFF7FEFF 		bl	TI1_Config
+ 2154 0032 E188     		ldrh	r1, [r4, #6]
+ 2155 0034 2800     		movs	r0, r5
+ 2156 0036 FFF7FEFF 		bl	TIM_SetIC1Prescaler
+ 2157 003a F4E7     		b	.L180
+ 2158              	.L186:
+ 2159 003c 0B89     		ldrh	r3, [r1, #8]
+ 2160 003e 8A88     		ldrh	r2, [r1, #4]
+ 2161 0040 4988     		ldrh	r1, [r1, #2]
+ 2162 0042 FFF7FEFF 		bl	TI2_Config
+ 2163 0046 E188     		ldrh	r1, [r4, #6]
+ 2164 0048 2800     		movs	r0, r5
+ 2165 004a FFF7FEFF 		bl	TIM_SetIC2Prescaler
+ 2166 004e EAE7     		b	.L180
+ 2167              	.L187:
+ 2168 0050 0B89     		ldrh	r3, [r1, #8]
+ 2169 0052 8A88     		ldrh	r2, [r1, #4]
+ 2170 0054 4988     		ldrh	r1, [r1, #2]
+ 2171 0056 FFF7FEFF 		bl	TI3_Config
+ 2172 005a E188     		ldrh	r1, [r4, #6]
+ 2173 005c 2800     		movs	r0, r5
+ 2174 005e FFF7FEFF 		bl	TIM_SetIC3Prescaler
+ 2175 0062 E0E7     		b	.L180
+ 2177              		.section	.text.TIM_ITConfig,"ax",%progbits
+ 2178              		.align	1
+ 2179              		.global	TIM_ITConfig
+ 2180              		.syntax unified
+ 2181              		.code	16
+ 2182              		.thumb_func
+ 2183              		.fpu softvfp
+ 2185              	TIM_ITConfig:
+ 2186              		@ args = 0, pretend = 0, frame = 0
+ 2187              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2188              		@ link register save eliminated.
+ 2189 0000 002A     		cmp	r2, #0
+ 2190 0002 03D1     		bne	.L191
+ 2191 0004 8389     		ldrh	r3, [r0, #12]
+ 2192 0006 8B43     		bics	r3, r1
+ 2193 0008 8381     		strh	r3, [r0, #12]
+ 2194              	.L188:
+ 2195              		@ sp needed
+ARM GAS  /tmp/ccIDOJbZ.s 			page 37
+
+
+ 2196 000a 7047     		bx	lr
+ 2197              	.L191:
+ 2198 000c 8389     		ldrh	r3, [r0, #12]
+ 2199 000e 1943     		orrs	r1, r3
+ 2200 0010 8181     		strh	r1, [r0, #12]
+ 2201 0012 FAE7     		b	.L188
+ 2203              		.section	.text.TIM_GenerateEvent,"ax",%progbits
+ 2204              		.align	1
+ 2205              		.global	TIM_GenerateEvent
+ 2206              		.syntax unified
+ 2207              		.code	16
+ 2208              		.thumb_func
+ 2209              		.fpu softvfp
+ 2211              	TIM_GenerateEvent:
+ 2212              		@ args = 0, pretend = 0, frame = 0
+ 2213              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2214              		@ link register save eliminated.
+ 2215 0000 8182     		strh	r1, [r0, #20]
+ 2216              		@ sp needed
+ 2217 0002 7047     		bx	lr
+ 2219              		.section	.text.TIM_GetFlagStatus,"ax",%progbits
+ 2220              		.align	1
+ 2221              		.global	TIM_GetFlagStatus
+ 2222              		.syntax unified
+ 2223              		.code	16
+ 2224              		.thumb_func
+ 2225              		.fpu softvfp
+ 2227              	TIM_GetFlagStatus:
+ 2228              		@ args = 0, pretend = 0, frame = 0
+ 2229              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2230              		@ link register save eliminated.
+ 2231 0000 038A     		ldrh	r3, [r0, #16]
+ 2232 0002 0B42     		tst	r3, r1
+ 2233 0004 01D1     		bne	.L196
+ 2234 0006 0020     		movs	r0, #0
+ 2235              	.L194:
+ 2236              		@ sp needed
+ 2237 0008 7047     		bx	lr
+ 2238              	.L196:
+ 2239 000a 0120     		movs	r0, #1
+ 2240 000c FCE7     		b	.L194
+ 2242              		.section	.text.TIM_ClearFlag,"ax",%progbits
+ 2243              		.align	1
+ 2244              		.global	TIM_ClearFlag
+ 2245              		.syntax unified
+ 2246              		.code	16
+ 2247              		.thumb_func
+ 2248              		.fpu softvfp
+ 2250              	TIM_ClearFlag:
+ 2251              		@ args = 0, pretend = 0, frame = 0
+ 2252              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2253              		@ link register save eliminated.
+ 2254 0000 C943     		mvns	r1, r1
+ 2255 0002 89B2     		uxth	r1, r1
+ 2256 0004 0182     		strh	r1, [r0, #16]
+ 2257              		@ sp needed
+ 2258 0006 7047     		bx	lr
+ARM GAS  /tmp/ccIDOJbZ.s 			page 38
+
+
+ 2260              		.section	.text.TIM_GetITStatus,"ax",%progbits
+ 2261              		.align	1
+ 2262              		.global	TIM_GetITStatus
+ 2263              		.syntax unified
+ 2264              		.code	16
+ 2265              		.thumb_func
+ 2266              		.fpu softvfp
+ 2268              	TIM_GetITStatus:
+ 2269              		@ args = 0, pretend = 0, frame = 0
+ 2270              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2271              		@ link register save eliminated.
+ 2272 0000 028A     		ldrh	r2, [r0, #16]
+ 2273 0002 8389     		ldrh	r3, [r0, #12]
+ 2274 0004 0B40     		ands	r3, r1
+ 2275 0006 0A42     		tst	r2, r1
+ 2276 0008 03D0     		beq	.L200
+ 2277 000a 002B     		cmp	r3, #0
+ 2278 000c 03D1     		bne	.L201
+ 2279 000e 0020     		movs	r0, #0
+ 2280 0010 00E0     		b	.L199
+ 2281              	.L200:
+ 2282 0012 0020     		movs	r0, #0
+ 2283              	.L199:
+ 2284              		@ sp needed
+ 2285 0014 7047     		bx	lr
+ 2286              	.L201:
+ 2287 0016 0120     		movs	r0, #1
+ 2288 0018 FCE7     		b	.L199
+ 2290              		.section	.text.TIM_ClearITPendingBit,"ax",%progbits
+ 2291              		.align	1
+ 2292              		.global	TIM_ClearITPendingBit
+ 2293              		.syntax unified
+ 2294              		.code	16
+ 2295              		.thumb_func
+ 2296              		.fpu softvfp
+ 2298              	TIM_ClearITPendingBit:
+ 2299              		@ args = 0, pretend = 0, frame = 0
+ 2300              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2301              		@ link register save eliminated.
+ 2302 0000 C943     		mvns	r1, r1
+ 2303 0002 89B2     		uxth	r1, r1
+ 2304 0004 0182     		strh	r1, [r0, #16]
+ 2305              		@ sp needed
+ 2306 0006 7047     		bx	lr
+ 2308              		.section	.text.TIM_DMAConfig,"ax",%progbits
+ 2309              		.align	1
+ 2310              		.global	TIM_DMAConfig
+ 2311              		.syntax unified
+ 2312              		.code	16
+ 2313              		.thumb_func
+ 2314              		.fpu softvfp
+ 2316              	TIM_DMAConfig:
+ 2317              		@ args = 0, pretend = 0, frame = 0
+ 2318              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2319              		@ link register save eliminated.
+ 2320 0000 1143     		orrs	r1, r2
+ 2321 0002 4823     		movs	r3, #72
+ARM GAS  /tmp/ccIDOJbZ.s 			page 39
+
+
+ 2322 0004 C152     		strh	r1, [r0, r3]
+ 2323              		@ sp needed
+ 2324 0006 7047     		bx	lr
+ 2326              		.section	.text.TIM_DMACmd,"ax",%progbits
+ 2327              		.align	1
+ 2328              		.global	TIM_DMACmd
+ 2329              		.syntax unified
+ 2330              		.code	16
+ 2331              		.thumb_func
+ 2332              		.fpu softvfp
+ 2334              	TIM_DMACmd:
+ 2335              		@ args = 0, pretend = 0, frame = 0
+ 2336              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2337              		@ link register save eliminated.
+ 2338 0000 002A     		cmp	r2, #0
+ 2339 0002 03D1     		bne	.L207
+ 2340 0004 8389     		ldrh	r3, [r0, #12]
+ 2341 0006 8B43     		bics	r3, r1
+ 2342 0008 8381     		strh	r3, [r0, #12]
+ 2343              	.L204:
+ 2344              		@ sp needed
+ 2345 000a 7047     		bx	lr
+ 2346              	.L207:
+ 2347 000c 8389     		ldrh	r3, [r0, #12]
+ 2348 000e 1943     		orrs	r1, r3
+ 2349 0010 8181     		strh	r1, [r0, #12]
+ 2350 0012 FAE7     		b	.L204
+ 2352              		.section	.text.TIM_SelectCCDMA,"ax",%progbits
+ 2353              		.align	1
+ 2354              		.global	TIM_SelectCCDMA
+ 2355              		.syntax unified
+ 2356              		.code	16
+ 2357              		.thumb_func
+ 2358              		.fpu softvfp
+ 2360              	TIM_SelectCCDMA:
+ 2361              		@ args = 0, pretend = 0, frame = 0
+ 2362              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2363              		@ link register save eliminated.
+ 2364 0000 0029     		cmp	r1, #0
+ 2365 0002 04D1     		bne	.L211
+ 2366 0004 8388     		ldrh	r3, [r0, #4]
+ 2367 0006 0822     		movs	r2, #8
+ 2368 0008 9343     		bics	r3, r2
+ 2369 000a 8380     		strh	r3, [r0, #4]
+ 2370              	.L208:
+ 2371              		@ sp needed
+ 2372 000c 7047     		bx	lr
+ 2373              	.L211:
+ 2374 000e 8388     		ldrh	r3, [r0, #4]
+ 2375 0010 0822     		movs	r2, #8
+ 2376 0012 1343     		orrs	r3, r2
+ 2377 0014 8380     		strh	r3, [r0, #4]
+ 2378 0016 F9E7     		b	.L208
+ 2380              		.section	.text.TIM_InternalClockConfig,"ax",%progbits
+ 2381              		.align	1
+ 2382              		.global	TIM_InternalClockConfig
+ 2383              		.syntax unified
+ARM GAS  /tmp/ccIDOJbZ.s 			page 40
+
+
+ 2384              		.code	16
+ 2385              		.thumb_func
+ 2386              		.fpu softvfp
+ 2388              	TIM_InternalClockConfig:
+ 2389              		@ args = 0, pretend = 0, frame = 0
+ 2390              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2391              		@ link register save eliminated.
+ 2392 0000 0389     		ldrh	r3, [r0, #8]
+ 2393 0002 0722     		movs	r2, #7
+ 2394 0004 9343     		bics	r3, r2
+ 2395 0006 0381     		strh	r3, [r0, #8]
+ 2396              		@ sp needed
+ 2397 0008 7047     		bx	lr
+ 2399              		.section	.text.TIM_SelectInputTrigger,"ax",%progbits
+ 2400              		.align	1
+ 2401              		.global	TIM_SelectInputTrigger
+ 2402              		.syntax unified
+ 2403              		.code	16
+ 2404              		.thumb_func
+ 2405              		.fpu softvfp
+ 2407              	TIM_SelectInputTrigger:
+ 2408              		@ args = 0, pretend = 0, frame = 0
+ 2409              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2410              		@ link register save eliminated.
+ 2411 0000 0389     		ldrh	r3, [r0, #8]
+ 2412 0002 7022     		movs	r2, #112
+ 2413 0004 9343     		bics	r3, r2
+ 2414 0006 1943     		orrs	r1, r3
+ 2415 0008 0181     		strh	r1, [r0, #8]
+ 2416              		@ sp needed
+ 2417 000a 7047     		bx	lr
+ 2419              		.section	.text.TIM_ITRxExternalClockConfig,"ax",%progbits
+ 2420              		.align	1
+ 2421              		.global	TIM_ITRxExternalClockConfig
+ 2422              		.syntax unified
+ 2423              		.code	16
+ 2424              		.thumb_func
+ 2425              		.fpu softvfp
+ 2427              	TIM_ITRxExternalClockConfig:
+ 2428              		@ args = 0, pretend = 0, frame = 0
+ 2429              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2430 0000 10B5     		push	{r4, lr}
+ 2431 0002 0400     		movs	r4, r0
+ 2432 0004 FFF7FEFF 		bl	TIM_SelectInputTrigger
+ 2433 0008 2389     		ldrh	r3, [r4, #8]
+ 2434 000a 0722     		movs	r2, #7
+ 2435 000c 1343     		orrs	r3, r2
+ 2436 000e 2381     		strh	r3, [r4, #8]
+ 2437              		@ sp needed
+ 2438 0010 10BD     		pop	{r4, pc}
+ 2440              		.section	.text.TIM_TIxExternalClockConfig,"ax",%progbits
+ 2441              		.align	1
+ 2442              		.global	TIM_TIxExternalClockConfig
+ 2443              		.syntax unified
+ 2444              		.code	16
+ 2445              		.thumb_func
+ 2446              		.fpu softvfp
+ARM GAS  /tmp/ccIDOJbZ.s 			page 41
+
+
+ 2448              	TIM_TIxExternalClockConfig:
+ 2449              		@ args = 0, pretend = 0, frame = 0
+ 2450              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2451 0000 70B5     		push	{r4, r5, r6, lr}
+ 2452 0002 0400     		movs	r4, r0
+ 2453 0004 0D00     		movs	r5, r1
+ 2454 0006 1100     		movs	r1, r2
+ 2455 0008 602D     		cmp	r5, #96
+ 2456 000a 0BD0     		beq	.L218
+ 2457 000c 0122     		movs	r2, #1
+ 2458 000e FFF7FEFF 		bl	TI1_Config
+ 2459              	.L217:
+ 2460 0012 2900     		movs	r1, r5
+ 2461 0014 2000     		movs	r0, r4
+ 2462 0016 FFF7FEFF 		bl	TIM_SelectInputTrigger
+ 2463 001a 2389     		ldrh	r3, [r4, #8]
+ 2464 001c 0722     		movs	r2, #7
+ 2465 001e 1343     		orrs	r3, r2
+ 2466 0020 2381     		strh	r3, [r4, #8]
+ 2467              		@ sp needed
+ 2468 0022 70BD     		pop	{r4, r5, r6, pc}
+ 2469              	.L218:
+ 2470 0024 0122     		movs	r2, #1
+ 2471 0026 FFF7FEFF 		bl	TI2_Config
+ 2472 002a F2E7     		b	.L217
+ 2474              		.section	.text.TIM_SelectOutputTrigger,"ax",%progbits
+ 2475              		.align	1
+ 2476              		.global	TIM_SelectOutputTrigger
+ 2477              		.syntax unified
+ 2478              		.code	16
+ 2479              		.thumb_func
+ 2480              		.fpu softvfp
+ 2482              	TIM_SelectOutputTrigger:
+ 2483              		@ args = 0, pretend = 0, frame = 0
+ 2484              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2485              		@ link register save eliminated.
+ 2486 0000 8388     		ldrh	r3, [r0, #4]
+ 2487 0002 7022     		movs	r2, #112
+ 2488 0004 9343     		bics	r3, r2
+ 2489 0006 8380     		strh	r3, [r0, #4]
+ 2490 0008 8388     		ldrh	r3, [r0, #4]
+ 2491 000a 1943     		orrs	r1, r3
+ 2492 000c 8180     		strh	r1, [r0, #4]
+ 2493              		@ sp needed
+ 2494 000e 7047     		bx	lr
+ 2496              		.section	.text.TIM_SelectSlaveMode,"ax",%progbits
+ 2497              		.align	1
+ 2498              		.global	TIM_SelectSlaveMode
+ 2499              		.syntax unified
+ 2500              		.code	16
+ 2501              		.thumb_func
+ 2502              		.fpu softvfp
+ 2504              	TIM_SelectSlaveMode:
+ 2505              		@ args = 0, pretend = 0, frame = 0
+ 2506              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2507              		@ link register save eliminated.
+ 2508 0000 0389     		ldrh	r3, [r0, #8]
+ARM GAS  /tmp/ccIDOJbZ.s 			page 42
+
+
+ 2509 0002 0722     		movs	r2, #7
+ 2510 0004 9343     		bics	r3, r2
+ 2511 0006 0381     		strh	r3, [r0, #8]
+ 2512 0008 0389     		ldrh	r3, [r0, #8]
+ 2513 000a 1943     		orrs	r1, r3
+ 2514 000c 0181     		strh	r1, [r0, #8]
+ 2515              		@ sp needed
+ 2516 000e 7047     		bx	lr
+ 2518              		.section	.text.TIM_SelectMasterSlaveMode,"ax",%progbits
+ 2519              		.align	1
+ 2520              		.global	TIM_SelectMasterSlaveMode
+ 2521              		.syntax unified
+ 2522              		.code	16
+ 2523              		.thumb_func
+ 2524              		.fpu softvfp
+ 2526              	TIM_SelectMasterSlaveMode:
+ 2527              		@ args = 0, pretend = 0, frame = 0
+ 2528              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2529              		@ link register save eliminated.
+ 2530 0000 0389     		ldrh	r3, [r0, #8]
+ 2531 0002 8022     		movs	r2, #128
+ 2532 0004 9343     		bics	r3, r2
+ 2533 0006 0381     		strh	r3, [r0, #8]
+ 2534 0008 0389     		ldrh	r3, [r0, #8]
+ 2535 000a 1943     		orrs	r1, r3
+ 2536 000c 0181     		strh	r1, [r0, #8]
+ 2537              		@ sp needed
+ 2538 000e 7047     		bx	lr
+ 2540              		.section	.text.TIM_ETRConfig,"ax",%progbits
+ 2541              		.align	1
+ 2542              		.global	TIM_ETRConfig
+ 2543              		.syntax unified
+ 2544              		.code	16
+ 2545              		.thumb_func
+ 2546              		.fpu softvfp
+ 2548              	TIM_ETRConfig:
+ 2549              		@ args = 0, pretend = 0, frame = 0
+ 2550              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2551 0000 30B5     		push	{r4, r5, lr}
+ 2552 0002 0489     		ldrh	r4, [r0, #8]
+ 2553 0004 FF25     		movs	r5, #255
+ 2554 0006 2C40     		ands	r4, r5
+ 2555 0008 1B02     		lsls	r3, r3, #8
+ 2556 000a 9BB2     		uxth	r3, r3
+ 2557 000c 1A43     		orrs	r2, r3
+ 2558 000e 1143     		orrs	r1, r2
+ 2559 0010 2143     		orrs	r1, r4
+ 2560 0012 0181     		strh	r1, [r0, #8]
+ 2561              		@ sp needed
+ 2562 0014 30BD     		pop	{r4, r5, pc}
+ 2564              		.section	.text.TIM_ETRClockMode1Config,"ax",%progbits
+ 2565              		.align	1
+ 2566              		.global	TIM_ETRClockMode1Config
+ 2567              		.syntax unified
+ 2568              		.code	16
+ 2569              		.thumb_func
+ 2570              		.fpu softvfp
+ARM GAS  /tmp/ccIDOJbZ.s 			page 43
+
+
+ 2572              	TIM_ETRClockMode1Config:
+ 2573              		@ args = 0, pretend = 0, frame = 0
+ 2574              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2575 0000 10B5     		push	{r4, lr}
+ 2576 0002 0400     		movs	r4, r0
+ 2577 0004 FFF7FEFF 		bl	TIM_ETRConfig
+ 2578 0008 2389     		ldrh	r3, [r4, #8]
+ 2579 000a 7722     		movs	r2, #119
+ 2580 000c 9343     		bics	r3, r2
+ 2581 000e 1343     		orrs	r3, r2
+ 2582 0010 2381     		strh	r3, [r4, #8]
+ 2583              		@ sp needed
+ 2584 0012 10BD     		pop	{r4, pc}
+ 2586              		.section	.text.TIM_ETRClockMode2Config,"ax",%progbits
+ 2587              		.align	1
+ 2588              		.global	TIM_ETRClockMode2Config
+ 2589              		.syntax unified
+ 2590              		.code	16
+ 2591              		.thumb_func
+ 2592              		.fpu softvfp
+ 2594              	TIM_ETRClockMode2Config:
+ 2595              		@ args = 0, pretend = 0, frame = 0
+ 2596              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2597 0000 10B5     		push	{r4, lr}
+ 2598 0002 0400     		movs	r4, r0
+ 2599 0004 FFF7FEFF 		bl	TIM_ETRConfig
+ 2600 0008 2389     		ldrh	r3, [r4, #8]
+ 2601 000a 8022     		movs	r2, #128
+ 2602 000c D201     		lsls	r2, r2, #7
+ 2603 000e 1343     		orrs	r3, r2
+ 2604 0010 2381     		strh	r3, [r4, #8]
+ 2605              		@ sp needed
+ 2606 0012 10BD     		pop	{r4, pc}
+ 2608              		.section	.text.TIM_EncoderInterfaceConfig,"ax",%progbits
+ 2609              		.align	1
+ 2610              		.global	TIM_EncoderInterfaceConfig
+ 2611              		.syntax unified
+ 2612              		.code	16
+ 2613              		.thumb_func
+ 2614              		.fpu softvfp
+ 2616              	TIM_EncoderInterfaceConfig:
+ 2617              		@ args = 0, pretend = 0, frame = 0
+ 2618              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2619 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 2620 0002 0689     		ldrh	r6, [r0, #8]
+ 2621 0004 048B     		ldrh	r4, [r0, #24]
+ 2622 0006 058C     		ldrh	r5, [r0, #32]
+ 2623 0008 0727     		movs	r7, #7
+ 2624 000a BE43     		bics	r6, r7
+ 2625 000c 3143     		orrs	r1, r6
+ 2626 000e 074E     		ldr	r6, .L226
+ 2627 0010 2640     		ands	r6, r4
+ 2628 0012 0224     		movs	r4, #2
+ 2629 0014 FF34     		adds	r4, r4, #255
+ 2630 0016 3443     		orrs	r4, r6
+ 2631 0018 AA26     		movs	r6, #170
+ 2632 001a B543     		bics	r5, r6
+ARM GAS  /tmp/ccIDOJbZ.s 			page 44
+
+
+ 2633 001c 1B01     		lsls	r3, r3, #4
+ 2634 001e 9BB2     		uxth	r3, r3
+ 2635 0020 1A43     		orrs	r2, r3
+ 2636 0022 2A43     		orrs	r2, r5
+ 2637 0024 0181     		strh	r1, [r0, #8]
+ 2638 0026 0483     		strh	r4, [r0, #24]
+ 2639 0028 0284     		strh	r2, [r0, #32]
+ 2640              		@ sp needed
+ 2641 002a F0BD     		pop	{r4, r5, r6, r7, pc}
+ 2642              	.L227:
+ 2643              		.align	2
+ 2644              	.L226:
+ 2645 002c FCFCFFFF 		.word	-772
+ 2647              		.section	.text.TIM_SelectHallSensor,"ax",%progbits
+ 2648              		.align	1
+ 2649              		.global	TIM_SelectHallSensor
+ 2650              		.syntax unified
+ 2651              		.code	16
+ 2652              		.thumb_func
+ 2653              		.fpu softvfp
+ 2655              	TIM_SelectHallSensor:
+ 2656              		@ args = 0, pretend = 0, frame = 0
+ 2657              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2658              		@ link register save eliminated.
+ 2659 0000 0029     		cmp	r1, #0
+ 2660 0002 04D1     		bne	.L231
+ 2661 0004 8388     		ldrh	r3, [r0, #4]
+ 2662 0006 8022     		movs	r2, #128
+ 2663 0008 9343     		bics	r3, r2
+ 2664 000a 8380     		strh	r3, [r0, #4]
+ 2665              	.L228:
+ 2666              		@ sp needed
+ 2667 000c 7047     		bx	lr
+ 2668              	.L231:
+ 2669 000e 8388     		ldrh	r3, [r0, #4]
+ 2670 0010 8022     		movs	r2, #128
+ 2671 0012 1343     		orrs	r3, r2
+ 2672 0014 8380     		strh	r3, [r0, #4]
+ 2673 0016 F9E7     		b	.L228
+ 2675              		.section	.text.TIM_RemapConfig,"ax",%progbits
+ 2676              		.align	1
+ 2677              		.global	TIM_RemapConfig
+ 2678              		.syntax unified
+ 2679              		.code	16
+ 2680              		.thumb_func
+ 2681              		.fpu softvfp
+ 2683              	TIM_RemapConfig:
+ 2684              		@ args = 0, pretend = 0, frame = 0
+ 2685              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2686              		@ link register save eliminated.
+ 2687 0000 5023     		movs	r3, #80
+ 2688 0002 C152     		strh	r1, [r0, r3]
+ 2689              		@ sp needed
+ 2690 0004 7047     		bx	lr
+ 2692              		.ident	"GCC: (GNU Tools for Arm Embedded Processors 7-2018-q3-update) 7.3.1 20180622 (release) [AR
+ARM GAS  /tmp/ccIDOJbZ.s 			page 45
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32f0xx_tim.c
+     /tmp/ccIDOJbZ.s:14     .text.TI1_Config:00000000 $t
+     /tmp/ccIDOJbZ.s:20     .text.TI1_Config:00000000 TI1_Config
+     /tmp/ccIDOJbZ.s:48     .text.TI2_Config:00000000 $t
+     /tmp/ccIDOJbZ.s:54     .text.TI2_Config:00000000 TI2_Config
+     /tmp/ccIDOJbZ.s:86     .text.TI2_Config:00000034 $d
+     /tmp/ccIDOJbZ.s:89     .text.TI3_Config:00000000 $t
+     /tmp/ccIDOJbZ.s:95     .text.TI3_Config:00000000 TI3_Config
+     /tmp/ccIDOJbZ.s:126    .text.TI3_Config:00000030 $d
+     /tmp/ccIDOJbZ.s:130    .text.TI4_Config:00000000 $t
+     /tmp/ccIDOJbZ.s:136    .text.TI4_Config:00000000 TI4_Config
+     /tmp/ccIDOJbZ.s:169    .text.TI4_Config:00000034 $d
+     /tmp/ccIDOJbZ.s:174    .text.TIM_DeInit:00000000 $t
+     /tmp/ccIDOJbZ.s:181    .text.TIM_DeInit:00000000 TIM_DeInit
+     /tmp/ccIDOJbZ.s:301    .text.TIM_DeInit:000000f4 $d
+     /tmp/ccIDOJbZ.s:311    .text.TIM_TimeBaseInit:00000000 $t
+     /tmp/ccIDOJbZ.s:318    .text.TIM_TimeBaseInit:00000000 TIM_TimeBaseInit
+     /tmp/ccIDOJbZ.s:377    .text.TIM_TimeBaseInit:0000005c $d
+     /tmp/ccIDOJbZ.s:386    .text.TIM_TimeBaseStructInit:00000000 $t
+     /tmp/ccIDOJbZ.s:393    .text.TIM_TimeBaseStructInit:00000000 TIM_TimeBaseStructInit
+     /tmp/ccIDOJbZ.s:409    .text.TIM_PrescalerConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:416    .text.TIM_PrescalerConfig:00000000 TIM_PrescalerConfig
+     /tmp/ccIDOJbZ.s:426    .text.TIM_CounterModeConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:433    .text.TIM_CounterModeConfig:00000000 TIM_CounterModeConfig
+     /tmp/ccIDOJbZ.s:446    .text.TIM_SetCounter:00000000 $t
+     /tmp/ccIDOJbZ.s:453    .text.TIM_SetCounter:00000000 TIM_SetCounter
+     /tmp/ccIDOJbZ.s:462    .text.TIM_SetAutoreload:00000000 $t
+     /tmp/ccIDOJbZ.s:469    .text.TIM_SetAutoreload:00000000 TIM_SetAutoreload
+     /tmp/ccIDOJbZ.s:478    .text.TIM_GetCounter:00000000 $t
+     /tmp/ccIDOJbZ.s:485    .text.TIM_GetCounter:00000000 TIM_GetCounter
+     /tmp/ccIDOJbZ.s:494    .text.TIM_GetPrescaler:00000000 $t
+     /tmp/ccIDOJbZ.s:501    .text.TIM_GetPrescaler:00000000 TIM_GetPrescaler
+     /tmp/ccIDOJbZ.s:511    .text.TIM_UpdateDisableConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:518    .text.TIM_UpdateDisableConfig:00000000 TIM_UpdateDisableConfig
+     /tmp/ccIDOJbZ.s:539    .text.TIM_UpdateRequestConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:546    .text.TIM_UpdateRequestConfig:00000000 TIM_UpdateRequestConfig
+     /tmp/ccIDOJbZ.s:567    .text.TIM_ARRPreloadConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:574    .text.TIM_ARRPreloadConfig:00000000 TIM_ARRPreloadConfig
+     /tmp/ccIDOJbZ.s:595    .text.TIM_SelectOnePulseMode:00000000 $t
+     /tmp/ccIDOJbZ.s:602    .text.TIM_SelectOnePulseMode:00000000 TIM_SelectOnePulseMode
+     /tmp/ccIDOJbZ.s:617    .text.TIM_SetClockDivision:00000000 $t
+     /tmp/ccIDOJbZ.s:624    .text.TIM_SetClockDivision:00000000 TIM_SetClockDivision
+     /tmp/ccIDOJbZ.s:640    .text.TIM_SetClockDivision:00000010 $d
+     /tmp/ccIDOJbZ.s:643    .text.TIM_Cmd:00000000 $t
+     /tmp/ccIDOJbZ.s:650    .text.TIM_Cmd:00000000 TIM_Cmd
+     /tmp/ccIDOJbZ.s:671    .text.TIM_BDTRConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:678    .text.TIM_BDTRConfig:00000000 TIM_BDTRConfig
+     /tmp/ccIDOJbZ.s:703    .text.TIM_BDTRStructInit:00000000 $t
+     /tmp/ccIDOJbZ.s:710    .text.TIM_BDTRStructInit:00000000 TIM_BDTRStructInit
+     /tmp/ccIDOJbZ.s:726    .text.TIM_CtrlPWMOutputs:00000000 $t
+     /tmp/ccIDOJbZ.s:733    .text.TIM_CtrlPWMOutputs:00000000 TIM_CtrlPWMOutputs
+     /tmp/ccIDOJbZ.s:758    .text.TIM_CtrlPWMOutputs:00000020 $d
+     /tmp/ccIDOJbZ.s:761    .text.TIM_OC1Init:00000000 $t
+     /tmp/ccIDOJbZ.s:768    .text.TIM_OC1Init:00000000 TIM_OC1Init
+     /tmp/ccIDOJbZ.s:830    .text.TIM_OC1Init:0000006c $d
+     /tmp/ccIDOJbZ.s:837    .text.TIM_OC2Init:00000000 $t
+ARM GAS  /tmp/ccIDOJbZ.s 			page 46
+
+
+     /tmp/ccIDOJbZ.s:844    .text.TIM_OC2Init:00000000 TIM_OC2Init
+     /tmp/ccIDOJbZ.s:920    .text.TIM_OC2Init:00000088 $d
+     /tmp/ccIDOJbZ.s:927    .text.TIM_OC3Init:00000000 $t
+     /tmp/ccIDOJbZ.s:934    .text.TIM_OC3Init:00000000 TIM_OC3Init
+     /tmp/ccIDOJbZ.s:998    .text.TIM_OC3Init:00000070 $d
+     /tmp/ccIDOJbZ.s:1006   .text.TIM_OC4Init:00000000 $t
+     /tmp/ccIDOJbZ.s:1013   .text.TIM_OC4Init:00000000 TIM_OC4Init
+     /tmp/ccIDOJbZ.s:1063   .text.TIM_OC4Init:00000054 $d
+     /tmp/ccIDOJbZ.s:1070   .text.TIM_OCStructInit:00000000 $t
+     /tmp/ccIDOJbZ.s:1077   .text.TIM_OCStructInit:00000000 TIM_OCStructInit
+     /tmp/ccIDOJbZ.s:1094   .text.TIM_SelectOCxM:00000000 $t
+     /tmp/ccIDOJbZ.s:1101   .text.TIM_SelectOCxM:00000000 TIM_SelectOCxM
+     /tmp/ccIDOJbZ.s:1147   .text.TIM_SelectOCxM:0000004c $d
+     /tmp/ccIDOJbZ.s:1150   .text.TIM_SetCompare1:00000000 $t
+     /tmp/ccIDOJbZ.s:1157   .text.TIM_SetCompare1:00000000 TIM_SetCompare1
+     /tmp/ccIDOJbZ.s:1166   .text.TIM_SetCompare2:00000000 $t
+     /tmp/ccIDOJbZ.s:1173   .text.TIM_SetCompare2:00000000 TIM_SetCompare2
+     /tmp/ccIDOJbZ.s:1182   .text.TIM_SetCompare3:00000000 $t
+     /tmp/ccIDOJbZ.s:1189   .text.TIM_SetCompare3:00000000 TIM_SetCompare3
+     /tmp/ccIDOJbZ.s:1198   .text.TIM_SetCompare4:00000000 $t
+     /tmp/ccIDOJbZ.s:1205   .text.TIM_SetCompare4:00000000 TIM_SetCompare4
+     /tmp/ccIDOJbZ.s:1214   .text.TIM_ForcedOC1Config:00000000 $t
+     /tmp/ccIDOJbZ.s:1221   .text.TIM_ForcedOC1Config:00000000 TIM_ForcedOC1Config
+     /tmp/ccIDOJbZ.s:1234   .text.TIM_ForcedOC2Config:00000000 $t
+     /tmp/ccIDOJbZ.s:1241   .text.TIM_ForcedOC2Config:00000000 TIM_ForcedOC2Config
+     /tmp/ccIDOJbZ.s:1257   .text.TIM_ForcedOC2Config:00000010 $d
+     /tmp/ccIDOJbZ.s:1260   .text.TIM_ForcedOC3Config:00000000 $t
+     /tmp/ccIDOJbZ.s:1267   .text.TIM_ForcedOC3Config:00000000 TIM_ForcedOC3Config
+     /tmp/ccIDOJbZ.s:1280   .text.TIM_ForcedOC4Config:00000000 $t
+     /tmp/ccIDOJbZ.s:1287   .text.TIM_ForcedOC4Config:00000000 TIM_ForcedOC4Config
+     /tmp/ccIDOJbZ.s:1303   .text.TIM_ForcedOC4Config:00000010 $d
+     /tmp/ccIDOJbZ.s:1306   .text.TIM_CCPreloadControl:00000000 $t
+     /tmp/ccIDOJbZ.s:1313   .text.TIM_CCPreloadControl:00000000 TIM_CCPreloadControl
+     /tmp/ccIDOJbZ.s:1334   .text.TIM_OC1PreloadConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:1341   .text.TIM_OC1PreloadConfig:00000000 TIM_OC1PreloadConfig
+     /tmp/ccIDOJbZ.s:1354   .text.TIM_OC2PreloadConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:1361   .text.TIM_OC2PreloadConfig:00000000 TIM_OC2PreloadConfig
+     /tmp/ccIDOJbZ.s:1377   .text.TIM_OC2PreloadConfig:00000010 $d
+     /tmp/ccIDOJbZ.s:1380   .text.TIM_OC3PreloadConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:1387   .text.TIM_OC3PreloadConfig:00000000 TIM_OC3PreloadConfig
+     /tmp/ccIDOJbZ.s:1400   .text.TIM_OC4PreloadConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:1407   .text.TIM_OC4PreloadConfig:00000000 TIM_OC4PreloadConfig
+     /tmp/ccIDOJbZ.s:1423   .text.TIM_OC4PreloadConfig:00000010 $d
+     /tmp/ccIDOJbZ.s:1426   .text.TIM_OC1FastConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:1433   .text.TIM_OC1FastConfig:00000000 TIM_OC1FastConfig
+     /tmp/ccIDOJbZ.s:1446   .text.TIM_OC2FastConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:1453   .text.TIM_OC2FastConfig:00000000 TIM_OC2FastConfig
+     /tmp/ccIDOJbZ.s:1469   .text.TIM_OC2FastConfig:00000010 $d
+     /tmp/ccIDOJbZ.s:1472   .text.TIM_OC3FastConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:1479   .text.TIM_OC3FastConfig:00000000 TIM_OC3FastConfig
+     /tmp/ccIDOJbZ.s:1492   .text.TIM_OC4FastConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:1499   .text.TIM_OC4FastConfig:00000000 TIM_OC4FastConfig
+     /tmp/ccIDOJbZ.s:1515   .text.TIM_OC4FastConfig:00000010 $d
+     /tmp/ccIDOJbZ.s:1518   .text.TIM_ClearOC1Ref:00000000 $t
+     /tmp/ccIDOJbZ.s:1525   .text.TIM_ClearOC1Ref:00000000 TIM_ClearOC1Ref
+     /tmp/ccIDOJbZ.s:1538   .text.TIM_ClearOC2Ref:00000000 $t
+     /tmp/ccIDOJbZ.s:1545   .text.TIM_ClearOC2Ref:00000000 TIM_ClearOC2Ref
+ARM GAS  /tmp/ccIDOJbZ.s 			page 47
+
+
+     /tmp/ccIDOJbZ.s:1560   .text.TIM_ClearOC3Ref:00000000 $t
+     /tmp/ccIDOJbZ.s:1567   .text.TIM_ClearOC3Ref:00000000 TIM_ClearOC3Ref
+     /tmp/ccIDOJbZ.s:1580   .text.TIM_ClearOC4Ref:00000000 $t
+     /tmp/ccIDOJbZ.s:1587   .text.TIM_ClearOC4Ref:00000000 TIM_ClearOC4Ref
+     /tmp/ccIDOJbZ.s:1602   .text.TIM_OC1PolarityConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:1609   .text.TIM_OC1PolarityConfig:00000000 TIM_OC1PolarityConfig
+     /tmp/ccIDOJbZ.s:1622   .text.TIM_OC1NPolarityConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:1629   .text.TIM_OC1NPolarityConfig:00000000 TIM_OC1NPolarityConfig
+     /tmp/ccIDOJbZ.s:1642   .text.TIM_OC2PolarityConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:1649   .text.TIM_OC2PolarityConfig:00000000 TIM_OC2PolarityConfig
+     /tmp/ccIDOJbZ.s:1664   .text.TIM_OC2NPolarityConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:1671   .text.TIM_OC2NPolarityConfig:00000000 TIM_OC2NPolarityConfig
+     /tmp/ccIDOJbZ.s:1686   .text.TIM_OC3PolarityConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:1693   .text.TIM_OC3PolarityConfig:00000000 TIM_OC3PolarityConfig
+     /tmp/ccIDOJbZ.s:1709   .text.TIM_OC3PolarityConfig:00000010 $d
+     /tmp/ccIDOJbZ.s:1712   .text.TIM_OC3NPolarityConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:1719   .text.TIM_OC3NPolarityConfig:00000000 TIM_OC3NPolarityConfig
+     /tmp/ccIDOJbZ.s:1735   .text.TIM_OC3NPolarityConfig:00000010 $d
+     /tmp/ccIDOJbZ.s:1738   .text.TIM_OC4PolarityConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:1745   .text.TIM_OC4PolarityConfig:00000000 TIM_OC4PolarityConfig
+     /tmp/ccIDOJbZ.s:1761   .text.TIM_OC4PolarityConfig:00000010 $d
+     /tmp/ccIDOJbZ.s:1764   .text.TIM_SelectOCREFClear:00000000 $t
+     /tmp/ccIDOJbZ.s:1771   .text.TIM_SelectOCREFClear:00000000 TIM_SelectOCREFClear
+     /tmp/ccIDOJbZ.s:1786   .text.TIM_CCxCmd:00000000 $t
+     /tmp/ccIDOJbZ.s:1793   .text.TIM_CCxCmd:00000000 TIM_CCxCmd
+     /tmp/ccIDOJbZ.s:1812   .text.TIM_CCxNCmd:00000000 $t
+     /tmp/ccIDOJbZ.s:1819   .text.TIM_CCxNCmd:00000000 TIM_CCxNCmd
+     /tmp/ccIDOJbZ.s:1838   .text.TIM_SelectCOM:00000000 $t
+     /tmp/ccIDOJbZ.s:1845   .text.TIM_SelectCOM:00000000 TIM_SelectCOM
+     /tmp/ccIDOJbZ.s:1866   .text.TIM_ICStructInit:00000000 $t
+     /tmp/ccIDOJbZ.s:1873   .text.TIM_ICStructInit:00000000 TIM_ICStructInit
+     /tmp/ccIDOJbZ.s:1888   .text.TIM_GetCapture1:00000000 $t
+     /tmp/ccIDOJbZ.s:1895   .text.TIM_GetCapture1:00000000 TIM_GetCapture1
+     /tmp/ccIDOJbZ.s:1904   .text.TIM_GetCapture2:00000000 $t
+     /tmp/ccIDOJbZ.s:1911   .text.TIM_GetCapture2:00000000 TIM_GetCapture2
+     /tmp/ccIDOJbZ.s:1920   .text.TIM_GetCapture3:00000000 $t
+     /tmp/ccIDOJbZ.s:1927   .text.TIM_GetCapture3:00000000 TIM_GetCapture3
+     /tmp/ccIDOJbZ.s:1936   .text.TIM_GetCapture4:00000000 $t
+     /tmp/ccIDOJbZ.s:1943   .text.TIM_GetCapture4:00000000 TIM_GetCapture4
+     /tmp/ccIDOJbZ.s:1952   .text.TIM_SetIC1Prescaler:00000000 $t
+     /tmp/ccIDOJbZ.s:1959   .text.TIM_SetIC1Prescaler:00000000 TIM_SetIC1Prescaler
+     /tmp/ccIDOJbZ.s:1974   .text.TIM_SetIC2Prescaler:00000000 $t
+     /tmp/ccIDOJbZ.s:1981   .text.TIM_SetIC2Prescaler:00000000 TIM_SetIC2Prescaler
+     /tmp/ccIDOJbZ.s:1999   .text.TIM_SetIC2Prescaler:00000014 $d
+     /tmp/ccIDOJbZ.s:2002   .text.TIM_PWMIConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:2009   .text.TIM_PWMIConfig:00000000 TIM_PWMIConfig
+     /tmp/ccIDOJbZ.s:2069   .text.TIM_SetIC3Prescaler:00000000 $t
+     /tmp/ccIDOJbZ.s:2076   .text.TIM_SetIC3Prescaler:00000000 TIM_SetIC3Prescaler
+     /tmp/ccIDOJbZ.s:2091   .text.TIM_SetIC4Prescaler:00000000 $t
+     /tmp/ccIDOJbZ.s:2098   .text.TIM_SetIC4Prescaler:00000000 TIM_SetIC4Prescaler
+     /tmp/ccIDOJbZ.s:2116   .text.TIM_SetIC4Prescaler:00000014 $d
+     /tmp/ccIDOJbZ.s:2119   .text.TIM_ICInit:00000000 $t
+     /tmp/ccIDOJbZ.s:2126   .text.TIM_ICInit:00000000 TIM_ICInit
+     /tmp/ccIDOJbZ.s:2178   .text.TIM_ITConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:2185   .text.TIM_ITConfig:00000000 TIM_ITConfig
+     /tmp/ccIDOJbZ.s:2204   .text.TIM_GenerateEvent:00000000 $t
+     /tmp/ccIDOJbZ.s:2211   .text.TIM_GenerateEvent:00000000 TIM_GenerateEvent
+ARM GAS  /tmp/ccIDOJbZ.s 			page 48
+
+
+     /tmp/ccIDOJbZ.s:2220   .text.TIM_GetFlagStatus:00000000 $t
+     /tmp/ccIDOJbZ.s:2227   .text.TIM_GetFlagStatus:00000000 TIM_GetFlagStatus
+     /tmp/ccIDOJbZ.s:2243   .text.TIM_ClearFlag:00000000 $t
+     /tmp/ccIDOJbZ.s:2250   .text.TIM_ClearFlag:00000000 TIM_ClearFlag
+     /tmp/ccIDOJbZ.s:2261   .text.TIM_GetITStatus:00000000 $t
+     /tmp/ccIDOJbZ.s:2268   .text.TIM_GetITStatus:00000000 TIM_GetITStatus
+     /tmp/ccIDOJbZ.s:2291   .text.TIM_ClearITPendingBit:00000000 $t
+     /tmp/ccIDOJbZ.s:2298   .text.TIM_ClearITPendingBit:00000000 TIM_ClearITPendingBit
+     /tmp/ccIDOJbZ.s:2309   .text.TIM_DMAConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:2316   .text.TIM_DMAConfig:00000000 TIM_DMAConfig
+     /tmp/ccIDOJbZ.s:2327   .text.TIM_DMACmd:00000000 $t
+     /tmp/ccIDOJbZ.s:2334   .text.TIM_DMACmd:00000000 TIM_DMACmd
+     /tmp/ccIDOJbZ.s:2353   .text.TIM_SelectCCDMA:00000000 $t
+     /tmp/ccIDOJbZ.s:2360   .text.TIM_SelectCCDMA:00000000 TIM_SelectCCDMA
+     /tmp/ccIDOJbZ.s:2381   .text.TIM_InternalClockConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:2388   .text.TIM_InternalClockConfig:00000000 TIM_InternalClockConfig
+     /tmp/ccIDOJbZ.s:2400   .text.TIM_SelectInputTrigger:00000000 $t
+     /tmp/ccIDOJbZ.s:2407   .text.TIM_SelectInputTrigger:00000000 TIM_SelectInputTrigger
+     /tmp/ccIDOJbZ.s:2420   .text.TIM_ITRxExternalClockConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:2427   .text.TIM_ITRxExternalClockConfig:00000000 TIM_ITRxExternalClockConfig
+     /tmp/ccIDOJbZ.s:2441   .text.TIM_TIxExternalClockConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:2448   .text.TIM_TIxExternalClockConfig:00000000 TIM_TIxExternalClockConfig
+     /tmp/ccIDOJbZ.s:2475   .text.TIM_SelectOutputTrigger:00000000 $t
+     /tmp/ccIDOJbZ.s:2482   .text.TIM_SelectOutputTrigger:00000000 TIM_SelectOutputTrigger
+     /tmp/ccIDOJbZ.s:2497   .text.TIM_SelectSlaveMode:00000000 $t
+     /tmp/ccIDOJbZ.s:2504   .text.TIM_SelectSlaveMode:00000000 TIM_SelectSlaveMode
+     /tmp/ccIDOJbZ.s:2519   .text.TIM_SelectMasterSlaveMode:00000000 $t
+     /tmp/ccIDOJbZ.s:2526   .text.TIM_SelectMasterSlaveMode:00000000 TIM_SelectMasterSlaveMode
+     /tmp/ccIDOJbZ.s:2541   .text.TIM_ETRConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:2548   .text.TIM_ETRConfig:00000000 TIM_ETRConfig
+     /tmp/ccIDOJbZ.s:2565   .text.TIM_ETRClockMode1Config:00000000 $t
+     /tmp/ccIDOJbZ.s:2572   .text.TIM_ETRClockMode1Config:00000000 TIM_ETRClockMode1Config
+     /tmp/ccIDOJbZ.s:2587   .text.TIM_ETRClockMode2Config:00000000 $t
+     /tmp/ccIDOJbZ.s:2594   .text.TIM_ETRClockMode2Config:00000000 TIM_ETRClockMode2Config
+     /tmp/ccIDOJbZ.s:2609   .text.TIM_EncoderInterfaceConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:2616   .text.TIM_EncoderInterfaceConfig:00000000 TIM_EncoderInterfaceConfig
+     /tmp/ccIDOJbZ.s:2645   .text.TIM_EncoderInterfaceConfig:0000002c $d
+     /tmp/ccIDOJbZ.s:2648   .text.TIM_SelectHallSensor:00000000 $t
+     /tmp/ccIDOJbZ.s:2655   .text.TIM_SelectHallSensor:00000000 TIM_SelectHallSensor
+     /tmp/ccIDOJbZ.s:2676   .text.TIM_RemapConfig:00000000 $t
+     /tmp/ccIDOJbZ.s:2683   .text.TIM_RemapConfig:00000000 TIM_RemapConfig
+
+UNDEFINED SYMBOLS
+RCC_APB2PeriphResetCmd
+RCC_APB1PeriphResetCmd
